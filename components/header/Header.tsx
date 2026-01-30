@@ -2,19 +2,24 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('Home');
+  const pathname = usePathname();
+  const isProductsPage = pathname === '/products';
+  const isCareerPage = pathname === '/career';
+  const isContactPage = pathname === '/contact';
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Products', href: '#products' },
-    { name: 'Career', href: '#career' },
-    { name: 'Franchise', href: '#franchise' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Products', href: '/products' },
+    { name: 'Career', href: '/career' },
+    { name: 'Franchise', href: '/#franchise' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -37,20 +42,24 @@ export default function Header() {
             {/* Desktop nav – center */}
             <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-full">
               <div className="flex items-center gap-6 xl:gap-8 2xl:gap-10 pointer-events-auto">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setActiveLink(link.name)}
-                    className={`text-sm xl:text-base transition-colors whitespace-nowrap font-medium ${
-                      activeLink === link.name
-                        ? 'text-[#C50D3E] font-semibold'
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const activeClass =
+                    (link.name === 'Products' && isProductsPage) ||
+                    (link.name === 'Career' && isCareerPage) ||
+                    (link.name === 'Contact' && isContactPage) ||
+                    (link.name === 'Home' && pathname === '/')
+                      ? 'text-[#C50D3E] font-semibold'
+                      : 'text-gray-400 hover:text-white';
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className={`text-sm xl:text-base transition-colors whitespace-nowrap font-medium ${activeClass}`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
@@ -78,25 +87,27 @@ export default function Header() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-800 bg-black">
+            <div className="lg:hidden border-t border-gray-800 bg-black">
             <div className="navbar-inner py-6 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => {
-                    setActiveLink(link.name);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`block text-base transition-colors ${
-                    activeLink === link.name
-                      ? 'text-[#C50D3E] font-semibold'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const active =
+                  (link.name === 'Products' && isProductsPage) ||
+                  (link.name === 'Career' && isCareerPage) ||
+                  (link.name === 'Contact' && isContactPage) ||
+                  (link.name === 'Home' && pathname === '/');
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`block text-base transition-colors ${
+                      active ? 'text-[#C50D3E] font-semibold' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
               <button className="w-full bg-[#C50D3E] text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 mt-4">
                 Join Now <span className="text-lg">&gt;&gt;&gt;</span>
               </button>

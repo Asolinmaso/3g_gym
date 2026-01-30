@@ -1,13 +1,13 @@
 import Image from 'next/image';
 
 const quickLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Products', href: '#products' },
-  { label: 'Career', href: '#career' },
-  { label: 'Franchise', href: '#franchise' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/#about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Products', href: '/products' },
+  { label: 'Career', href: '/career' },
+  { label: 'Franchise', href: '/#franchise' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const programs = [
