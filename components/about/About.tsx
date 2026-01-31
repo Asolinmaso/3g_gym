@@ -35,7 +35,7 @@ export default function About() {
               </p>
             </div>
 
-            <a href="#services" className="about-cta">
+            <a href="/about" className="about-cta">
               <span>Know More</span>
               <span className="about-cta-arrows" aria-hidden>
                 &gt;&gt;&gt;

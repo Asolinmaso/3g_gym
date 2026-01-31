@@ -11,14 +11,17 @@ export default function Header() {
   const isProductsPage = pathname === '/products';
   const isCareerPage = pathname === '/career';
   const isContactPage = pathname === '/contact';
+  const isServicesPage = pathname === '/services';
+  const isAboutPage = pathname === '/about';
+  const isFranchisePage = pathname === '/franchise';
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/#about' },
-    { name: 'Services', href: '/#services' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
     { name: 'Products', href: '/products' },
     { name: 'Career', href: '/career' },
-    { name: 'Franchise', href: '/#franchise' },
+    { name: 'Franchise', href: '/franchise' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -47,6 +50,9 @@ export default function Header() {
                     (link.name === 'Products' && isProductsPage) ||
                     (link.name === 'Career' && isCareerPage) ||
                     (link.name === 'Contact' && isContactPage) ||
+                    (link.name === 'Services' && isServicesPage) ||
+                    (link.name === 'About' && isAboutPage) ||
+                    (link.name === 'Franchise' && isFranchisePage) ||
                     (link.name === 'Home' && pathname === '/')
                       ? 'text-[#C50D3E] font-semibold'
                       : 'text-gray-400 hover:text-white';
@@ -65,9 +71,12 @@ export default function Header() {
 
             {/* Right: Join Now (desktop) + Hamburger (mobile) */}
             <div className="flex items-center justify-end shrink-0">
-              <button className="hidden lg:inline-flex bg-[#C50D3E] text-white px-8 xl:px-10 2xl:px-12 py-3.5 xl:py-4 rounded-full font-medium hover:opacity-90 transition-opacity items-center gap-1.5 text-sm xl:text-base whitespace-nowrap">
-                Join Now <span className="text-base xl:text-lg">&gt;&gt;&gt;</span>
-              </button>
+              <Link
+                href="/#contact"
+                className="hidden lg:inline-flex bg-[#C50D3E] text-white h-[52px] min-w-[163px] px-6 rounded-[40px] font-normal hover:opacity-90 transition-opacity items-center justify-center gap-1.5 whitespace-nowrap footer-join-btn"
+              >
+                Join Now <span className="text-base" aria-hidden>&gt;&gt;&gt;</span>
+              </Link>
               <button
                 className="lg:hidden text-white p-2"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -94,6 +103,9 @@ export default function Header() {
                   (link.name === 'Products' && isProductsPage) ||
                   (link.name === 'Career' && isCareerPage) ||
                   (link.name === 'Contact' && isContactPage) ||
+                  (link.name === 'Services' && isServicesPage) ||
+                  (link.name === 'About' && isAboutPage) ||
+                  (link.name === 'Franchise' && isFranchisePage) ||
                   (link.name === 'Home' && pathname === '/');
                 return (
                   <Link
@@ -108,9 +120,12 @@ export default function Header() {
                   </Link>
                 );
               })}
-              <button className="w-full bg-[#C50D3E] text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 mt-4">
-                Join Now <span className="text-lg">&gt;&gt;&gt;</span>
-              </button>
+              <Link
+                href="/#contact"
+                className="w-full bg-[#C50D3E] text-white h-[52px] min-w-[163px] px-6 rounded-[40px] font-normal hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 mt-4 footer-join-btn"
+              >
+                Join Now <span className="text-base" aria-hidden>&gt;&gt;&gt;</span>
+              </Link>
             </div>
           </div>
         )}

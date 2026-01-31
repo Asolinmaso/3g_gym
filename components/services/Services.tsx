@@ -60,7 +60,7 @@ export default function Services() {
               From strength to fat loss, our expert-led programs help you train
               smarter and achieve real results at any fitness level.
             </p>
-            <a href="#contact" className="services-cta">
+            <a href="/services" className="services-cta">
               <span>Know More</span>
               <span className="services-cta-arrows" aria-hidden>
                 &gt;&gt;&gt;

@@ -1,12 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/#about' },
-  { label: 'Services', href: '/#services' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
   { label: 'Products', href: '/products' },
   { label: 'Career', href: '/career' },
-  { label: 'Franchise', href: '/#franchise' },
+  { label: 'Franchise', href: '/franchise' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -45,45 +46,32 @@ const social = [
 
 export default function Footer() {
   return (
-    <footer className="relative text-white overflow-hidden">
-      {/* Background: gym image + dark overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/banner.png"
-          alt=""
-          fill
-          className="object-cover"
-          sizes="100vw"
-          priority={false}
-        />
-        <div className="absolute inset-0 bg-black/85" aria-hidden />
-      </div>
-
-      <div className="content-inner relative z-10 pt-16 pb-8 md:pt-20 md:pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
-          {/* Column 1: Logo, about, Follow Us */}
-          <div className="space-y-4 lg:max-w-xs">
+    <footer className="footer-root">
+      <div className="content-inner footer-inner">
+        <div className="footer-grid">
+          {/* Column 1: Logo, about, Follow Us (Frame 60) */}
+          <div className="footer-col footer-col--about">
             <Image
               src="/logo.png"
               alt="3RD GENERATION FITNESS STUDIO"
-              width={180}
-              height={80}
-              className="h-auto w-auto max-h-16 md:max-h-20 object-contain"
+              width={156}
+              height={156}
+              className="footer-logo"
             />
-            <p className="text-white/90 text-sm leading-relaxed">
+            <p className="footer-about">
               We are a results-driven fitness center focused on strength, transformation, and long-term wellness. With expert trainers and modern facilities, we help you train smarter and achieve real results.
             </p>
-            <div>
-              <p className="text-white font-bold text-sm mb-3">Follow Us -</p>
-              <div className="flex gap-2">
+            <div className="footer-follow">
+              <p className="footer-follow-title">Follow Us -</p>
+              <div className="footer-social">
                 {social.map(({ name, href, icon }) => (
                   <a
                     key={name}
                     href={href}
-                    className="w-9 h-9 rounded-full bg-[#C50D3E] flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                    className="footer-social-link"
                     aria-label={name}
                   >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="footer-social-icon" fill="currentColor" viewBox="0 0 24 24">
                       {icon}
                     </svg>
                   </a>
@@ -92,86 +80,78 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="text-white font-bold text-base mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+          {/* Column 2: Quick Links (Frame 55) */}
+          <div className="footer-col footer-col--links">
+            <h3 className="footer-heading">Quick Links</h3>
+            <ul className="footer-list">
               {quickLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a
-                    href={href}
-                    className="text-white/85 hover:text-white transition-colors text-sm"
-                  >
+                  <Link href={href} className="footer-link">
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Our Programs */}
-          <div>
-            <h3 className="text-white font-bold text-base mb-4">Our Programs</h3>
-            <ul className="space-y-2">
+          {/* Column 3: Our Programs (Frame 61) */}
+          <div className="footer-col footer-col--programs">
+            <h3 className="footer-heading">Our Programs</h3>
+            <ul className="footer-list">
               {programs.map((name) => (
                 <li key={name}>
-                  <a
-                    href="#services"
-                    className="text-white/85 hover:text-white transition-colors text-sm"
-                  >
+                  <Link href="/services" className="footer-link">
                     {name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
-          <div>
-            <h3 className="text-white font-bold text-base mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm text-white/90">
-              <li className="flex gap-3">
-                <span className="shrink-0 mt-0.5" aria-hidden>
-                  <svg className="w-4 h-4 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          {/* Column 4: Contact (Frame 1321314932) */}
+          <div className="footer-col footer-col--contact">
+            <h3 className="footer-heading">Contact</h3>
+            <ul className="footer-contact-list">
+              <li className="footer-contact-item">
+                <span className="footer-contact-icon" aria-hidden>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                   </svg>
                 </span>
-                <span className="flex flex-col">
-                  <a href="tel:+918667378012" className="hover:text-white transition-colors">+91 86673 78012</a>
-                  <a href="tel:+918778359643" className="hover:text-white transition-colors">+91 8778359643</a>
+                <span className="footer-contact-text">
+                  <a href="tel:+918667378012">+91 86673 78012</a>
+                  <a href="tel:+918778359643">+91 8778359643</a>
                 </span>
               </li>
-              <li className="flex gap-3">
-                <span className="shrink-0 mt-0.5" aria-hidden>
-                  <svg className="w-4 h-4 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <li className="footer-contact-item">
+                <span className="footer-contact-icon" aria-hidden>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <path d="M22 6l-10 7L2 6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <a
-                  href="mailto:Contact@3rdgenerationfitnessstudio.com"
-                  className="hover:text-white transition-colors break-all"
-                >
+                <a href="mailto:Contact@3rdgenerationfitnessstudio.com" className="footer-link footer-contact-text">
                   Contact@3rdgenerationfitnessstudio.com
                 </a>
               </li>
-              <li className="flex gap-3">
-                <span className="shrink-0 mt-0.5" aria-hidden>
-                  <svg className="w-4 h-4 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <li className="footer-contact-item footer-contact-item--address">
+                <span className="footer-contact-icon" aria-hidden>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                    <circle cx="12" cy="10" r="3" />
                   </svg>
                 </span>
-                <span>
-                  10, Alamadhi Rd, Vetrivel Nagar, Ganesh Nagar, New Vellanur, Tamil Nadu 600062
+                <span className="footer-contact-text">
+                  10, Alamadhi Rd, Vetrivel Nagar, ganesh Nagar, New Vellanur, Tamil Nadu 600062
                 </span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/20 pt-6 md:pt-8">
-          <p className="text-white/80 text-center text-xs md:text-sm">
+        {/* Line 54 + Copyright */}
+        <div className="footer-bottom">
+          <p className="footer-copyright">
             © 2026 3rd Generation Gym. All rights reserved. | Designed & Developed By Manvian
           </p>
         </div>

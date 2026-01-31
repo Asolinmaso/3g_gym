@@ -3,13 +3,9 @@ import Image from 'next/image';
 const TRANSFORMATIONS = [
   {
     image: '/results/male_result.png',
-    title: '–14 kg in 12 Weeks',
-    subtitle: 'Strength Training + Nutrition Plan',
   },
   {
     image: '/results/female_result.png',
-    title: 'Abs Built in 8 Weeks',
-    subtitle: 'Personal Training + Core Workouts',
   },
 ];
 
@@ -26,11 +22,11 @@ export default function Results() {
 
         <div className="results-grid">
           {TRANSFORMATIONS.map((t) => (
-            <div key={t.title} className="results-card">
+            <div key={t.image} className="results-card">
               <div className="results-card__image-wrap">
                 <Image
                   src={t.image}
-                  alt={t.title}
+                  alt="Result"
                   fill
                   className="results-card__image"
                   sizes="(max-width: 1023px) 100vw, 603px"
@@ -43,8 +39,7 @@ export default function Results() {
                 </span>
               </div>
               <div className="results-card__bar">
-                <p className="results-card__bar-title">{t.title}</p>
-                <p className="results-card__bar-subtitle">{t.subtitle}</p>
+               
               </div>
             </div>
           ))}
