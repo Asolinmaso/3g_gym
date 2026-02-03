@@ -4755,3 +4755,829 @@ html {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ========== Mobile responsive overrides (do not affect desktop) ========== */
+@media (max-width: 1023px) {
+  .navbar-inner,
+  .content-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero banner – home */
+  .hero-banner-section {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+  .hero-banner__headline {
+    font-size: clamp(2rem, 8vw, 80px);
+    line-height: 1.3;
+  }
+  .hero-banner__copy {
+    max-width: 100%;
+  }
+  .hero-banner__paragraph {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* About section – home */
+  .about-section {
+    padding: 48px 0 56px;
+  }
+  .about-heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Services section – home */
+  .services-section {
+    padding: 48px 0 56px;
+  }
+  .services-heading {
+    font-size: clamp(1.75rem, 4vw, 40px);
+  }
+  .services-desc {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .services-grid {
+    gap: 1rem;
+  }
+  .services-card__title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  /* Results section */
+  .results-section {
+    padding: 48px 0 56px;
+  }
+  .results-title {
+    font-size: clamp(2rem, 5vw, 60px);
+    line-height: 1.2;
+  }
+  .results-subtitle {
+    font-size: 18px;
+  }
+  .results-cards {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .results-card {
+    max-width: 100%;
+  }
+
+  /* Testimonials */
+  .testimonials-section {
+    padding: 48px 0 56px;
+  }
+  .testimonials-heading {
+    font-size: clamp(2rem, 5vw, 60px);
+    line-height: 1.2;
+  }
+  .testimonials-subtitle {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .testimonials-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .testimonials-attribution,
+  .testimonials-program {
+    font-size: 18px;
+  }
+
+  /* Pricing */
+  .pricing-section {
+    padding: 48px 0 56px;
+  }
+  .pricing-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 48px 0 56px;
+  }
+  .cta-heading {
+    font-size: clamp(1.5rem, 4vw, 36px);
+    line-height: 1.3;
+  }
+  .cta-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* Footer – stack and smaller text on tablet */
+  .footer-grid {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .footer-about {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .footer-link,
+  .footer-contact-text {
+    font-size: 18px;
+  }
+  .footer-copyright {
+    font-size: 16px;
+  }
+
+  /* Services page */
+  .services-page-hero {
+    min-height: 500px;
+    margin-top: 80px;
+  }
+  .services-page-hero__title {
+    font-size: clamp(3rem, 12vw, 80px);
+    line-height: 1.2;
+  }
+  .services-detail__title {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .services-detail__text,
+  .services-detail__list-item {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .services-detail__subheading {
+    font-size: 20px;
+  }
+  .services-faq {
+    padding: 48px 0 64px;
+  }
+  .services-faq__title {
+    font-size: clamp(2rem, 5vw, 56px);
+    line-height: 1.2;
+  }
+  .services-faq__question {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 20px 16px;
+  }
+  .services-faq__answer {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* About page */
+  .about-page-hero {
+    min-height: 480px;
+    margin-top: 80px;
+  }
+  .about-page-hero__title {
+    font-size: clamp(3rem, 12vw, 80px);
+    line-height: 1.2;
+  }
+  .about-page-hero__subtitle {
+    font-size: 24px;
+  }
+  .about-gen {
+    padding: 48px 0 56px;
+  }
+  .about-gen__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-gen__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .about-gen__card-num {
+    font-size: 56px;
+    line-height: 1.2;
+  }
+  .about-gen__card-label {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  .about-gen__pink-label {
+    font-size: 20px;
+  }
+  .about-vm {
+    padding: 48px 0 56px;
+    min-height: auto;
+  }
+  .about-vm__title {
+    font-size: 28px;
+  }
+  .about-vm__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .about-vm__watermark {
+    font-size: clamp(2rem, 6vw, 64px);
+    line-height: 1.2;
+  }
+  .about-wcu {
+    padding: 48px 0 56px;
+  }
+  .about-wcu__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-wcu__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .about-wcu__card-title {
+    font-size: 28px;
+  }
+  .about-wcu__card-text {
+    font-size: 18px;
+  }
+  .about-trainers {
+    padding: 48px 0 56px;
+  }
+  .about-trainers__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-trainers__name {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .about-trainers__role {
+    font-size: 20px;
+  }
+  .about-infra {
+    padding: 48px 0 0;
+  }
+  .about-infra__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-infra__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Franchise page */
+  .franchise-hero {
+    min-height: 480px;
+    margin-top: 80px;
+  }
+  .franchise-hero__title {
+    font-size: clamp(3rem, 12vw, 80px);
+    line-height: 1.2;
+  }
+  .franchise-hero__subtitle {
+    font-size: 24px;
+  }
+  .franchise-empire {
+    padding: 48px 0 56px;
+  }
+  .franchise-empire__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-empire__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-empire__images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .franchise-empire__img-wrap,
+  .franchise-empire__img-wrap--2 {
+    max-width: 100%;
+  }
+  .franchise-support {
+    padding: 48px 0 56px;
+    min-height: auto;
+  }
+  .franchise-support__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-support__card-title {
+    font-size: 28px;
+  }
+  .franchise-support__card-text {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .franchise-blueprint {
+    padding: 48px 0 56px;
+  }
+  .franchise-blueprint__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-blueprint__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-blueprint__card-label {
+    font-size: 20px;
+  }
+  .franchise-blueprint__card-value {
+    font-size: 28px;
+  }
+  .franchise-process {
+    padding: 48px 0 56px;
+  }
+  .franchise-process__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-process__step {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+    gap: 1.5rem;
+  }
+  .franchise-process__step-num {
+    font-size: 80px;
+    line-height: 1.2;
+  }
+  .franchise-process__step-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .franchise-process__step-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-contact {
+    padding: 48px 0 56px;
+  }
+  .franchise-contact__heading {
+    font-size: clamp(1.5rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-contact__block-title {
+    font-size: 28px;
+  }
+  .franchise-contact__block-text {
+    font-size: 18px;
+  }
+  .franchise-contact__form-title {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  .franchise-contact__form-desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-contact__form-wrap {
+    padding: 1.5rem;
+  }
+  .franchise-contact__input,
+  .franchise-contact__input-row {
+    height: 52px;
+  }
+  .franchise-contact__input {
+    font-size: 16px;
+  }
+  .franchise-contact__submit {
+    height: 52px;
+    font-size: 20px;
+  }
+}
+
+/* Small mobile (phones) – tighter spacing and smaller typography */
+@media (max-width: 767px) {
+  .navbar-inner,
+  .content-inner {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .hero-banner__headline {
+    font-size: clamp(1.75rem, 10vw, 48px);
+  }
+  .hero-banner__image-frame {
+    width: 100%;
+    max-width: none;
+    height: 280px;
+  }
+  .hero-banner__paragraph {
+    font-size: 16px;
+  }
+  .hero-get-started-btn {
+    min-width: 160px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .about-heading {
+    font-size: clamp(1.5rem, 8vw, 36px);
+  }
+  .about-content-row {
+    grid-template-columns: 1fr;
+  }
+  .about-image-small-wrap {
+    max-width: 100%;
+  }
+
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .services-heading {
+    font-size: clamp(1.5rem, 6vw, 32px);
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-title {
+    font-size: clamp(1.75rem, 8vw, 40px);
+  }
+  .results-subtitle {
+    font-size: 16px;
+  }
+
+  .testimonials-subtitle-wrap {
+    max-width: 100%;
+  }
+  .testimonials-subtitle {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .testimonials-heading {
+    font-size: clamp(1.75rem, 8vw, 40px);
+  }
+  .testimonials-image-wrap {
+    max-width: 100%;
+    height: 320px;
+  }
+
+  .pricing-title {
+    font-size: 24px;
+  }
+  .pricing-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .cta-heading {
+    font-size: clamp(1.25rem, 6vw, 28px);
+  }
+  .cta-desc {
+    font-size: 14px;
+  }
+  .cta-cta {
+    padding: 14px 20px;
+    font-size: 18px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .footer-about {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .footer-heading,
+  .footer-follow-title {
+    font-size: 20px;
+  }
+  .footer-link,
+  .footer-contact-text {
+    font-size: 16px;
+  }
+  .footer-bottom {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .footer-copyright {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .services-page-hero {
+    min-height: 400px;
+  }
+  .services-page-hero__title {
+    font-size: clamp(2.5rem, 14vw, 56px);
+  }
+  .services-page-hero__image-wrap {
+    max-width: 100%;
+  }
+  .services-detail-inner {
+    gap: 40px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .services-detail__title {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .services-detail__subheading {
+    font-size: 18px;
+  }
+  .services-detail__text,
+  .services-detail__list-item {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .services-detail__cta {
+    min-width: 160px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .services-faq__title {
+    font-size: clamp(1.75rem, 8vw, 40px);
+  }
+  .services-faq__question {
+    font-size: 16px;
+    padding: 16px;
+  }
+  .services-faq__answer-wrap {
+    padding: 0 16px 16px;
+  }
+  .services-faq__answer {
+    font-size: 14px;
+  }
+
+  .about-page-hero {
+    min-height: 380px;
+  }
+  .about-page-hero__title {
+    font-size: clamp(2.5rem, 14vw, 56px);
+  }
+  .about-page-hero__subtitle {
+    font-size: 20px;
+  }
+  .about-gen__subtitle {
+    font-size: 24px;
+  }
+  .about-gen__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-gen__card {
+    padding: 16px 20px;
+    left: 0.5rem;
+    bottom: -10px;
+  }
+  .about-gen__card-num {
+    font-size: 48px;
+  }
+  .about-gen__card-label {
+    font-size: 20px;
+  }
+  .about-gen__pink-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-gen__pink-label {
+    font-size: 18px;
+  }
+  .about-vm__grid {
+    gap: 1.5rem;
+  }
+  .about-vm__card {
+    padding: 32px 20px;
+  }
+  .about-vm__title {
+    font-size: 24px;
+  }
+  .about-vm__text {
+    font-size: 16px;
+  }
+  .about-wcu__subtitle {
+    font-size: 24px;
+  }
+  .about-wcu__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-wcu__text {
+    font-size: 18px;
+  }
+  .about-wcu__grid {
+    gap: 1.5rem;
+  }
+  .about-wcu__card-title {
+    font-size: 28px;
+  }
+  .about-wcu__card-text {
+    font-size: 16px;
+  }
+  .about-trainers__subtitle {
+    font-size: 24px;
+  }
+  .about-trainers__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-trainers__grid {
+    gap: 1.5rem;
+  }
+  .about-trainers__image-wrap {
+    max-width: 100%;
+  }
+  .about-trainers__name {
+    font-size: 28px;
+  }
+  .about-trainers__role {
+    font-size: 18px;
+  }
+  .about-infra__subtitle {
+    font-size: 24px;
+  }
+  .about-infra__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-infra__text {
+    font-size: 16px;
+  }
+  .about-infra__vertical-label {
+    font-size: 24px;
+    right: 16px;
+  }
+  .about-infra__red-bar {
+    width: 80px;
+  }
+
+  .franchise-hero {
+    min-height: 360px;
+  }
+  .franchise-hero__title {
+    font-size: clamp(2.5rem, 14vw, 56px);
+  }
+  .franchise-hero__subtitle {
+    font-size: 20px;
+  }
+  .franchise-empire__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-empire__text {
+    font-size: 16px;
+  }
+  .franchise-empire__cta {
+    width: 100%;
+    max-width: 200px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .franchise-support__subtitle {
+    font-size: 24px;
+  }
+  .franchise-support__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-support__grid {
+    gap: 1.5rem;
+  }
+  .franchise-support__card {
+    padding: 32px 20px;
+  }
+  .franchise-support__card-title {
+    font-size: 24px;
+  }
+  .franchise-support__card-text {
+    font-size: 16px;
+  }
+  .franchise-blueprint__subtitle {
+    font-size: 24px;
+  }
+  .franchise-blueprint__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-blueprint__text {
+    font-size: 16px;
+  }
+  .franchise-blueprint__card {
+    padding: 16px;
+    max-width: 100%;
+  }
+  .franchise-blueprint__card-label {
+    font-size: 18px;
+  }
+  .franchise-blueprint__card-value {
+    font-size: 24px;
+  }
+  .franchise-process__subtitle {
+    font-size: 24px;
+  }
+  .franchise-process__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-process__step-num {
+    font-size: 64px;
+  }
+  .franchise-process__step-title {
+    font-size: 28px;
+  }
+  .franchise-process__step-text {
+    font-size: 16px;
+  }
+  .franchise-process__step-image {
+    max-width: 100%;
+  }
+  .franchise-contact__subtitle {
+    font-size: 24px;
+  }
+  .franchise-contact__heading {
+    font-size: clamp(1.25rem, 6vw, 32px);
+    line-height: 1.25;
+  }
+  .franchise-contact__block-title {
+    font-size: 24px;
+  }
+  .franchise-contact__block-text {
+    font-size: 16px;
+  }
+  .franchise-contact__form-title {
+    font-size: 28px;
+  }
+  .franchise-contact__form-desc {
+    font-size: 16px;
+  }
+  .franchise-contact__form-wrap {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+}
+
+/* Products / Career / Contact page mobile */
+@media (max-width: 1023px) {
+  .products-hero-title,
+  .career-hero-title,
+  .contact-hero-title {
+    font-size: clamp(2.5rem, 10vw, 72px);
+    line-height: 1.2;
+  }
+  .products-our-heading,
+  .career-our-heading,
+  .career-positions-heading {
+    font-size: clamp(1.75rem, 4vw, 40px);
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .career-jobs-grid {
+    gap: 1rem;
+  }
+  .contact-cards-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .products-hero-title,
+  .career-hero-title,
+  .contact-hero-title {
+    font-size: clamp(2rem, 12vw, 48px);
+  }
+  .products-our-heading,
+  .career-our-heading,
+  .career-positions-heading {
+    font-size: clamp(1.5rem, 5vw, 32px);
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .products-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .career-apply-layout {
+    flex-direction: column;
+  }
+  .contact-form-wrap {
+    padding: 1.5rem;
+  }
+  .career-jobs-grid {
+    grid-template-columns: 1fr;
+  }
+  .career-job-card {
+    padding: 1rem;
+  }
+  .contact-form-wrap {
+    padding: 1.25rem;
+  }
+}
+
+/* Touch-friendly tap targets on mobile */
+@media (max-width: 767px) {
+  .footer-join-btn,
+  .hero-get-started-btn,
+  .about-cta,
+  .services-cta,
+  .franchise-empire__cta,
+  .franchise-contact__submit,
+  .services-detail__cta {
+    min-height: 48px;
+    padding: 0 20px;
+  }
+  .testimonials-nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
