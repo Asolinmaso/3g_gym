@@ -1,0 +1,58 @@
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 800px;
+}
+
+/* Background image */
+.contact-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contact-hero-bg-image {
+  object-fit: cover;
+}
+
+/* Huge faded background text */
+.contact-hero-title-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 14vw;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+  #f2f2f2 40%,
+  #FFFFFF40 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Center model */
+.contact-hero-model {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.contact-hero-model-img {
+  width: 680px;
+  height: 700px;
+}

@@ -20,7 +20,7 @@ export default function Services() {
               <span className="services-label-line" aria-hidden />
             </div>
             <h2 className="services-heading">
-              Programs Designed to Transform You
+              Programs Designed to <span style={{color:"#c50d3e"}}>Transform You</span>
             </h2>
           </div>
           <div className="services-header__right">

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import './Result.css';
 
 const TRANSFORMATIONS = [
   {
@@ -17,7 +18,7 @@ export default function Results() {
       <div className="results-ellipse results-ellipse--right" aria-hidden />
 
       <div className="content-inner results-inner">
-        <h2 className="results-title">Real People. Real Results.</h2>
+        <h2 className="results-title">Real <span className='result-span'>People.</span> Real <span className='result-span'>Results.</span></h2>
         <p className="results-subtitle">Transformations That Inspire.</p>
 
         <div className="results-grid">
