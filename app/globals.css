@@ -609,13 +609,12 @@ html {
 }
 
 .about-heading {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 400;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
-  color: #c50d3e;
+  color: #000000;
   margin: 0;
-  max-width: 633px;
 }
 
 .about-content-row {
@@ -662,6 +661,7 @@ html {
   font-size: 24px;
   line-height: 24px;
   text-decoration: none;
+  margin-top: 20px;
 }
 
 .about-cta-arrows {
@@ -701,7 +701,7 @@ html {
   }
 
   .about-heading {
-    font-size: 80px;
+    font-size: 60px;
     line-height: 100px;
   }
 
@@ -2075,7 +2075,7 @@ html {
 .contact-hero {
   position: relative;
   width: 100%;
-  min-height: 652px;
+  min-height: 800px;
   background: #010101;
   overflow: hidden;
 }
@@ -2409,7 +2409,7 @@ html {
 .hero-get-started-btn {
   font-family: var(--font-oswald), "Oswald", sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 24px;
 }
 
@@ -2690,23 +2690,12 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(1, 1, 1, 0.75), rgba(1, 1, 1, 0.75)),
-    url("/footer-bg.png") -280px -302px / 2000px 1333px no-repeat;
+  background: linear-gradient(0deg, rgba(1, 1, 1, 0.164), rgba(1, 1, 1, 0.011)),
+    url("/footer_bg.png") -280px -302px / 2000px 1333px no-repeat;
   pointer-events: none;
   z-index: 0;
 }
-.footer-root::after {
-  content: "";
-  position: absolute;
-  width: 761px;
-  height: 761px;
-  left: 909px;
-  top: -182px;
-  background: #c50d3e;
-  filter: blur(600px);
-  pointer-events: none;
-  z-index: 0;
-}
+
 .footer-inner {
   position: relative;
   z-index: 1;
@@ -2722,6 +2711,9 @@ html {
   gap: 32px;
   margin-bottom: 32px;
 }
+.footer-col--about {
+  max-width: 450px;
+}
 
 @media (min-width: 640px) {
   .footer-grid {
@@ -2731,7 +2723,7 @@ html {
 
 @media (min-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+    grid-template-columns: 350px 1fr 300px 1fr;
     gap: 40px;
     align-items: start;
   }
@@ -2744,20 +2736,20 @@ html {
   gap: 16px;
 }
 
-.footer-col--about {
-  max-width: 398px;
-}
+
 
 .footer-logo {
   width: 120px;
   height: auto;
   object-fit: contain;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
   .footer-logo {
     width: 156px;
     height: 156px;
+    margin-bottom: 20px;
   }
 }
 
@@ -2765,7 +2757,7 @@ html {
 .footer-tagline {
   font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 700;
-  font-size: clamp(1.75rem, 4vw, 48px);
+  font-size: clamp(1.75rem, 4vw, 44px);
   line-height: 60px;
   color: #ffffff;
   margin: 0;
@@ -2950,7 +2942,8 @@ html {
 .services-page-hero__bg {
   position: absolute;
   inset: 0;
-  background: #39000f;
+  background: linear-gradient(0deg, rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
+    url("/banner-bg.png") left center / cover no-repeat;
 }
 
 .services-page-hero__gradient {
@@ -4141,8 +4134,7 @@ html {
 .franchise-hero__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(1, 1, 1, 0.75), rgba(1, 1, 1, 0.75)),
-    url("/banner-bg.png") center center / cover no-repeat;
+  background: url("/banner-bg.png") center center / cover no-repeat;
   filter: blur(4px);
 }
 
@@ -4195,7 +4187,7 @@ html {
 }
 
 .franchise-hero__title {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
+  font-family: var(--font-poppins), sans-serif;
   font-weight: 400;
   font-size: clamp(4rem, 10vw, 135px);
   line-height: 135px;
