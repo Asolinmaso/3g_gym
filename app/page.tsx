@@ -8,12 +8,6 @@ import Testimonials from '@/components/testimonials/Testimonials';
 import Pricing from '@/components/pricing/Pricing';
 import Commitment from '@/components/commitment/Commitment';
 import CTA from '@/components/cta/CTA';
-import CareersHero from "@/components/CareersHero";
-import OpenPositions from "@/components/OpenPositions";
-import ApplyNow from "@/components/ApplyNow";
-import Footer from "@/components/Footer";
-
-
 import Footer from '@/components/footer/Footer';
 
 export default function Home() {
@@ -31,15 +25,5 @@ export default function Home() {
       <CTA />
       <Footer />
     </main>
-  );
-}
-export default function CareerPage() {
-  return (
-    <>
-      <CareersHero />
-      <OpenPositions />
-      <ApplyNow />
-      <Footer />
-    </>
   );
 }
