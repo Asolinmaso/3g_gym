@@ -1,0 +1,53 @@
+.franchise-hero {
+  position: relative;
+  height: 100vh;
+  background: url("/Franchise/banner_bg.png") center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Dark cinematic overlay */
+.franchise-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:transparent;
+  z-index: 1;
+}
+
+/* Content */
+.franchise-hero__content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers logo horizontally */
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* Logo */
+.franchise-hero__logo {
+  margin-bottom: 25px;
+}
+
+.franchise-hero__title {
+  font-size: 200px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  line-height: 1;
+
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #FFFFFF40 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}

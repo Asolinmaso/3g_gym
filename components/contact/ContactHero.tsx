@@ -1,33 +1,35 @@
-import Image from 'next/image';
+import Image from "next/image";
+import "./ContactHero.css";
 
 export default function ContactHero() {
   return (
-    <section className="contact-hero" aria-label="Contact Us">
+    <section className="contact-hero">
+
+      {/* Background */}
       <div className="contact-hero-bg">
         <Image
-          src="/banner.png"
+          src="/contact/contact_bg.png"
           alt=""
           fill
-          className="contact-hero-bg-image"
-          sizes="100vw"
           priority
+          className="contact-hero-bg-image"
         />
-        <div className="contact-hero-overlay" aria-hidden />
       </div>
-      <div className="contact-hero-blur" aria-hidden />
-      <div className="contact-hero-deco" aria-hidden />
-      <div className="content-inner contact-hero-inner">
-        <h1 className="contact-hero-title">Contact Us</h1>
-      </div>
-      <div className="contact-hero-image-wrap">
+
+      {/* Huge Background Title */}
+      <h1 className="contact-hero-title-bg">CONTACT US</h1>
+
+      {/* Center Model */}
+      <div className="contact-hero-model">
         <Image
-          src="/contactus.png"
-          alt=""
-          fill
-          className="contact-hero-image"
-          sizes="(max-width: 1023px) 0px, 573px"
+          src="/contact/hero_con.png"
+          alt="Trainer"
+          width={600}
+          height={750}
+          className="contact-hero-model-img"
         />
       </div>
+
     </section>
   );
 }
