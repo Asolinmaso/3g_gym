@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import "./footer.css";
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -52,18 +51,17 @@ export default function Footer() {
   return (
     <footer className="footer-root">
       <div className="content-inner footer-inner">
-        <Image
-              src="/logo1.png"
+        <div className="footer-grid">
+          {/* Column 1: Logo, tagline, Follow Us (Frame 60) – Figma Frame 55 */}
+          <div className="footer-col footer-col--about">
+            <Image
+              src="/logo.png"
               alt="3RD GENERATION FITNESS STUDIO"
               width={156}
               height={156}
               className="footer-logo"
             />
-        <div className="footer-grid">
-          {/* Column 1: Logo, tagline, Follow Us (Frame 60) – Figma Frame 55 */}
-          <div className="footer-col footer-col--about">
-            
-            <p className="footer-tagline">Let's Transform Your Life</p>
+            <p className="footer-tagline">Let&apos;s Transform Your Life</p>
             <div className="footer-follow">
               <p className="footer-follow-title">Follow Us -</p>
               <div className="footer-social">

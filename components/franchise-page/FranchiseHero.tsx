@@ -8,7 +8,7 @@ export default function FranchiseHero() {
 
       <div className="franchise-hero__content">
         <Image
-          src="/Franchise/middle.png"
+          src="/middle.png"
           alt="3rd Generation Fitness Studio"
           width={240}
           height={240}
