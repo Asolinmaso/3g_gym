@@ -18,6 +18,9 @@ const programs = [
   'Personal Training',
   'Group Classes',
   'Nutrition Guidance',
+  'Weight Gain Program',
+  'Zumba Class',
+  'Contest Preparation',
 ];
 
 const social = [
@@ -49,7 +52,7 @@ export default function Footer() {
     <footer className="footer-root">
       <div className="content-inner footer-inner">
         <div className="footer-grid">
-          {/* Column 1: Logo, about, Follow Us (Frame 60) */}
+          {/* Column 1: Logo, tagline, Follow Us (Frame 60) – Figma Frame 55 */}
           <div className="footer-col footer-col--about">
             <Image
               src="/logo.png"
@@ -58,9 +61,7 @@ export default function Footer() {
               height={156}
               className="footer-logo"
             />
-            <p className="footer-about">
-              We are a results-driven fitness center focused on strength, transformation, and long-term wellness. With expert trainers and modern facilities, we help you train smarter and achieve real results.
-            </p>
+            <p className="footer-tagline">Let&apos;s Transform Your Life</p>
             <div className="footer-follow">
               <p className="footer-follow-title">Follow Us -</p>
               <div className="footer-social">

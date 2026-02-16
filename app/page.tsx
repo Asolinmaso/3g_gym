@@ -6,6 +6,7 @@ import Services from '@/components/services/Services';
 import Results from '@/components/results/Results';
 import Testimonials from '@/components/testimonials/Testimonials';
 import Pricing from '@/components/pricing/Pricing';
+import Commitment from '@/components/commitment/Commitment';
 import CTA from '@/components/cta/CTA';
 import Footer from '@/components/footer/Footer';
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Results />
       <Testimonials />
       <Pricing />
+      <Commitment />
       <CTA />
       <Footer />
     </main>
