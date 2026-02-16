@@ -104,7 +104,7 @@ export default function Pricing() {
     <section id="pricing" className="pricing-section">
       <div className="content-inner">
         <h2 className="pricing-title">
-          Choose the <span className="pricing-title__accent">Plan</span> That Fits Your <span className="pricing-title__accent">Goals</span>
+          Choose the <span className="pricing-title__accent">Plan</span> That Fits Your <span className="pricing-title__gradient">Goals</span>
         </h2>
 
         <div className="pricing-tabs">

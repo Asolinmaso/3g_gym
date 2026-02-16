@@ -21,7 +21,7 @@ const oswald = Oswald({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800", "900"],
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
