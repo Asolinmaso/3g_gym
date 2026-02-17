@@ -4,7 +4,7 @@
   min-height: calc(100vh - 100px);
   margin-top: 100px; /* clear fixed navbar so banner is not hidden */
   box-sizing: border-box;
-  background: url("/Franchise/banner_bg.png") center center / cover no-repeat;
+  background: url("/Franchise/Banner_bg.png") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
