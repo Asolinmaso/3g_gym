@@ -1,11 +1,14 @@
+/* Same idea as home/services: viewport height minus navbar so banner fills visible area */
 .franchise-hero {
   position: relative;
-  height: 100vh;
+  min-height: calc(100vh - 100px);
+  margin-top: 100px; /* clear fixed navbar so banner is not hidden */
+  box-sizing: border-box;
   background: url("/Franchise/banner_bg.png") center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* Dark cinematic overlay */
@@ -35,19 +38,13 @@
 }
 
 .franchise-hero__title {
-  font-size: 200px;
+  font-size: clamp(64px, 14vw, 200px);
   font-weight: 900;
   letter-spacing: 8px;
   text-transform: uppercase;
   line-height: 1;
-
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #FFFFFF40 100%
-  );
-
+  background: linear-gradient(to bottom, #ffffff 0%, #FFFFFF40 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
+  background-clip: text;
 }

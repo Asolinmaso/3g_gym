@@ -26,35 +26,25 @@ export default function About() {
                   alt="Athlete training"
                   fill
                   className="about-image-small"
-                  sizes="292px"
+                  sizes="302px"
                 />
               </div>
-              <p className="about-desc">
-                We are a results-driven fitness community built to help you
-                become stronger, healthier, and more confident. Our programs are
-                designed by certified experts and backed by proven training
-                methods that deliver real, lasting results.
-                <br />
+              <div className="about-content-text">
+                <p className="about-desc">
+                  We are a results-driven fitness community built to help you
+                  become stronger, healthier, and more confident. Our programs are
+                  designed by certified experts and backed by proven training
+                  methods that deliver real, lasting results.
+                </p>
                 <a href="/about" className="about-cta">
-                  <span>Know More</span>
-                  <span className="about-cta-arrows" aria-hidden>
-                    <svg
-                      width="9"
-                      height="16"
-                      viewBox="0 0 9 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M8.64216 8.88875L1.72819 16L0 14.2225L6.04988 8L0 1.7775L1.72819 0L8.64216 7.11125C8.87128 7.34699 9 7.66667 9 8C9 8.33333 8.87128 8.65301 8.64216 8.88875Z"
-                        fill="white"
-                      />
+                  Know More
+                  <span className="about-cta-arrow" aria-hidden>
+                    <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L8 8L1 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                     </svg>
                   </span>
                 </a>
-              </p>
+              </div>
             </div>
           </div>
 

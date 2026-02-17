@@ -1,41 +1,40 @@
 import Image from 'next/image';
 
 const PINK_CARDS = [
-  { label: 'MODERN FACILITIES', icon: true },
-  { label: 'EXPERT TEAM', icon: true },
-  { label: 'DIVERSE OFFERING', icon: true },
-  { label: 'FITNESS FOCUS', icon: true },
+  { label: 'Modern Facilities', icon: true },
+  { label: 'Expert Team', icon: true },
+  { label: 'Diverse Offering', icon: true },
+  { label: 'Fitness Focus', icon: true },
 ];
 
 export default function AboutGeneration() {
   return (
     <section className="about-gen">
       <div className="content-inner about-gen__inner">
-        <div className="about-gen__subtitle-wrap">
-          <span className="about-gen__line about-gen__line--left" aria-hidden />
-          <span className="about-gen__subtitle">ABOUT 3RD GENERATION</span>
-          <span className="about-gen__line about-gen__line--right" aria-hidden />
-        </div>
-        <h2 className="about-gen__heading">
-          Always Provide Best <span className="about-gen__heading-accent">Fitness Trainers.</span>
-        </h2>
         <div className="about-gen__layout">
           <div className="about-gen__image-wrap">
             <Image
-              src="/about_us/big_image.png"
+              src="/images/about_page/about_generation.jpg"
               alt="Fitness training"
               fill
               className="about-gen__image"
-              sizes="(max-width: 1023px) 100vw, 532px"
+              sizes="(max-width: 1023px) 100vw, 500px"
             />
             <div className="about-gen__card">
-              <span className="about-gen__card-num">25+</span>
-              <span className="about-gen__card-label">Years of Fitness Experience</span>
+              <span className="about-gen__card-num">09+</span>
+              <span className="about-gen__card-label">Years Of Fitness Experience</span>
             </div>
           </div>
           <div className="about-gen__right">
+            <div className="about-gen__subtitle-wrap">
+              <span className="about-gen__line" aria-hidden />
+              <span className="about-gen__subtitle">ABOUT 3RD GEN</span>
+            </div>
+            <h2 className="about-gen__heading">
+              Always Provide Best Fitness Trainers.
+            </h2>
             <p className="about-gen__text">
-              Harum congue eiusmod minus saepe, qui quis facere dolor scelerisque magnis ea nec parturient, iste odio, accumsan distinctio quibusdam nonummy placerat, habitasse sit. Iaculis consequatur iaculis accusantium. Ligula quasi ligula suspendisse quos! A numquam qui commodo nemo corporis hac laboris.
+              With over 9 years of experience, 3rd Gen Fitness delivers expert training designed to transform your strength, endurance, and confidence. Our certified trainers combine modern techniques with personalized programs to help you achieve real, lasting results in a motivating environment.
             </p>
             <div className="about-gen__pink-grid">
               {PINK_CARDS.map((item) => (

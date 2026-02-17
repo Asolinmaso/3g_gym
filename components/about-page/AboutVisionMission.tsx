@@ -16,7 +16,9 @@ export default function AboutVisionMission() {
           {CARDS.map((card) => (
             <div key={card.title} className={`about-vm__card ${card.highlight ? 'about-vm__card--highlight' : ''}`}>
               <div className="about-vm__icon-wrap">
-                <div className="about-vm__icon" aria-hidden />
+                {card.icon === 'vision' && <div className="about-vm__icon" aria-hidden />}
+                {card.icon === 'mission' && <div className="about-vm__icon" aria-hidden />}
+                {card.icon === 'value' && <div className="about-vm__icon" aria-hidden />}
               </div>
               <h3 className="about-vm__title">{card.title}</h3>
               <p className="about-vm__text">{card.text}</p>

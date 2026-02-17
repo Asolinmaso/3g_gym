@@ -36,9 +36,9 @@ export default function FranchiseProcess() {
     <section className="franchise-process">
       <div className="content-inner franchise-process__inner">
         <div className="franchise-process__subtitle-wrap">
-          <span className="franchise-process__line franchise-process__line--left" aria-hidden />
-          <span className="franchise-process__subtitle">The Journey</span>
-          <span className="franchise-process__line franchise-process__line--right" aria-hidden />
+          <span className="franchise-process__line" aria-hidden />
+          <span className="franchise-process__subtitle">THE JOURNEY</span>
+          <span className="franchise-process__line" aria-hidden />
         </div>
         <h2 className="franchise-process__heading">Franchise Process</h2>
         <div className="franchise-process__steps">

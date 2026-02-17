@@ -31,20 +31,20 @@ export default function Hero() {
           style={{ transform: "rotate(270deg)" }}
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M138.887 139.235L250 27.843L222.227 0L125 97.4702L27.7734 0L0 27.843L111.113 139.235C114.797 142.926 119.792 145 125 145C130.208 145 135.203 142.926 138.887 139.235Z"
             fill="#010101"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M138.887 240.394L250 132.075L222.227 105L125 199.781L27.7734 105L0 132.075L111.113 240.394C114.797 243.983 119.792 246 125 246C130.208 246 135.203 243.983 138.887 240.394Z"
             fill="#010101"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M138.887 339.473L250 232.691L222.227 206L125 299.437L27.7734 206L0 232.691L111.113 339.473C114.797 343.012 119.792 345 125 345C130.208 345 135.203 343.012 138.887 339.473Z"
             fill="#010101"
           />
@@ -65,20 +65,20 @@ export default function Hero() {
           style={{ transform: "rotate(270deg)" }}
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M138.887 139.235L250 27.843L222.227 0L125 97.4702L27.7734 0L0 27.843L111.113 139.235C114.797 142.926 119.792 145 125 145C130.208 145 135.203 142.926 138.887 139.235Z"
             fill="#010101"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M138.887 240.394L250 132.075L222.227 105L125 199.781L27.7734 105L0 132.075L111.113 240.394C114.797 243.983 119.792 246 125 246C130.208 246 135.203 243.983 138.887 240.394Z"
             fill="#010101"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M138.887 339.473L250 232.691L222.227 206L125 299.437L27.7734 206L0 232.691L111.113 339.473C114.797 343.012 119.792 345 125 345C130.208 345 135.203 343.012 138.887 339.473Z"
             fill="#010101"
           />
@@ -93,7 +93,10 @@ export default function Hero() {
         <span className="hero-banner__line1">
           TRAIN <span className="hero-banner__accent">HARD</span> SEE RESULTS.
         </span>
-        <span className="hero-banner__line2">LIVE STRONG.</span>
+        <span className="hero-banner__line2">
+          <span className="hero-banner__line2-live">LIVE </span>
+          <span className="hero-banner__line2-strong">STRONG.</span>
+        </span>
       </h1>
 
       {/* Copy + CTA – centered */}

@@ -1,32 +1,45 @@
+/* CTA banner – in-flow layout, no absolute for image (Frame 1321314854) */
 .cta-banner {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .cta-content {
-  max-width: 55%;
   position: relative;
   z-index: 2;
 }
-.cta-heading{
-  margin-bottom: 15px;
-}
-.cta-desc{
-  margin-bottom: 15px;
+
+.cta-heading {
+  margin-bottom: 0.5rem;
 }
 
+.cta-desc {
+  margin-bottom: 1rem;
+}
+
+/* Image in flow – responsive width, aspect-ratio for clarity */
 .cta-image {
-  position: absolute;
-  right: -60px;   /* push slightly outside */
-  bottom: 0;      /* stick to bottom */
-  z-index: 1;
-
-  display: flex;
-  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  max-width: 423px;
+  aspect-ratio: 423 / 344;
+  margin-top: 1.5rem;
+  flex-shrink: 0;
 }
 
 .cta-img {
-  width: 600px;   /* control size only with width */
-  height: 600px;   /* keep natural proportion */
+  object-fit: cover;
+  object-position: center bottom;
 }
 
+.cta-btn-arrow {
+  display: inline-flex;
+  width: 9px;
+  height: 16px;
+  margin-left: 1px; /* gap 1px per design */
+}
+
+.cta-btn-arrow svg {
+  width: 9px;
+  height: 16px;
+}

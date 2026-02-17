@@ -4,14 +4,13 @@ export default function AboutHero() {
   return (
     <section className="about-page-hero">
       <div className="about-page-hero__bg" aria-hidden />
-      <div className="about-page-hero__overlay about-page-hero__overlay--1" aria-hidden />
       <div className="about-page-hero__overlay about-page-hero__overlay--2" aria-hidden />
       <div className="about-page-hero__rect" aria-hidden />
       <div className="content-inner about-page-hero__inner">
-        <h1 className="about-page-hero__title">About Us</h1>
+        <h1 className="about-page-hero__title">ABOUT US</h1>
         <div className="about-page-hero__image-wrap">
           <Image
-            src="/banner.png"
+            src="/images/about_page/about_banner_hero.png"
             alt="Fitness"
             width={679}
             height={586}
