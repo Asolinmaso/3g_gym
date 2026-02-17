@@ -7,8 +7,10 @@ export default function ProductsPage() {
   return (
     <main className="products-page">
       <Header />
-      <ProductsHero />
-      <section className="products-main">
+      
+      {/* <ProductsHero /> */}
+
+      {/* <section className="products-main">
         <div className="content-inner">
           <h2 className="products-our-heading">
             Our <span className="products-our-heading-accent">Products</span>
@@ -29,7 +31,7 @@ export default function ProductsPage() {
             </button>
           </nav>
         </div>
-      </section>
+      </section> */}
       <Footer />
     </main>
   );

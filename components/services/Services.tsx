@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 const SERVICES = [
-  { title: 'Strength Training', image: '/services/Strength_training.png' },
-  { title: 'Weight Loss Program', image: '/services/Weight_loss.png' },
-  { title: 'Functional Training', image: '/services/Functional.png' },
-  { title: 'Personal Training', image: '/services/Personal_training.png' },
+  { title: 'Strength Training', image: '/services/strength_home.png' },
+  { title: 'Weight Loss Program', image: '/services/weight_loss_home.png' },
+  { title: 'Functional Training', image: '/services/functional_training.png' },
+  { title: 'Personal Training', image: '/services/personel_train.png' },
 ];
 
 export default function Services() {
