@@ -1,3 +1,4 @@
+import './Hero.css'
 export default function Hero() {
   return (
     <section id="home" className="hero-banner-section" aria-label="Hero banner">
