@@ -7,7 +7,8 @@ export type IconType =
   | "nutrition"
   | "dance"
   | "contest"
-  | "weightgain";
+  | "weightgain"
+  | "gains";
 
 export const SERVICES_DETAIL: {
   id: string;
@@ -34,7 +35,7 @@ export const SERVICES_DETAIL: {
     ],
     duration: "45–75 min per session",
     intensity: "Moderate to High",
-    image: "/services/Strength_training1.png",
+    image: "/services/strength_training2.png",
     imageLeft: true,
   },
   {
@@ -125,7 +126,7 @@ export const SERVICES_DETAIL: {
   {
     id: "weight-gain",
     title: "Weight Gain Training",
-    icon: "weightgain",
+    icon: "gains",
     whoItFor:
       "Ideal for individuals looking to gain healthy weight, muscle mass, and overall body strength.",
     benefits: [
