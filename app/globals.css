@@ -1168,188 +1168,165 @@ html {
   margin: 0;
 }
 
-/* CTA section – black background, magenta card, white text, image right */
+/* CTA – Group 6: 1308×570. Frame 62 red card 1240×443 @ top 127px. image 18: 701×570 @ left 707px, top 0 – image exceeds card height */
 .cta-section {
   padding: 48px var(--navbar-container-px) 64px;
-  background: #010101;
+  overflow: visible;
+}
+
+.cta-inner {
+  position: relative;
+  width: 100%;
+  max-width: min(1308px, calc(100% - 2rem));
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 400px;
+  overflow: visible;
 }
 
 .cta-banner {
-  max-width: min(439px, 100%);
-  margin: 0 auto;
   background: #c50d3e;
   border-radius: 32px;
-  padding: 40px 24px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
-}
-
-.cta-content {
-  width: 100%;
-  padding: 0 16px;
+  padding: 32px 24px 40px;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .cta-heading {
   font-family: var(--font-poppins), "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(1.5rem, 4vw, 32px);
-  line-height: 40px;
-  color: #ffffff;
+  line-height: 1.3;
+  color: #010101;
   margin: 0 0 0.5rem;
-  max-width: 300px;
 }
 
 .cta-desc {
   font-family: "Roboto", system-ui, sans-serif;
   font-weight: 400;
-  font-size: clamp(16px, 3.5vw, 18px);
+  font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: #010101;
   margin: 0 0 1rem;
-  max-width: 257px;
 }
 
 .cta-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 1px;
   min-width: 148px;
-  min-height: 48px;
-  padding: 0 20px;
+  height: 52px;
+  border: none;
+  padding: 0 24px;
   box-sizing: border-box;
   background: #010101;
   border-radius: 40px;
   color: #ffffff;
   font-family: var(--font-poppins), "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 24px;
   text-decoration: none;
 }
 
+.cta-btn-arrow {
+  display: inline-flex;
+  width: 9px;
+  height: 16px;
+  margin-left: 4px;
+}
+
 .cta-image {
+  position: relative;
   width: 100%;
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  align-self: center;
+  max-width: 400px;
+  aspect-ratio: 701 / 570;
+  margin: 1.5rem auto 0;
+  overflow: hidden;
+  border-radius: 0 0 32px 32px;
 }
 
-@media (min-width: 480px) {
-  .cta-banner {
-    padding: 40px 40px 0;
-  }
-  .cta-content {
-    padding: 0;
-  }
+.cta-img {
+  object-fit: contain; /* match Figma: no crop */
+  object-position: right bottom;
 }
 
-@media (min-width: 768px) {
-  .cta-banner {
-    max-width: min(400px, 100%);
-    padding: 40px 40px 24px;
-    min-height: 0;
-  }
-  .cta-heading {
-    font-size: 32px;
-    line-height: 40px;
-  }
-  .cta-desc {
-    font-size: 18px;
-  }
-  .cta-image {
-    max-width: 423px;
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .cta-banner {
-    max-width: 439px;
-    padding: 40px 40px 24px;
-  }
-  .cta-content {
-    max-width: 300px;
-  }
-  .cta-image {
-    max-width: 423px;
-    margin-left: -10px;
-    margin-right: -10px;
-    width: calc(100% + 20px);
-  }
-}
-
-/* CTA desktop – Group 6 / Frame 62: red card + overlapping image (from 1408px) */
+/* Desktop: Figma – Group 6 1308×570. Card 443px tall @ top 127px. Image 701×570 full height @ left 707px so it exceeds card. */
 @media (min-width: 1408px) {
   .cta-section {
-    padding-left: var(--navbar-container-px);
-    padding-right: var(--navbar-container-px);
+    padding: 64px var(--navbar-container-px) 80px;
   }
-  .cta-section .cta-inner {
+  .cta-inner {
     position: relative;
-    width: 100%;
-    max-width: 1408px;
+    width: 1408px; /* 707 + 701 so image not clipped */
+    height: 570px;
+    max-width: calc(100vw - 2rem);
     min-height: 570px;
     margin-left: auto;
     margin-right: auto;
+    overflow: visible;
   }
-  .cta-section .cta-banner {
+  .cta-banner {
     position: absolute;
     left: 100px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 127px;
     width: 1240px;
     height: 443px;
+    max-width: none;
     margin: 0;
-    padding: 50px 0 48px 100px;
-    border-radius: 60px;
-    background: #c50d3e;
-    display: block;
-    box-sizing: border-box;
-  }
-  .cta-section .cta-content {
-    max-width: 581px;
     padding: 0;
+    border-radius: 60px;
+    box-sizing: border-box;
+    z-index: 1;
   }
-  .cta-section .cta-heading {
-    font-weight: 600;
+  .cta-heading {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    width: 581px;
     font-size: 64px;
     line-height: 90px;
-    max-width: 581px;
-    margin: 0 0 1rem;
+    color: #010101;
+    margin: 0;
+    z-index: 2;
   }
-  .cta-section .cta-desc {
+  .cta-desc {
+    position: absolute;
+    left: 100px;
+    top: 254px;
+    width: 499px;
     font-size: 24px;
     line-height: 32px;
-    max-width: 499px;
-    margin: 0 0 2rem;
+    color: #010101;
+    margin: 0;
+    z-index: 2;
   }
-  .cta-section .cta-btn {
-    min-width: 180px;
+  .cta-btn {
+    position: absolute;
+    left: 100px;
+    top: 342px;
     width: 180px;
-    height: 52px;
-    min-height: 52px;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 400;
-    gap: 1px;
+    min-width: 180px;
+    z-index: 2;
   }
-  .cta-section .cta-image {
+  /* image 18: 701×570, top 0 so it exceeds card (card is 443px @ top 127px) */
+  .cta-image {
     position: absolute;
     left: 707px;
     top: 0;
     width: 701px;
     height: 570px;
     margin: 0;
+    aspect-ratio: auto;
     transform: scaleX(-1);
     border-radius: 0;
+    overflow: visible;
+    z-index: 2;
   }
-  .cta-section .cta-image .cta-img {
+  .cta-img {
     object-fit: cover;
-    object-position: center;
+    object-position: right center;
   }
 }
 
@@ -1782,10 +1759,24 @@ html {
   position: relative;
   width: 100%;
   min-height: 662px;
-  padding-top: 97px; /* clear fixed navbar per design */
+  /* Push hero below fixed navbar (h-24/md:h-28/lg:h-32) */
+  margin-top: 96px;
+  padding-top: 0;
   box-sizing: border-box;
   background: #010101;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .career-hero {
+    margin-top: 112px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .career-hero {
+    margin-top: 128px;
+  }
 }
 
 /* contact bg – base black */
@@ -1825,7 +1816,7 @@ html {
 .career-hero-image-layer {
   position: absolute;
   left: 0;
-  top: -10px;
+  top: 0; /* avoid sliding under fixed navbar */
   width: 100%;
   height: 662px;
   min-height: 662px;
@@ -1870,17 +1861,20 @@ html {
   pointer-events: none;
 }
 
-/* CAREERS – gradient text */
+/* CAREERS – gradient text, centered */
 .career-hero-inner {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   top: 50px;
   width: 100%;
-  max-width: 946px;
   z-index: 3;
   padding: 0 1rem;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
 .career-hero-title {
@@ -1891,6 +1885,7 @@ html {
   line-height: 200px;
   margin: 0;
   text-align: center;
+  width: 100%;
   background: linear-gradient(177.69deg, #ffffff 50%, rgba(255, 255, 255, 0.25) 78.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1927,21 +1922,23 @@ html {
   transform: matrix(0.02, -1, -1, -0.02, 0, 0);
 }
 
-/* Rectangle 59 – front image with drop-shadow (people on top) */
+/* Rectangle 59 – front image with drop-shadow (people), centered */
 .career-hero-front-image {
   position: absolute;
-  left: 0;
-  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0; /* avoid sliding under fixed navbar */
   width: 100%;
+  max-width: 1200px;
   height: 651px;
-  min-height: 651px;
+  min-height: 500px;
   z-index: 2;
   filter: drop-shadow(9px 1px 0 #c50d3e);
 }
 
 .career-hero-front-img {
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 }
 
 @media (min-width: 1024px) {
