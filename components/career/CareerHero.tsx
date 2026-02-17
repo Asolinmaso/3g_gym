@@ -13,25 +13,14 @@ export default function CareerHero() {
       {/* Rectangle 31 – gradient + border right, flipped */}
       <div className="career-hero-rect31" aria-hidden />
 
-      {/* image 20 – gradient overlay + background image */}
-      <div className="career-hero-image-layer">
-        <Image
-          src={HERO_IMAGE}
-          alt=""
-          fill
-          className="career-hero-bg-image"
-          sizes="100vw"
-          priority
-        />
-        <div className="career-hero-overlay" aria-hidden />
-      </div>
+      
 
       {/* Ellipse 1 (red blur left), Ellipse 2 (black blur right) */}
       <div className="career-hero-ellipse career-hero-ellipse--1" aria-hidden />
       <div className="career-hero-ellipse career-hero-ellipse--2" aria-hidden />
 
-      {/* CAREERS – gradient text */}
-      <div className="content-inner career-hero-inner">
+      {/* CAREERS – gradient text, centered */}
+      <div className="career-hero-inner">
         <h1 className="career-hero-title">CAREERS</h1>
       </div>
 
