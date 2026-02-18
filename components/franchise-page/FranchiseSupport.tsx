@@ -36,7 +36,7 @@ export default function FranchiseSupport() {
         <h2 className="franchise-support__heading">Unmatched Support</h2>
         <div className="franchise-support__grid">
           {CARDS.map((card) => (
-            <div key={card.title} className={`franchise-support__card ${card.highlight ? 'franchise-support__card--highlight' : ''}`}>
+            <div key={card.title} className="franchise-support__card">
               <h3 className="franchise-support__card-title">{card.title}</h3>
               <span className="franchise-support__card-line" aria-hidden />
               <p className="franchise-support__card-text">{card.text}</p>

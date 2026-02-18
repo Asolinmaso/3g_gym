@@ -8,41 +8,13 @@ function PlanCard({
   title,
   priceLines,
   sessions,
-  highlighted,
 }: {
   title: string;
   priceLines: string[];
   sessions?: string;
-  highlighted?: boolean;
 }) {
   return (
-    <div className={`pricing-card ${highlighted ? 'pricing-card--highlight' : ''}`}>
-      {highlighted && (
-        <>
-          <div className="pricing-card__chevrons pricing-card__chevrons--tl" aria-hidden>
-            <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
-              <path d="M1 1L7 7L13 1" stroke="rgba(197, 13, 62, 0.25)" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-              <path d="M1 1L6.5 7L12 1" stroke="rgba(197, 13, 62, 0.25)" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-              <path d="M1 1L6.5 7L12 1" stroke="rgba(197, 13, 62, 0.25)" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </div>
-          <div className="pricing-card__chevrons pricing-card__chevrons--br" aria-hidden>
-            <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
-              <path d="M13 7L7 1L1 7" stroke="rgba(197, 13, 62, 0.25)" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-              <path d="M12 7L6.5 1L1 7" stroke="rgba(197, 13, 62, 0.25)" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-              <path d="M12 7L6.5 1L1 7" stroke="rgba(197, 13, 62, 0.25)" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </div>
-        </>
-      )}
+    <div className="pricing-card">
       <h3 className="pricing-card__title">{title}</h3>
       <div className="pricing-card__prices">
         {priceLines.map((line) => (
@@ -127,7 +99,6 @@ export default function Pricing() {
               title={plan.title}
               priceLines={plan.priceLines}
               sessions={(plan as { sessions?: string }).sessions}
-              highlighted={plan.highlighted}
             />
           ))}
         </div>

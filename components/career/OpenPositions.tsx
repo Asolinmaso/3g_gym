@@ -9,7 +9,7 @@ export default function OpenPositions() {
           {JOBS.map((job) => (
             <article
               key={job.id}
-              className={`career-job-card ${job.highlighted ? 'career-job-card--highlight' : ''}`}
+              className="career-job-card"
             >
               <div className="career-job-card__content">
                 <h3 className="career-job-card__title">{job.title}</h3>

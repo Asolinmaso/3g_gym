@@ -1,10 +1,26 @@
+/* Contact hero – flexible layout, no fixed sizes */
 .contact-hero {
   position: relative;
   overflow: hidden;
-  min-height: 800px;
+  min-height: clamp(400px, 60vh, 800px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 96px; /* clear fixed header */
 }
 
-/* Background image */
+@media (min-width: 768px) {
+  .contact-hero {
+    margin-top: 112px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-hero {
+    margin-top: 128px;
+  }
+}
+
 .contact-hero-bg {
   position: absolute;
   inset: 0;
@@ -15,44 +31,43 @@
   object-fit: cover;
 }
 
-/* Huge faded background text */
 .contact-hero-title-bg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 900;
-  font-size: 14vw;
-  letter-spacing: 10px;
+  font-size: clamp(4rem, 14vw, 12rem);
+  letter-spacing: clamp(2px, 1vw, 10px);
   text-transform: uppercase;
   white-space: nowrap;
-
   background: linear-gradient(
     to bottom,
     #ffffff 0%,
-  #f2f2f2 40%,
-  #FFFFFF40 100%
+    #f2f2f2 40%,
+    #FFFFFF40 100%
   );
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
+  background-clip: text;
   z-index: 1;
   pointer-events: none;
 }
 
-/* Center model */
 .contact-hero-model {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: min(680px, 90vw);
+  display: flex;
+  justify-content: center;
 }
 
 .contact-hero-model-img {
-  width: 680px;
-  height: 700px;
+  width: 100%;
+  height: auto;
+  max-width: 680px;
+  object-fit: contain;
+  object-position: bottom;
 }

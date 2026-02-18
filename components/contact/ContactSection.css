@@ -1,45 +1,54 @@
-/* ===============================
-   CONTACT SECTION
-================================= */
-
+/* Contact section – flex layout, responsive spacing, no fixed px */
 .contact-section {
-  padding: 50px 80px;
+  padding: clamp(2rem, 5vw, 80px) var(--navbar-container-px, 1rem);
   background: #f5f5f5;
 }
 
-/* Layout */
 .contact-layout {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  gap: 100px;
-  margin-bottom: 50px;
+  align-items: flex-start;
+  gap: clamp(2rem, 5vw, 100px);
+  margin-bottom: clamp(2rem, 5vw, 50px);
 }
 
-/* ===============================
-   LEFT SIDE INFO
-================================= */
-
 .contact-left {
-  flex: 0 0 40%;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+@media (min-width: 992px) {
+  .contact-left {
+    flex: 0 0 min(40%, 480px);
+  }
 }
 
 .contact-item {
   display: flex;
-  gap: 18px;
-  margin-bottom: 48px;
+  gap: 1rem;
+  margin-bottom: clamp(1.5rem, 3vw, 48px);
   align-items: flex-start;
 }
 
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
 .contact-icon {
-  font-size: 22px;
+  flex-shrink: 0;
   color: #c50d3e;
   margin-top: 4px;
 }
 
+.contact-icon svg {
+  width: 1.5rem;
+  height: auto;
+}
+
 .contact-item h4 {
-  margin: 0 0 8px;
-  font-size: 24px;
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.125rem, 2vw, 24px);
   font-weight: 700;
   color: #111;
 }
@@ -48,88 +57,45 @@
   margin: 0;
   color: #6b6b6b;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: clamp(0.875rem, 1.5vw, 15px);
 }
 
-/* ===============================
-   RIGHT SIDE FORM CARD
-================================= */
-
-.contact-form-card {
-  flex: 0 0 50%;
-  background: #ffffff;
-  padding: 50px;
-  border-radius: 18px;
-  box-shadow: 0 25px 60px rgba(197, 13, 62, 0.18);
+.contact-form-wrap {
+  flex: 1 1 100%;
+  min-width: 0;
 }
 
-.contact-form-title {
-  text-align: center;
-  margin-bottom: 35px;
-  color: #c50d3e;
-  font-size: 30px;
-  font-weight: 700;
+@media (min-width: 992px) {
+  .contact-form-wrap {
+    flex: 1 1 min(55%, 600px);
+  }
 }
 
-/* Form */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+/* Map – fluid, aspect-ratio (overrides globals for this page) */
+.contact-section .contact-map-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 646 / 517;
+  max-height: min(517px, 60vh);
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  font-size: 14px;
-  outline: none;
-  transition: 0.3s ease;
-  background: #fafafa;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #c50d3e;
-  background: #fff;
-}
-
-/* Submit Button */
-.contact-form button {
-  width: 160px;
-  align-self: center;
-  padding: 12px 0;
-  border-radius: 30px;
+.contact-section .contact-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   border: none;
-  background: #c50d3e;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s ease;
 }
 
-.contact-form button:hover {
-  background: #a50a32;
-}
-
-/* ===============================
-   RESPONSIVE
-================================= */
-
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .contact-layout {
     flex-direction: column;
-    gap: 60px;
   }
 
   .contact-left,
-  .contact-form-card {
+  .contact-form-wrap {
     flex: 1 1 100%;
-  }
-
-  .contact-form-card {
-    padding: 40px;
   }
 }

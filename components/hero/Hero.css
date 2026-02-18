@@ -1,3 +1,15 @@
-.hero-banner-section{
-    margin-top: 120px;
+.hero-banner-section {
+  margin-top: 96px; /* clear fixed header h-24 */
+}
+
+@media (min-width: 768px) {
+  .hero-banner-section {
+    margin-top: 112px; /* h-28 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-banner-section {
+    margin-top: 128px; /* h-32 */
+  }
 }
