@@ -14,7 +14,7 @@ export default function CareerApply() {
           <div className="career-apply-info">
             <div className="career-apply-image-wrap">
               <Image
-                src="/about_us/big_image.png"
+                src="/images/career_page_image/career_addresssec_img.png"
                 alt="Gym team"
                 fill
                 className="career-apply-image"

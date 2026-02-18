@@ -13,13 +13,11 @@ export default function CareerHero() {
       {/* Rectangle 31 – gradient + border right, flipped */}
       <div className="career-hero-rect31" aria-hidden />
 
-      
-
       {/* Ellipse 1 (red blur left), Ellipse 2 (black blur right) */}
       <div className="career-hero-ellipse career-hero-ellipse--1" aria-hidden />
       <div className="career-hero-ellipse career-hero-ellipse--2" aria-hidden />
 
-      {/* CAREERS – gradient text, centered */}
+      {/* CAREERS – gradient text behind the front image (lower z-index) */}
       <div className="career-hero-inner">
         <h1 className="career-hero-title">CAREERS</h1>
       </div>
@@ -30,7 +28,7 @@ export default function CareerHero() {
         <div className="career-hero-rect11" />
       </div>
 
-      {/* Rectangle 59 – front image with drop-shadow (people on top) */}
+      {/* Rectangle 59 – front image on top (people in front of text) */}
       <div className="career-hero-front-image">
         <Image
           src={HERO_IMAGE}
