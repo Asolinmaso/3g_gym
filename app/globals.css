@@ -47,6 +47,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 * {
@@ -57,6 +58,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Navbar + section content – same max-width and padding, aligned with navbar */
@@ -66,7 +68,9 @@ html {
   max-width: var(--navbar-container-max);
   margin-left: auto;
   margin-right: auto;
- 
+  padding-left: var(--navbar-container-px, 1rem);
+  padding-right: var(--navbar-container-px, 1rem);
+  box-sizing: border-box;
 }
 
 /* Marquee horizontal scroll */
@@ -200,11 +204,16 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pricing-card--highlight {
+.pricing-card:hover {
   background: linear-gradient(154deg, #ff93b0 -3.01%, #b10b37 24.55%, #890024 62.67%, #ff93b0 91.49%);
   box-shadow: 0 0 10px 5px rgba(144, 144, 144, 0.25);
+}
+
+.pricing-card:hover .pricing-card__cta {
+  background: #010101;
 }
 
 .pricing-card__chevrons {
@@ -303,10 +312,6 @@ html {
 
 .pricing-card__cta:hover {
   opacity: 0.9;
-}
-
-.pricing-card--highlight .pricing-card__cta {
-  background: #010101;
 }
 
 .pricing-card__cta-arrow {
@@ -489,7 +494,7 @@ html {
   position: relative;
   width: 100%;
   max-width: 357px;
-  height: 480px;
+  height: clamp(320px, 55vw, 480px);
   margin: 0 auto;
   overflow: hidden;
   border-radius: 0;
@@ -811,7 +816,7 @@ html {
 .results-card__image-wrap {
   position: relative;
   width: 100%;
-  height: 431px;
+  aspect-ratio: 603 / 431;
   overflow: hidden;
 }
 
@@ -1181,6 +1186,9 @@ html {
   margin-right: auto;
   min-height: 400px;
   overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cta-banner {
@@ -1214,7 +1222,6 @@ html {
   align-items: center;
   justify-content: center;
   gap: 1px;
-  min-width: 148px;
   height: 52px;
   border: none;
   padding: 0 24px;
@@ -1238,11 +1245,9 @@ html {
 
 .cta-image {
   position: relative;
- 
-  aspect-ratio: 701 / 570;
-  margin: 1.5rem auto 0;
-  overflow: hidden;
+  width: 100%;
   border-radius: 0 0 32px 32px;
+  flex-shrink: 0;
 }
 
 .cta-img {
@@ -1263,6 +1268,9 @@ html {
     margin-left: auto;
     margin-right: auto;
     overflow: visible;
+    display: block;
+    flex-direction: unset;
+    align-items: unset;
   }
   .cta-banner {
     position: absolute;
@@ -1303,14 +1311,13 @@ html {
     position: absolute;
     left: 100px;
     top: 342px;
-    width: 180px;
     min-width: 180px;
     z-index: 2;
   }
   /* image 18: 701×570, top 0 so it exceeds card (card is 443px @ top 127px) */
   .cta-image {
     position: absolute;
-    left: 707px;
+    right: 0;
     top: 0;
     width: 701px;
     height: 570px;
@@ -1997,12 +2004,27 @@ html {
   box-sizing: border-box;
   background: #ffffff;
   position: relative;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.career-job-card--highlight {
+.career-job-card:hover {
   background: #c50d3e;
   border-color: #c50d3e;
   box-shadow: 0 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.career-job-card:hover .career-job-card__title,
+.career-job-card:hover .career-job-card__details {
+  color: #ffffff;
+}
+
+.career-job-card:hover .career-job-card__arrow-circle {
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+
+.career-job-card:hover .career-job-card__arrow-path {
+  fill: #c50d3e;
 }
 
 .career-job-card__content {
@@ -2022,10 +2044,6 @@ html {
   margin: 0;
 }
 
-.career-job-card--highlight .career-job-card__title {
-  color: #ffffff;
-}
-
 .career-job-card__details {
   font-family: "Roboto", system-ui, sans-serif;
   font-weight: 400;
@@ -2033,10 +2051,6 @@ html {
   line-height: 28px;
   color: #010101;
   margin: 0;
-}
-
-.career-job-card--highlight .career-job-card__details {
-  color: #ffffff;
 }
 
 .career-job-card__arrow {
@@ -2052,15 +2066,6 @@ html {
   width: 48px;
   height: 48px;
   display: block;
-}
-
-.career-job-card--highlight .career-job-card__arrow-circle {
-  stroke: #ffffff;
-  fill: #ffffff;
-}
-
-.career-job-card--highlight .career-job-card__arrow-path {
-  fill: #c50d3e;
 }
 
 .career-pagination {
@@ -2371,7 +2376,7 @@ html {
 .contact-hero {
   position: relative;
   width: 100%;
-  min-height: 800px;
+  min-height: clamp(400px, 60vh, 800px);
   background: #010101;
   overflow: hidden;
 }
@@ -2394,11 +2399,11 @@ html {
 
 .contact-hero-blur {
   position: absolute;
-  width: 222px;
-  height: 523px;
+  width: min(222px, 20vw);
+  height: min(523px, 50vh);
   right: 0;
   top: 50%;
-  transform: translateY(calc(-50% + 43.5px));
+  transform: translateY(-50%);
   background: #c50d3e;
   filter: blur(150px);
   pointer-events: none;
@@ -2406,8 +2411,9 @@ html {
 
 .contact-hero-deco {
   position: absolute;
-  width: 161px;
-  height: 169px;
+  width: min(161px, 15vw);
+  height: auto;
+  aspect-ratio: 161 / 169;
   left: 0;
   bottom: 0;
   background: #c50d3e;
@@ -2421,9 +2427,9 @@ html {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  min-height: 652px;
-  padding-top: 120px;
-  padding-bottom: 80px;
+  min-height: clamp(400px, 50vh, 652px);
+  padding-top: clamp(2rem, 10vh, 120px);
+  padding-bottom: clamp(2rem, 6vw, 80px);
 }
 
 .contact-hero-title {
@@ -2451,10 +2457,11 @@ html {
   .contact-hero-image-wrap {
     display: block;
     position: absolute;
-    width: 573px;
-    height: 674px;
+    width: min(573px, 45vw);
+    height: auto;
+    aspect-ratio: 573 / 674;
     right: 0;
-    top: 28px;
+    top: clamp(1rem, 3vw, 28px);
     overflow: hidden;
     z-index: 1;
   }
@@ -2489,11 +2496,11 @@ html {
   box-sizing: border-box;
   width: 100%;
   max-width: 397px;
-  height: 294px;
+  min-height: clamp(220px, 35vw, 294px);
   margin: 0 auto;
   border: 1px solid #c50d3e;
   border-radius: 24px;
-  padding: 24px;
+  padding: clamp(1rem, 2.5vw, 24px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2558,8 +2565,8 @@ html {
 
 @media (min-width: 1024px) {
   .contact-form-layout {
-    grid-template-columns: 559px 1fr;
-    gap: 30px;
+    grid-template-columns: minmax(280px, 559px) 1fr;
+    gap: clamp(1.5rem, 3vw, 30px);
     align-items: start;
   }
 }
@@ -2663,15 +2670,15 @@ html {
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  width: 173px;
-  height: 60px;
+  min-width: 140px;
+  min-height: 52px;
   background: #c50d3e;
   border-radius: 32px;
   border: none;
   font-family: var(--font-oswald), "Oswald", sans-serif;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: clamp(1rem, 2vw, 24px);
+  line-height: 1.5;
   color: #ffffff;
   cursor: pointer;
 }
@@ -2680,7 +2687,7 @@ html {
   position: relative;
   width: 100%;
   aspect-ratio: 646 / 517;
-  max-height: 517px;
+  max-height: min(517px, 60vh);
   overflow: hidden;
   border-radius: 8px;
 }
@@ -3244,8 +3251,20 @@ html {
   position: relative;
   width: 100%;
   min-height: 652px;
-  margin-top: 100px;
+  margin-top: 96px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .services-page-hero {
+    margin-top: 112px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-page-hero {
+    margin-top: 128px;
+  }
 }
 
 .services-page-hero__bg {
@@ -3666,8 +3685,20 @@ html {
   width: 100%;
   height: 630px;
   min-height: 630px;
-  margin-top: 100px;
+  margin-top: 96px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .about-page-hero {
+    margin-top: 112px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-page-hero {
+    margin-top: 128px;
+  }
 }
 
 /* about bg: 1440×630, full bleed */
@@ -4759,8 +4790,20 @@ html {
   position: relative;
   width: 100%;
   min-height: 652px;
-  margin-top: 100px;
+  margin-top: 96px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .franchise-hero {
+    margin-top: 112px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .franchise-hero {
+    margin-top: 128px;
+  }
 }
 
 .franchise-hero__bg {
@@ -5122,10 +5165,16 @@ html {
   flex-direction: column;
   gap: 1rem;
   position: relative;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.franchise-support__card--highlight {
+.franchise-support__card:hover {
   background: linear-gradient(154deg, #ff93b0 -3.01%, #b10b37 27.96%, #890024 66.61%, #ff93b0 103.53%);
+}
+
+.franchise-support__card:hover .franchise-support__card-text {
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
 .franchise-support__card-title {
@@ -5152,10 +5201,6 @@ html {
   line-height: 28px;
   color: #7e7c7c;
   margin: 0;
-}
-
-.franchise-support__card--highlight .franchise-support__card-text {
-  color: #ffffff;
 }
 
 @media (min-width: 1024px) {
@@ -5823,6 +5868,16 @@ html {
   .services-grid {
     gap: 1rem;
   }
+  .services-cards-inner {
+    padding: 56px 1rem 64px;
+  }
+  .services-curve {
+    height: 80px;
+  }
+  .services-card {
+    height: clamp(260px, 70vw, 420px);
+    max-width: 100%;
+  }
   .services-card__title {
     font-size: 1.25rem;
     line-height: 1.3;
@@ -5847,6 +5902,22 @@ html {
   .results-card {
     max-width: 100%;
   }
+  .results-card__image-wrap {
+    min-height: 220px;
+    aspect-ratio: 603 / 431;
+  }
+  .results-card__badge {
+    font-size: 18px;
+    line-height: 1.2;
+    padding: 4px 10px;
+  }
+  .results-card__bar {
+    width: 100%;
+    left: 0;
+    height: auto;
+    min-height: 70px;
+    padding: 12px 1rem;
+  }
 
   /* Testimonials */
   .testimonials-section {
@@ -5868,6 +5939,17 @@ html {
     font-size: 18px;
   }
 
+  /* Commitment */
+  .commitment-section {
+    padding: 48px 0 56px;
+  }
+  .commitment-heading {
+    font-size: clamp(2rem, 5vw, 48px);
+  }
+  .commitment-text {
+    font-size: 18px;
+  }
+
   /* Pricing */
   .pricing-section {
     padding: 48px 0 56px;
@@ -5879,7 +5961,14 @@ html {
 
   /* CTA */
   .cta-section {
-    padding: 48px 0 56px;
+    padding: 48px var(--navbar-container-px) 56px;
+  }
+  .cta-inner {
+    min-height: auto;
+  }
+  .cta-banner {
+    max-width: 100%;
+    width: 100%;
   }
   .cta-heading {
     font-size: clamp(1.5rem, 4vw, 36px);
@@ -5906,7 +5995,7 @@ html {
   /* Services page */
   .services-page-hero {
     min-height: 500px;
-    margin-top: 80px;
+    margin-top: 96px;
   }
   .services-page-hero__title {
     font-size: clamp(3rem, 12vw, 80px);
@@ -5945,7 +6034,7 @@ html {
   .about-page-hero {
     height: 480px;
     min-height: 480px;
-    margin-top: 80px;
+    margin-top: 96px;
   }
   .about-page-hero__title {
     font-size: clamp(3rem, 12vw, 80px);
@@ -6037,7 +6126,7 @@ html {
   /* Franchise page */
   .franchise-hero {
     min-height: 480px;
-    margin-top: 80px;
+    margin-top: 96px;
   }
   .franchise-hero__title {
     font-size: clamp(3rem, 12vw, 80px);
@@ -6166,74 +6255,172 @@ html {
     padding-right: 0.75rem;
   }
 
+  .hero-banner-section {
+    padding-top: clamp(60px, 10vh, 100px);
+    padding-bottom: 2rem;
+  }
   .hero-banner__headline {
     font-size: clamp(1.75rem, 10vw, 48px);
+    line-height: 1.2;
   }
   .hero-banner__paragraph {
     font-size: 16px;
+    line-height: 1.5;
+  }
+  .hero-banner__copy {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
   }
   .hero-get-started-btn {
-    min-width: 160px;
+    min-width: 140px;
     height: 48px;
-    font-size: 20px;
+    padding: 0 20px;
+    font-size: 18px;
   }
 
+  .about-section {
+    padding: 40px 0 48px;
+  }
   .about-heading {
     font-size: clamp(1.5rem, 8vw, 36px);
+    line-height: 1.15;
+  }
+  .about-desc {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
   }
   .about-content-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .about-image-small-wrap {
     max-width: 100%;
+    min-width: 0;
+  }
+  .about-cta {
+    width: 100%;
+    max-width: 200px;
+    min-height: 48px;
   }
 
+  .services-section {
+    padding: 40px 0 48px;
+  }
   .services-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    margin-bottom: 1.5rem;
   }
   .services-heading {
     font-size: clamp(1.5rem, 6vw, 32px);
+    line-height: 1.2;
+  }
+  .services-desc {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .services-cards-inner {
+    padding: 40px 0.75rem 48px;
+  }
+  .services-curve {
+    height: 56px;
   }
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .services-card {
+    height: clamp(240px, 65vw, 360px);
   }
 
+  .results-section {
+    padding: 40px 0 48px;
+  }
   .results-title {
     font-size: clamp(1.75rem, 8vw, 40px);
+    line-height: 1.2;
   }
   .results-subtitle {
     font-size: 16px;
+    margin-bottom: 1.5rem;
+  }
+  .results-grid {
+    gap: 1.5rem;
+  }
+  .results-card__image-wrap {
+    min-height: 200px;
+  }
+  .results-card__badge {
+    font-size: 16px;
+    padding: 3px 8px;
   }
 
+  .testimonials-section {
+    padding: 40px 0 48px;
+  }
   .testimonials-subtitle-wrap {
     max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
   }
   .testimonials-subtitle {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.3;
   }
   .testimonials-heading {
     font-size: clamp(1.75rem, 8vw, 40px);
+    line-height: 1.2;
   }
 
+  .pricing-section {
+    padding: 40px 0 48px;
+  }
   .pricing-title {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .pricing-tabs {
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-tab {
+    padding: 10px 16px;
+    font-size: 16px;
   }
   .pricing-card {
     min-width: 0;
     width: 100%;
   }
 
+  .cta-section {
+    padding: 40px 0.75rem 48px;
+  }
   .cta-heading {
     font-size: clamp(1.25rem, 6vw, 28px);
   }
   .cta-desc {
     font-size: 14px;
+    line-height: 1.4;
   }
-  .cta-cta {
-    padding: 14px 20px;
+  .cta-btn {
+    height: 48px;
+    padding: 0 20px;
+    font-size: 18px;
+  }
+
+  .commitment-section {
+    padding: 40px 0 48px;
+  }
+  .commitment-heading {
+    font-size: clamp(1.75rem, 6vw, 36px);
+  }
+  .commitment-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .commitment-motto {
     font-size: 18px;
   }
 

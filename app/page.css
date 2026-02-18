@@ -1,7 +1,7 @@
 .footer-equipment {
   position: relative;
   width: 100%;
-  height: 380px;   /* control visible strip */
+  height: clamp(180px, 30vw, 380px);   /* keep desktop the same, scale down on small screens */
   overflow: hidden;
   background: #fff;
 }
