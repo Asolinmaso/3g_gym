@@ -1233,13 +1233,12 @@ html {
   display: inline-flex;
   width: 9px;
   height: 16px;
-  margin-left: 4px;
+  margin-left: 12px;
 }
 
 .cta-image {
   position: relative;
-  width: 100%;
-  max-width: 400px;
+ 
   aspect-ratio: 701 / 570;
   margin: 1.5rem auto 0;
   overflow: hidden;
@@ -1247,8 +1246,7 @@ html {
 }
 
 .cta-img {
-  object-fit: contain; /* match Figma: no crop */
-  object-position: right bottom;
+
 }
 
 /* Desktop: Figma – Group 6 1308×570. Card 443px tall @ top 127px. Image 701×570 full height @ left 707px so it exceeds card. */
@@ -1318,14 +1316,12 @@ html {
     height: 570px;
     margin: 0;
     aspect-ratio: auto;
-    transform: scaleX(-1);
     border-radius: 0;
     overflow: visible;
     z-index: 2;
   }
   .cta-img {
-    object-fit: cover;
-    object-position: right center;
+   
   }
 }
 
@@ -2282,7 +2278,7 @@ html {
   width: 10px;
   height: 5px;
   background: #a5a5a5;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clipPath: polygon(0 0, 100% 0, 50% 100%);
 }
 
 .career-apply-input--contact {
@@ -2649,7 +2645,7 @@ html {
   width: 10px;
   height: 5px;
   background: #a5a5a5;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clipPath: polygon(0 0, 100% 0, 50% 100%);
 }
 
 .contact-form-input--contact {
@@ -4706,7 +4702,7 @@ html {
   height: 326px;
   background: #c50d3e;
   z-index: 2;
-  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clipPath: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 /* INFRASTRUCTURE vertical label – centered on the red bar */
