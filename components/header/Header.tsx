@@ -125,10 +125,29 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-800 bg-black">
-            <div className="navbar-inner py-6 space-y-4">
+        {/* Mobile menu – left-to-right sliding drawer overlay */}
+        <div
+          className={`mobile-menu-overlay lg:hidden ${isMenuOpen ? "mobile-menu-overlay--open" : ""}`}
+          aria-hidden={!isMenuOpen}
+        >
+          <button
+            className="mobile-menu-backdrop"
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+          />
+          <div className="mobile-menu-drawer">
+            <div className="mobile-menu-blur mobile-menu-blur--1" aria-hidden />
+            <div className="mobile-menu-blur mobile-menu-blur--2" aria-hidden />
+            <button
+              className="mobile-menu-close"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <nav className="mobile-menu-nav">
               {navLinks.map((link) => {
                 const active =
                   (link.name === "Products" && isProductsPage) ||
@@ -143,11 +162,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block text-base transition-colors ${
-                      active
-                        ? "text-[#C50D3E] font-semibold"
-                        : "text-gray-400 hover:text-white"
-                    }`}
+                    className={`mobile-menu-link ${active ? "mobile-menu-link--active" : ""}`}
                   >
                     {link.name}
                   </Link>
@@ -155,16 +170,15 @@ export default function Header() {
               })}
               <Link
                 href="/#contact"
-                className="w-full bg-[#C50D3E] text-white h-[52px] min-w-[163px] px-6 rounded-[40px] font-normal hover:opacity-90 transition-opacity flex items-center justify-center gap-1.5 mt-4 footer-join-btn"
+                onClick={() => setIsMenuOpen(false)}
+                className="mobile-menu-cta"
               >
-                Join 3rd Gen{" "}
-                <span className="text-base" aria-hidden>
-                  {">"}
-                </span>
+                Join 3rd Gen
+                <span aria-hidden>&gt;</span>
               </Link>
-            </div>
+            </nav>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

@@ -22,12 +22,7 @@ export default function CareerHero() {
         <h1 className="career-hero-title">CAREERS</h1>
       </div>
 
-      {/* Frame 65 – bottom left red blocks (Rectangle 10 + 11) */}
-      <div className="career-hero-frame65" aria-hidden>
-        <div className="career-hero-rect10" />
-        <div className="career-hero-rect11" />
-      </div>
-
+     
       {/* Rectangle 59 – front image on top (people in front of text) */}
       <div className="career-hero-front-image">
         <Image
@@ -35,7 +30,6 @@ export default function CareerHero() {
           alt="Team at 3G Gym"
           fill
           className="career-hero-front-img"
-          sizes="100vw"
           priority
         />
       </div>

@@ -128,6 +128,11 @@ export default function ContactSection() {
                   placeholder="E-mail"
                   className="contact-form-input"
                 />
+                <input
+                  type="text"
+                  placeholder="Location"
+                  className="contact-form-input"
+                />
                 <textarea
                   placeholder="Message"
                   className="contact-form-textarea"

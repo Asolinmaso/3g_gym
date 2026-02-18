@@ -17,7 +17,10 @@ export default function ContactHero() {
       </div>
 
       {/* Huge Background Title */}
-      <h1 className="contact-hero-title-bg">CONTACT US</h1>
+      <h1 className="contact-hero-title-bg">
+        <span className="contact-hero-title-line1">CONTACT</span>
+        <span className="contact-hero-title-line2">US</span>
+      </h1>
 
       {/* Center Model */}
       <div className="contact-hero-model">

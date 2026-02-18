@@ -88,14 +88,16 @@ export default function Hero() {
       {/* 3RD GEN – outlined text */}
       <h2 className="hero-banner__badge">3RD GEN</h2>
 
-      {/* Train Hard See Results. – gradient with HARD in red */}
+      {/* Train hard / see results / live strong – separate lines with gaps */}
       <h1 className="hero-banner__headline">
-        <span className="hero-banner__line1">
-          TRAIN <span className="hero-banner__accent">HARD</span> SEE RESULTS.
+        <span className="hero-banner__line hero-banner__line--1">
+          Train <span className="hero-banner__accent">hard</span>
         </span>
-        <span className="hero-banner__line2">
-          <span className="hero-banner__line2-live">LIVE </span>
-          <span className="hero-banner__line2-strong">STRONG.</span>
+        <span className="hero-banner__line hero-banner__line--2">
+          see <span className="hero-banner__accent">results</span>
+        </span>
+        <span className="hero-banner__line hero-banner__line--3">
+          live <span className="hero-banner__accent">strong</span>
         </span>
       </h1>
 
