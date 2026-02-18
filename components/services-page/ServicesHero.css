@@ -1,6 +1,8 @@
+/* Match franchise banner height */
 .services-hero-custom {
   position: relative;
-  height: 100vh;
+  min-height: 652px;
+  margin-top: 128px;
   overflow: hidden;
 }
 
@@ -46,7 +48,6 @@
 /* Center Model */
 .services-hero-model {
   position: absolute;
-  bottom: -150px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -55,4 +56,21 @@
 .services-hero-model-img {
   width: 520px;
   height: auto;
+}
+
+@media (max-width: 1023px) {
+  .services-hero-custom {
+    min-height: 480px;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-hero-custom {
+    min-height: 360px;
+  }
+  .services-hero-model-img {
+    width: 100%;
+    max-width: 400px;
+  }
 }

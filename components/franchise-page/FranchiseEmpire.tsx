@@ -24,10 +24,10 @@ export default function FranchiseEmpire() {
         </div>
         <div className="franchise-empire__images">
           <div className="franchise-empire__img-wrap franchise-empire__img-wrap--1">
-            <Image src="/about_us/small_image.png" alt="" fill className="franchise-empire__img" sizes="321px" />
+            <Image src="/images/franchise_page/franchise_empire.jpg" alt="" fill className="franchise-empire__img" sizes="321px" />
           </div>
           <div className="franchise-empire__img-wrap franchise-empire__img-wrap--2">
-            <Image src="/about_us/big_image.png" alt="" fill className="franchise-empire__img" sizes="316px" />
+            <Image src="/images/franchise_page/franchise_empire2.jpg" alt="" fill className="franchise-empire__img" sizes="316px" />
           </div>
         </div>
       </div>

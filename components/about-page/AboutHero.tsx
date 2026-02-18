@@ -12,10 +12,9 @@ export default function AboutHero() {
           <Image
             src="/images/about_page/about_banner_hero.png"
             alt="Fitness"
-            width={679}
-            height={586}
+            fill
             className="about-page-hero__image"
-            sizes="(max-width: 1024px) 60vw, 679px"
+            sizes="(max-width: 767px) 90vw, (max-width: 1024px) 85vw, 679px"
             priority
           />
         </div>

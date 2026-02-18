@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const CARDS = [
-  { title: 'Pro Equipment', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_choose1.jpg' },
+  { title: 'Pro Equipment', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_choose1.png' },
   { title: 'Expert Trainers', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_choose2.jpg' },
   { title: 'Health Report', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_choose3.jpg' },
 ];
