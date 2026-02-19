@@ -1,9 +1,23 @@
-/* Match franchise banner height */
+/* Same fixed height and margin as About/Contact/Franchise banners */
 .services-hero-custom {
   position: relative;
-  min-height: 652px;
-  margin-top: 128px;
+  width: 100%;
+  height: 630px;
+  min-height: 630px;
+  margin-top: 96px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .services-hero-custom {
+    margin-top: 112px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-hero-custom {
+    margin-top: 128px;
+  }
 }
 
 /* Background */
@@ -58,16 +72,17 @@
   height: auto;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .services-hero-custom {
+    height: 480px;
     min-height: 480px;
-    margin-top: 80px;
   }
 }
 
 @media (max-width: 767px) {
   .services-hero-custom {
-    min-height: 360px;
+    height: 380px;
+    min-height: 380px;
   }
   .services-hero-model-img {
     width: 100%;

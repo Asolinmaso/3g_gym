@@ -50,6 +50,7 @@ export default function FranchiseContact() {
               <span className="franchise-contact__divider" aria-hidden />
               <input type="tel" placeholder="Contact" className="franchise-contact__input franchise-contact__input--contact" aria-label="Contact" />
             </div>
+            <input type="email" placeholder="Email" className="franchise-contact__input" aria-label="Email" />
             <input type="text" placeholder="City" className="franchise-contact__input" aria-label="City" />
             <input type="text" placeholder="Investment Capacity" className="franchise-contact__input" aria-label="Investment Capacity" />
             <button type="submit" className="franchise-contact__submit">Submit Enquiry</button>

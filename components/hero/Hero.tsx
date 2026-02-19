@@ -88,16 +88,13 @@ export default function Hero() {
       {/* 3RD GEN – outlined text */}
       <h2 className="hero-banner__badge">3RD GEN</h2>
 
-      {/* Train hard / see results / live strong – separate lines with gaps */}
+      {/* Desktop: "TRAIN HARD SEE RESULTS." (one line) + "LIVE STRONG." (one line, red) */}
       <h1 className="hero-banner__headline">
         <span className="hero-banner__line hero-banner__line--1">
-          Train <span className="hero-banner__accent">hard</span>
+          TRAIN <span className="hero-banner__accent">HARD</span> SEE RESULTS.
         </span>
-        <span className="hero-banner__line hero-banner__line--2">
-          see <span className="hero-banner__accent">results</span>
-        </span>
-        <span className="hero-banner__line hero-banner__line--3">
-          live <span className="hero-banner__accent">strong</span>
+        <span className="hero-banner__line hero-banner__line--2 hero-banner__line--live">
+          LIVE STRONG.
         </span>
       </h1>
 

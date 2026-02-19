@@ -1,13 +1,18 @@
-/* Bottom red stats strip */
+/* Bottom red stats strip – full viewport width */
 .about-bottom-image {
   position: relative;
-  width: 100%;
-  height: clamp(160px, 24vw, 300px);      /* keep desktop the same, scale down on small screens */
-  margin-top: clamp(32px, 6vw, 80px);     /* keep desktop spacing, reduce on mobile */
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  left: 0;
+  right: 0;
+  height: clamp(160px, 24vw, 300px);
+  margin-top: clamp(32px, 6vw, 80px);
   overflow: hidden;
 }
 
 .about-bottom-img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }

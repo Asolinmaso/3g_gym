@@ -6,9 +6,14 @@ export default function FranchiseEmpire() {
       <div className="content-inner franchise-empire__inner">
         <div className="franchise-empire__content">
           <h2 className="franchise-empire__heading">
-            Build Your <span className="franchise-empire__accent">Fitness Empire</span>
-            <br />
-            <span className="franchise-empire__accent">At 3RD GEN</span>
+            <span className="franchise-empire__heading-line">
+              <span className="franchise-empire__heading-black">Build your</span>{" "}
+              <span className="franchise-empire__accent">Fitness Empire</span>
+            </span>
+            <span className="franchise-empire__heading-line">
+              <span className="franchise-empire__heading-black">At</span>{" "}
+              <span className="franchise-empire__accent">3RD GEN</span>
+            </span>
           </h2>
           <p className="franchise-empire__text">
             we believe fitness is not just about lifting weights it&apos;s about building strength, confidence, and a healthier lifestyle. Our gym is designed to motivate you at every step, whether you&apos;re a beginner or a seasoned athlete. We offer a fully equipped training space, expert-certified trainers, and a supportive environment that pushes you to become the best version of yourself. From strength training and cardio to functional workouts and personal training, we focus on results-driven fitness programs tailored to your goals.

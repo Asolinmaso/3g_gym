@@ -1,12 +1,32 @@
+'use client';
+
+import { useState, useMemo } from 'react';
 import { JOBS } from './career-data';
 
+const JOBS_PER_PAGE = 4;
+
 export default function OpenPositions() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = useMemo(
+    () => Math.ceil(JOBS.length / JOBS_PER_PAGE) || 1,
+    []
+  );
+  const start = (currentPage - 1) * JOBS_PER_PAGE;
+  const jobsOnPage = useMemo(
+    () => JOBS.slice(start, start + JOBS_PER_PAGE),
+    [start]
+  );
+
+  const goPrev = () => setCurrentPage((p) => Math.max(1, p - 1));
+  const goNext = () => setCurrentPage((p) => Math.min(totalPages, p + 1));
+
   return (
     <section className="career-positions">
       <div className="content-inner">
         <h2 className="career-positions-heading">Open Positions</h2>
         <div className="career-jobs-grid">
-          {JOBS.map((job) => (
+          {jobsOnPage.map((job) => (
             <article
               key={job.id}
               className={`career-job-card ${job.highlighted ? 'career-job-card--highlight' : ''}`}
@@ -26,18 +46,39 @@ export default function OpenPositions() {
             </article>
           ))}
         </div>
-        <nav className="career-pagination" aria-label="Jobs pagination">
-          <button type="button" className="career-pagination-btn career-pagination-btn--arrow" aria-label="Previous page">
-            <span className="career-pagination-arrow career-pagination-arrow--left" />
-          </button>
-          <button type="button" className="career-pagination-btn career-pagination-btn--active" aria-current="page">1</button>
-          <button type="button" className="career-pagination-btn">2</button>
-          <button type="button" className="career-pagination-btn">3</button>
-          <button type="button" className="career-pagination-btn">4</button>
-          <button type="button" className="career-pagination-btn career-pagination-btn--arrow" aria-label="Next page">
-            <span className="career-pagination-arrow career-pagination-arrow--right" />
-          </button>
-        </nav>
+        {totalPages > 1 && (
+          <nav className="career-pagination" aria-label="Jobs pagination">
+            <button
+              type="button"
+              className="career-pagination-btn career-pagination-btn--arrow"
+              aria-label="Previous page"
+              onClick={goPrev}
+              disabled={currentPage === 1}
+            >
+              <span className="career-pagination-arrow career-pagination-arrow--left" />
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                type="button"
+                className={`career-pagination-btn ${currentPage === page ? 'career-pagination-btn--active' : ''}`}
+                aria-current={currentPage === page ? 'page' : undefined}
+                onClick={() => setCurrentPage(page)}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              type="button"
+              className="career-pagination-btn career-pagination-btn--arrow"
+              aria-label="Next page"
+              onClick={goNext}
+              disabled={currentPage === totalPages}
+            >
+              <span className="career-pagination-arrow career-pagination-arrow--right" />
+            </button>
+          </nav>
+        )}
       </div>
     </section>
   );

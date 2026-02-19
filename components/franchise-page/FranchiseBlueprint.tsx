@@ -25,13 +25,16 @@ export default function FranchiseBlueprint() {
         </div>
         <div className="franchise-blueprint__right">
           <div className="franchise-blueprint__header-strip">
-            <span className="franchise-blueprint__subtitle">THE BLUEPRINT</span>
-            <span className="franchise-blueprint__line" aria-hidden />
+            <div className="franchise-blueprint__strip-row">
+              <span className="franchise-blueprint__line" aria-hidden />
+              <span className="franchise-blueprint__subtitle">THE BLUEPRINT</span>
+            </div>
             <h2 className="franchise-blueprint__heading">
-              What You Need <span className="franchise-blueprint__heading-accent">To Get Started</span>
+              <span className="franchise-blueprint__heading-line">What You Need</span>
             </h2>
           </div>
           <div className="franchise-blueprint__right-body">
+            <span className="franchise-blueprint__heading-accent franchise-blueprint__heading-get-started">Get Started</span>
           <p className="franchise-blueprint__text">
             We look for partners who are passionate about fitness and committed to delivering a premium experience.
           </p>
