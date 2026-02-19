@@ -1,0 +1,9 @@
+export { default as Hero } from "@/components/hero/Hero";
+export { default as Marquee } from "@/components/marquee/Marquee";
+export { default as About } from "@/components/about/About";
+export { default as Services } from "@/components/services/Services";
+export { default as Results } from "@/components/results/Results";
+export { default as Testimonials } from "@/components/testimonials/Testimonials";
+export { default as Pricing } from "@/components/pricing/Pricing";
+export { default as Commitment } from "@/components/commitment/Commitment";
+export { default as CTA } from "@/components/cta/CTA";
