@@ -1,23 +1,21 @@
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
-import AboutHero from '@/components/about-page/AboutHero';
-import AboutGeneration from '@/components/about-page/AboutGeneration';
-import AboutVisionMission from '@/components/about-page/AboutVisionMission';
-import AboutFounder from '@/components/about-page/AboutFounder';
-import AboutWhyChoose from '@/components/about-page/AboutWhyChoose';
-import AboutInfrastructure from '@/components/about-page/AboutInfrastructure';
+import {
+  AboutFounder,
+  AboutGeneration,
+  AboutHero,
+  AboutInfrastructure,
+  AboutVisionMission,
+  AboutWhyChoose,
+} from "@/features/about";
 
 export default function AboutPage() {
   return (
-    <main className="about-page" style={{ background: '#FDFDFD' }}>
-      <Header />
+    <main className="about-page flex-1" style={{ background: "#FDFDFD" }}>
       <AboutHero />
       <AboutGeneration />
       <AboutVisionMission />
       <AboutFounder />
       <AboutWhyChoose />
       <AboutInfrastructure />
-      <Footer />
     </main>
   );
 }

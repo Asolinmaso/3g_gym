@@ -1,0 +1,1373 @@
+/* ========== Mobile responsive overrides (do not affect desktop) ========== */
+@media (max-width: 1023px) {
+  .navbar-inner,
+  .content-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero banner – home */
+  .hero-banner-section {
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+  .hero-banner__headline {
+    font-size: clamp(2rem, 8vw, 80px);
+    line-height: 1.3;
+  }
+  .hero-banner__copy {
+    max-width: 100%;
+  }
+  .hero-banner__paragraph {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* About section – home */
+  .about-section {
+    padding: 48px 0 56px;
+  }
+  .about-heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Services section – home */
+  .services-section {
+    padding: 48px 0 56px;
+  }
+  .services-heading {
+    font-size: clamp(1.75rem, 4vw, 40px);
+  }
+  .services-desc {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .services-grid {
+    gap: 1rem;
+  }
+  .services-cards-inner {
+    padding: 56px 1rem 64px;
+  }
+  .services-curve {
+    height: 80px;
+  }
+  .services-card {
+    height: clamp(260px, 70vw, 420px);
+    max-width: 100%;
+  }
+  .services-grid--scroll .services-card {
+    flex: 0 0 min(320px, 85vw);
+    width: min(320px, 85vw);
+    height: 400px;
+  }
+  .services-card__title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  /* Results section */
+  .results-section {
+    padding: 48px 0 56px;
+  }
+  .results-title {
+    font-size: clamp(2rem, 5vw, 60px);
+    line-height: 1.2;
+  }
+  .results-subtitle {
+    font-size: 18px;
+  }
+  .results-cards {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .results-card {
+    max-width: 100%;
+  }
+  .results-card__image-wrap {
+    min-height: 220px;
+    aspect-ratio: 603 / 431;
+  }
+  .results-card__badge {
+    font-size: 18px;
+    line-height: 1.2;
+    padding: 4px 10px;
+  }
+  .results-card__bar {
+    width: 100%;
+    left: 0;
+    height: auto;
+    min-height: 70px;
+    padding: 12px 1rem;
+  }
+
+  /* Testimonials */
+  .testimonials-section {
+    padding: 48px 0 56px;
+  }
+  .testimonials-heading {
+    font-size: clamp(2rem, 5vw, 60px);
+    line-height: 1.2;
+  }
+  .testimonials-subtitle {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .testimonials-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .testimonials-attribution {
+    font-size: 18px;
+  }
+
+  /* Commitment */
+  .commitment-section {
+    padding: 48px 0 56px;
+  }
+  .commitment-heading {
+    font-size: clamp(2rem, 5vw, 48px);
+  }
+  .commitment-text {
+    font-size: 18px;
+  }
+
+  /* Pricing */
+  .pricing-section {
+    padding: 48px 0 56px;
+  }
+  .pricing-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 48px var(--navbar-container-px) 56px;
+  }
+  .cta-inner {
+    min-height: auto;
+  }
+  .cta-banner {
+    max-width: 100%;
+    width: 100%;
+  }
+  .cta-heading {
+    font-size: clamp(1.5rem, 4vw, 36px);
+    line-height: 1.3;
+  }
+  .cta-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* Footer – stack and smaller text on tablet */
+  .footer-grid {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .footer-link,
+  .footer-contact-text {
+    font-size: 18px;
+  }
+  .footer-copyright {
+    font-size: 16px;
+  }
+
+  /* Services page */
+  .services-page-hero {
+    min-height: 500px;
+    margin-top: 96px;
+  }
+  .services-page-hero__title {
+    font-size: clamp(3rem, 12vw, 80px);
+    line-height: 1.2;
+  }
+  .services-detail__title {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .services-detail__text,
+  .services-detail__list-item {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .services-detail__subheading {
+    font-size: 20px;
+  }
+  .services-faq {
+    padding: 48px 0 64px;
+  }
+  .services-faq__title {
+    font-size: clamp(2rem, 5vw, 56px);
+    line-height: 1.2;
+  }
+  .services-faq__question {
+    font-size: 18px;
+    line-height: 26px;
+    padding: 20px 16px;
+  }
+  .services-faq__answer {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* About page */
+  .about-page-hero {
+    height: 480px;
+    min-height: 480px;
+    margin-top: 96px;
+  }
+  .about-page-hero__title {
+    font-size: clamp(3rem, 12vw, 80px);
+    line-height: 1.2;
+  }
+  .about-page-hero__subtitle {
+    font-size: 24px;
+  }
+  .about-gen {
+    padding: 48px 0 56px;
+  }
+  .about-gen__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-gen__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .about-gen__card-num {
+    font-size: 56px;
+    line-height: 1.2;
+  }
+  .about-gen__card-label {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  .about-gen__pink-label {
+    font-size: 20px;
+  }
+  .about-vm {
+    padding: 48px 0 56px;
+    min-height: auto;
+  }
+  .about-vm__title {
+    font-size: 28px;
+  }
+  .about-vm__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .about-vm__watermark {
+    font-size: clamp(2rem, 6vw, 64px);
+    line-height: 1.2;
+  }
+  .about-wcu {
+    padding: 48px 0 56px;
+  }
+  .about-wcu__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-wcu__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .about-wcu__card-title {
+    font-size: 28px;
+  }
+  .about-wcu__card-text {
+    font-size: 18px;
+  }
+  .about-trainers {
+    padding: 48px 0 56px;
+  }
+  .about-trainers__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-trainers__name {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .about-trainers__role {
+    font-size: 20px;
+  }
+  .about-infra {
+    padding: 48px 0 64px;
+  }
+  .about-infra__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .about-infra__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Franchise page hero – fixed heights, no position overrides */
+  .franchise-page-hero {
+    height: 480px;
+    min-height: 480px;
+  }
+  .franchise-page-hero__bg {
+    min-height: 480px;
+  }
+  .franchise-page-hero__inner {
+    min-height: 480px;
+  }
+  .franchise-page-hero__title {
+    font-size: clamp(2.5rem, 12vw, 72px);
+    line-height: 1.2;
+  }
+  .franchise-hero__title {
+    font-size: clamp(3rem, 12vw, 80px);
+    line-height: 1.2;
+  }
+  .franchise-hero__subtitle {
+    font-size: 24px;
+  }
+  .franchise-empire {
+    padding: 48px 0 56px;
+  }
+  .franchise-empire__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-empire__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-empire__images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .franchise-empire__img-wrap,
+  .franchise-empire__img-wrap--2 {
+    max-width: 100%;
+  }
+  .franchise-support {
+    padding: 48px 0 56px;
+    min-height: auto;
+  }
+  .franchise-support__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-support__card-title {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-size: 22px;
+    line-height: 32px;
+  }
+  .franchise-support__card-text {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .franchise-support__card-icon-wrap {
+    width: 44px;
+    height: 46px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .franchise-blueprint {
+    padding: 48px 0 56px;
+  }
+  .franchise-blueprint__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-blueprint__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-blueprint__card-label {
+    font-size: 20px;
+  }
+  .franchise-blueprint__card-value {
+    font-size: 28px;
+  }
+  .franchise-process {
+    padding: 48px 0 56px;
+  }
+  .franchise-process__heading {
+    font-size: clamp(1.75rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-process__step {
+    padding: 2rem 1.5rem;
+    min-height: auto;
+    gap: 1.5rem;
+  }
+  .franchise-process__step-num {
+    font-size: 80px;
+    line-height: 1.2;
+  }
+  .franchise-process__step-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .franchise-process__step-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-contact {
+    padding: 48px 0 56px;
+  }
+  .franchise-contact__heading {
+    font-size: clamp(1.5rem, 5vw, 48px);
+    line-height: 1.2;
+  }
+  .franchise-contact__block-title {
+    font-size: 28px;
+  }
+  .franchise-contact__block-text {
+    font-size: 18px;
+  }
+  .franchise-contact__form-title {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  .franchise-contact__form-desc {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .franchise-contact__form-wrap {
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+  .franchise-contact__input,
+  .franchise-contact__input-row {
+    height: 52px;
+  }
+  .franchise-contact__input {
+    font-size: 16px;
+  }
+  .franchise-contact__submit {
+    height: 52px;
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+/* Small mobile (phones) – tighter spacing and smaller typography */
+@media (max-width: 767px) {
+  .navbar-inner,
+  .content-inner {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .hero-banner-section {
+    padding-top: clamp(60px, 10vh, 100px);
+    padding-bottom: 2rem;
+  }
+  .hero-banner__headline {
+    font-size: clamp(1.75rem, 10vw, 48px);
+    line-height: 1.2;
+  }
+  .hero-banner__paragraph {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .hero-banner__copy {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  .hero-get-started-btn {
+    min-width: 140px;
+    height: 48px;
+    padding: 0 20px;
+    font-size: 18px;
+  }
+
+  .about-section {
+    padding: 40px 0 48px;
+  }
+  .about-heading {
+    font-size: clamp(1.5rem, 8vw, 36px);
+    line-height: 1.15;
+  }
+  .about-desc {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .about-content-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .about-image-small-wrap {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .about-cta {
+    width: 100%;
+    max-width: 200px;
+    min-height: 48px;
+  }
+
+  .services-section {
+    padding: 40px 0 48px;
+  }
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .services-heading {
+    font-size: clamp(1.5rem, 6vw, 32px);
+    line-height: 1.2;
+  }
+  .services-desc {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .services-cards-inner {
+    padding: 40px 0 48px;
+  }
+  .services-curve {
+    height: 56px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .services-grid--scroll .services-card {
+    flex: 0 0 min(280px, 78vw);
+    width: min(280px, 78vw);
+    height: 360px;
+  }
+  .services-card {
+    height: clamp(240px, 65vw, 360px);
+  }
+
+  .results-section {
+    padding: 40px 0 48px;
+  }
+  .results-title {
+    font-size: clamp(1.75rem, 8vw, 40px);
+    line-height: 1.2;
+  }
+  .results-subtitle {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+  }
+  .results-grid {
+    gap: 1.5rem;
+  }
+  .results-card__image-wrap {
+    min-height: 200px;
+  }
+  .results-card__badge {
+    font-size: 16px;
+    padding: 3px 8px;
+  }
+
+  .testimonials-section {
+    padding: 40px 0 48px;
+  }
+  .testimonials-subtitle-wrap {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .testimonials-subtitle {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .testimonials-heading {
+    font-size: clamp(1.75rem, 8vw, 40px);
+    line-height: 1.2;
+  }
+
+  .pricing-section {
+    padding: 40px 0 48px;
+  }
+  .pricing-title {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .pricing-tabs {
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-tab {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+  .pricing-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .cta-section {
+    padding: 40px 0.75rem 48px;
+  }
+  .cta-heading {
+    font-size: clamp(1.25rem, 6vw, 28px);
+  }
+  .cta-desc {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .cta-btn {
+    height: 48px;
+    padding: 0 20px;
+    font-size: 18px;
+  }
+
+  .commitment-section {
+    padding: 40px 0 48px;
+  }
+  .commitment-heading {
+    font-size: clamp(1.75rem, 6vw, 36px);
+  }
+  .commitment-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .commitment-motto {
+    font-size: 18px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  .footer-tagline {
+    font-size: clamp(1.5rem, 6vw, 36px);
+    line-height: 1.25;
+  }
+  .footer-heading,
+  .footer-follow-title {
+    font-size: 20px;
+  }
+  .footer-link,
+  .footer-contact-text {
+    font-size: 16px;
+  }
+  .footer-bottom {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .footer-copyright {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .services-page-hero {
+    height: 480px;
+    min-height: 480px;
+  }
+  .services-page-hero__inner {
+    min-height: 480px;
+  }
+  .services-page-hero__title {
+    font-size: clamp(2.5rem, 14vw, 56px);
+  }
+  .services-page-hero__image-wrap {
+    max-width: 100%;
+  }
+  .services-detail-inner {
+    gap: 40px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .services-detail__title {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .services-detail__subheading {
+    font-size: 18px;
+  }
+  .services-detail__text,
+  .services-detail__list-item {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .services-detail__cta {
+    min-width: 160px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .services-faq__title {
+    font-size: clamp(1.75rem, 8vw, 40px);
+  }
+  .services-faq__question {
+    font-size: 16px;
+    padding: 16px;
+  }
+  .services-faq__answer-wrap {
+    padding: 0 16px 16px;
+  }
+  .services-faq__answer {
+    font-size: 14px;
+  }
+
+  .about-page-hero {
+    height: 380px;
+    min-height: 380px;
+  }
+  .about-page-hero__inner {
+    height: 100%;
+    min-height: 380px;
+    padding: 1rem 0.75rem;
+    gap: 1rem;
+  }
+  .franchise-page-hero {
+    height: 380px;
+    min-height: 380px;
+  }
+  .franchise-page-hero__bg {
+    min-height: 380px;
+  }
+  .franchise-page-hero__inner {
+    min-height: 380px;
+    padding: 0.75rem 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+  .franchise-page-hero__image-wrap {
+    width: min(60vw, 180px);
+  }
+  .contact-hero {
+    height: 380px;
+    min-height: 380px;
+  }
+  .services-page-hero {
+    height: 380px;
+    min-height: 380px;
+  }
+  .services-page-hero__inner {
+    min-height: 380px;
+  }
+  .about-page-hero__image-wrap {
+    height: 65%;
+    max-height: calc(100% - 5rem);
+    max-width: min(90vw, 320px);
+  }
+  .about-page-hero__title {
+    font-size: clamp(2.5rem, 14vw, 56px);
+  }
+  .about-page-hero__subtitle {
+    font-size: 20px;
+  }
+  .about-gen__subtitle {
+    font-size: 24px;
+  }
+  .about-gen__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-gen__card {
+    padding: 16px 20px;
+    left: 0.5rem;
+    bottom: -10px;
+  }
+  .about-gen__card-num {
+    font-size: 48px;
+  }
+  .about-gen__card-label {
+    font-size: 20px;
+  }
+  .about-gen__pink-card {
+    width: 100%;
+    min-width: 0;
+  }
+  .about-gen__pink-label {
+    font-size: 18px;
+  }
+  .about-vm__grid {
+    gap: 1.5rem;
+  }
+  .about-vm__card {
+    padding: 32px 20px;
+  }
+  .about-vm__title {
+    font-size: 24px;
+  }
+  .about-vm__text {
+    font-size: 16px;
+  }
+  .about-wcu__subtitle {
+    font-size: 24px;
+  }
+  .about-wcu__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-wcu__text {
+    font-size: 18px;
+  }
+  .about-wcu__grid {
+    gap: 1.5rem;
+  }
+  .about-wcu__card-title {
+    font-size: 28px;
+  }
+  .about-wcu__card-text {
+    font-size: 16px;
+  }
+  .about-trainers__subtitle {
+    font-size: 24px;
+  }
+  .about-trainers__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-trainers__grid {
+    gap: 1.5rem;
+  }
+  .about-trainers__image-wrap {
+    max-width: 100%;
+  }
+  .about-trainers__name {
+    font-size: 28px;
+  }
+  .about-trainers__role {
+    font-size: 18px;
+  }
+  .about-infra__subtitle {
+    font-size: 24px;
+  }
+  .about-infra__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .about-infra__text {
+    font-size: 16px;
+  }
+  .about-infra__vertical-label {
+    font-size: 24px;
+    right: 16px;
+  }
+  .about-infra__red-bar {
+    width: 80px;
+  }
+
+  .franchise-page-hero__title {
+    font-size: clamp(2rem, 12vw, 56px);
+  }
+  .franchise-page-hero__image-wrap {
+    width: min(55vw, 160px);
+  }
+  .franchise-hero {
+    min-height: 360px;
+  }
+  .franchise-hero__title {
+    font-size: clamp(2.5rem, 14vw, 56px);
+  }
+  .franchise-hero__subtitle {
+    font-size: 20px;
+  }
+  .franchise-empire__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-empire__text {
+    font-size: 16px;
+  }
+  .franchise-empire__cta {
+    width: 100%;
+    max-width: 200px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .franchise-support__subtitle {
+    font-size: 24px;
+  }
+  .franchise-support__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-support__grid {
+    gap: 1.5rem;
+  }
+  .franchise-support__card {
+    padding: 32px 20px;
+  }
+  .franchise-support__card-title {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .franchise-support__card-text {
+    font-size: 16px;
+  }
+  .franchise-support__card-icon-wrap {
+    width: 40px;
+    height: 42px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .franchise-blueprint__subtitle {
+    font-size: 24px;
+  }
+  .franchise-blueprint__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-blueprint__text {
+    font-size: 16px;
+  }
+  .franchise-blueprint__card {
+    padding: 16px;
+    max-width: 100%;
+  }
+  .franchise-blueprint__card-label {
+    font-size: 18px;
+  }
+  .franchise-blueprint__card-value {
+    font-size: 24px;
+  }
+  .franchise-process__subtitle {
+    font-size: 24px;
+  }
+  .franchise-process__heading {
+    font-size: clamp(1.5rem, 6vw, 36px);
+  }
+  .franchise-process__step-num {
+    font-size: 64px;
+  }
+  .franchise-process__step-title {
+    font-size: 28px;
+  }
+  .franchise-process__step-text {
+    font-size: 16px;
+  }
+  .franchise-process__step-image {
+    max-width: 100%;
+  }
+  .franchise-contact__subtitle {
+    font-size: 24px;
+  }
+  .franchise-contact__heading {
+    font-size: clamp(1.25rem, 6vw, 32px);
+    line-height: 1.25;
+  }
+  .franchise-contact__block-title {
+    font-size: 24px;
+  }
+  .franchise-contact__block-text {
+    font-size: 16px;
+  }
+  .franchise-contact__form-title {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .franchise-contact__form-desc {
+    font-size: 16px;
+  }
+  .franchise-contact__form-wrap {
+    padding: 1.25rem 1.25rem 1rem;
+    border-radius: 16px;
+  }
+  .franchise-contact__submit {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+/* Products / Career / Contact page mobile */
+@media (max-width: 1023px) {
+  .products-hero-title,
+  .career-hero-title,
+  .contact-hero-title {
+    font-size: clamp(2.5rem, 10vw, 72px);
+    line-height: 1.2;
+  }
+  .products-our-heading,
+  .career-our-heading,
+  .career-positions-heading {
+    font-size: clamp(1.75rem, 4vw, 40px);
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .career-jobs-grid {
+    gap: 1rem;
+  }
+  .contact-cards-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .products-hero-title,
+  .career-hero-title,
+  .contact-hero-title {
+    font-size: clamp(2rem, 12vw, 48px);
+  }
+  .products-our-heading,
+  .career-our-heading,
+  .career-positions-heading {
+    font-size: clamp(1.5rem, 5vw, 32px);
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .products-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .career-apply-layout {
+    flex-direction: column;
+  }
+  .contact-form-wrap {
+    padding: 1.5rem;
+  }
+  .career-jobs-grid {
+    grid-template-columns: 1fr;
+  }
+  .career-job-card {
+    padding: 1rem;
+  }
+  /* Open Positions mobile (Figma) */
+  .career-positions-heading {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  .career-jobs-grid {
+    gap: 10px;
+    max-width: 409px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .career-job-card {
+    min-height: 212px;
+    padding: 24px;
+    gap: 48px;
+  }
+  .career-job-card__content {
+    gap: 16px;
+  }
+  .career-job-card__title-row {
+    flex-shrink: 0;
+  }
+  .career-job-card__details {
+    flex-shrink: 0;
+    overflow: visible;
+  }
+  .career-job-card__title {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .career-job-card__details {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .career-job-card__arrow,
+  .career-job-card__arrow-svg {
+    width: 40px;
+    height: 40px;
+  }
+  .career-pagination {
+    gap: 32px;
+  }
+  .career-pagination-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  .contact-form-wrap {
+    padding: 1.25rem;
+  }
+}
+
+/* Touch-friendly tap targets on mobile */
+@media (max-width: 767px) {
+  .footer-join-btn,
+  .hero-get-started-btn,
+  .about-cta,
+  .services-cta,
+  .franchise-empire__cta,
+  .franchise-contact__submit,
+  .services-detail__cta {
+    min-height: 48px;
+    padding: 0 20px;
+  }
+  .testimonials-nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Mobile 440px (Figma spec) – home page only, no desktop changes */
+@media (max-width: 480px) {
+  .navbar-inner,
+  .content-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-banner-section {
+    min-height: 609px;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 0;
+  }
+  .hero-banner__badge {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 0.75rem;
+  }
+  .hero-banner__headline {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 0.75rem;
+  }
+  .hero-banner__copy {
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .hero-banner__paragraph {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 363px;
+  }
+  .hero-banner-section .hero-get-started-btn {
+    width: 151px;
+    height: 48px;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .about-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .about-heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .about-desc {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .about-label {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .about-cta {
+    width: 148px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .services-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .services-heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .services-desc {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .services-label {
+    font-size: 16px;
+  }
+  .services-cta {
+    width: 148px;
+    height: 48px;
+    font-size: 16px;
+  }
+  .services-card__title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .results-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .results-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .results-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .results-card {
+    max-width: 400px;
+  }
+
+  .testimonials-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .testimonials-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .testimonials-heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .testimonials-text {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  /* Contact page mobile – fixed height for consistency */
+  .contact-hero {
+    height: 480px;
+    min-height: 480px;
+  }
+  .contact-section {
+    padding: 24px 20px 40px;
+    background: #fdfdfd;
+  }
+  .contact-layout {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .contact-item {
+    margin-bottom: 24px;
+  }
+  .contact-item h4 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .contact-item p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #7e7c7c;
+  }
+  .contact-form {
+    padding: 24px;
+    gap: 24px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .contact-form-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .contact-form-input {
+    height: 48px;
+  }
+  .contact-form-textarea {
+    min-height: 110px;
+  }
+  .contact-form-submit {
+    width: 140px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 24px;
+  }
+  .contact-section .contact-map-wrap {
+    aspect-ratio: 646 / 517;
+  }
+
+  .testimonials-attribution {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .pricing-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .pricing-title {
+    font-size: 32px;
+    line-height: 55px;
+  }
+  .pricing-tabs {
+    gap: 16px;
+    margin-bottom: 1.5rem;
+  }
+  .pricing-tab {
+    padding: 8px 16px;
+    height: 43px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .pricing-card {
+    max-width: 375px;
+    height: 448px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pricing-card__title {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 2rem;
+  }
+  .pricing-card__price {
+    font-size: 24px;
+  }
+  .pricing-card__feature {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .pricing-card__cta {
+    width: 131px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .cta-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .cta-heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .cta-desc {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .cta-btn {
+    width: 148px;
+    height: 48px;
+    font-size: 16px;
+  }
+  .cta-inner {
+    align-items: center;
+  }
+  .cta-banner {
+    border-radius: 32px;
+    padding: 2.5rem 2rem 3rem;
+  }
+
+  .commitment-section {
+    padding: 2rem 1rem 2.5rem;
+  }
+  .commitment-heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .commitment-label {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .commitment-text {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .commitment-motto {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .footer-tagline {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .footer-link,
+  .footer-contact-text {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .footer-heading,
+  .footer-follow-title {
+    font-size: 18px;
+  }
+}

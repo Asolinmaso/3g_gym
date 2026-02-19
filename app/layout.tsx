@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Oswald, Poppins } from "next/font/google";
+import { Footer, Header } from "@/features/layout";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,6 +28,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "3G Gym - Transform Your Body, Transform Your Life",
   description: "Achieve your fitness goals with our expert trainers and personalized programs, designed to push your limits and transform your body.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -37,9 +41,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} ${poppins.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} ${poppins.variable} antialiased min-h-screen flex flex-col overflow-x-hidden`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,16 +1,10 @@
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
-import ServicesHero from '@/components/services-page/ServicesHero';
-import ServicesDetailBlock from '@/components/services-page/ServicesDetailBlock';
-import FAQ from '@/components/services-page/FAQ';
 import Image from "next/image";
-import './page.css';
-import { SERVICES_DETAIL } from '@/components/services-page/services-detail-data';
+import { FAQ, SERVICES_DETAIL, ServicesDetailBlock, ServicesHero } from "@/features/services";
+import "./page.css";
 
 export default function ServicesPage() {
   return (
-    <main className="services-page" style={{ background: '#FDFDFD' }}>
-      <Header />
+    <main className="services-page flex-1" style={{ background: "#FDFDFD" }}>
       <ServicesHero />
       <section className="services-detail-section">
         <div className="content-inner services-detail-inner">
@@ -21,16 +15,14 @@ export default function ServicesPage() {
       </section>
       <FAQ />
       <section className="footer-equipment">
-          <Image
-            src="/footer_image.png"
-            alt="Gym Equipment"
-            width={300}
-            height={400}
-            className="footer-equipment-img"
-          />
-        </section>
-
-      <Footer />
+        <Image
+          src="/footer_image.png"
+          alt="Gym Equipment"
+          width={300}
+          height={400}
+          className="footer-equipment-img"
+        />
+      </section>
     </main>
   );
 }

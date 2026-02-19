@@ -1,21 +1,20 @@
-import Header from '@/components/header/Header';
-import Hero from '@/components/hero/Hero';
-import Marquee from '@/components/marquee/Marquee';
-import About from '@/components/about/About';
-import Services from '@/components/services/Services';
-import Results from '@/components/results/Results';
-import Testimonials from '@/components/testimonials/Testimonials';
-import Pricing from '@/components/pricing/Pricing';
-import Commitment from '@/components/commitment/Commitment';
-import CTA from '@/components/cta/CTA';
-import Footer from '@/components/footer/Footer';
 import Image from "next/image";
-import './page.css';
+import {
+  About,
+  Commitment,
+  CTA,
+  Hero,
+  Marquee,
+  Pricing,
+  Results,
+  Services,
+  Testimonials,
+} from "@/features/home";
+import "./page.css";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden">
-      <Header />
+    <main className="min-h-screen flex-1">
       <Hero />
       <Marquee />
       <About />
@@ -25,17 +24,15 @@ export default function Home() {
       <Pricing />
       <Commitment />
       <CTA />
-      {/* Equipment Top Section */}
-  <section className="footer-equipment">
-    <Image
-      src="/footer_image.png"
-      alt="Gym Equipment"
-      width={300}
-      height={400}
-      className="footer-equipment-img"
-    />
-  </section>
-      <Footer />
+      <section className="footer-equipment">
+        <Image
+          src="/footer_image.png"
+          alt="Gym Equipment"
+          width={300}
+          height={400}
+          className="footer-equipment-img"
+        />
+      </section>
     </main>
   );
 }

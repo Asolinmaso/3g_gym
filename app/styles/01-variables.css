@@ -1,0 +1,61 @@
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --navbar-container-px: 1.5rem;
+  --navbar-container-max: 80rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --navbar-container-px: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --navbar-container-px: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --navbar-container-px: 3rem;
+    --navbar-container-max: 87.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --navbar-container-px: 4rem;
+    --navbar-container-max: 100rem;
+  }
+}
+@media (min-width: 1536px) {
+  :root {
+    --navbar-container-px: 5rem;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins), "Poppins", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}

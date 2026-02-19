@@ -1,13 +1,9 @@
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
-import ProductsLaunching from '@/components/products/ProductsLaunching';
+import { ProductsLaunching } from "@/features/products";
 
 export default function ProductsPage() {
   return (
-    <main className="products-page">
-      <Header />
+    <main className="products-page flex-1">
       <ProductsLaunching />
-      <Footer />
     </main>
   );
 }
