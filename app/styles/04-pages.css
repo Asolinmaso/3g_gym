@@ -116,14 +116,26 @@
 }
 
 .services-detail-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 60px;
-  max-width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
-
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 60px !important;
+  max-width: 1240px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--navbar-container-px) !important;
+  padding-right: var(--navbar-container-px) !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 1440px) {
+  .services-detail-inner {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--navbar-container-px);
+    padding-right: var(--navbar-container-px);
+    width: 100%;
+  }
 }
 
 .services-detail {
@@ -131,11 +143,15 @@
 }
 
 .services-detail__row {
-  display: flex;
+ display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 60px;
+  align-items: stretch;
+  gap: 40px;
   width: 100%;
+}
+
+.services-detail__row--tall {
+  min-height: 764px;
 }
 
 .services-detail__row--reverse {
@@ -152,31 +168,51 @@
 
 .services-detail__image-wrap {
   position: relative;
-  width: 100%;
-  max-width: 612px;
-  aspect-ratio: 612 / 704;
+  width: 612px;
   flex-shrink: 0;
   overflow: hidden;
+  align-self: stretch;
 }
 
+@media (max-width: 1024px) {
+  .services-detail__image-wrap {
+    width: 100%;
+    aspect-ratio: 612 / 704;
+    align-self: auto;
+  }
+}
 .services-detail__image {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
 }
 
 .services-detail__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 22px;
-  width: 100%;
-  max-width: 568px;
+  width: 568px;
+  flex-shrink: 0;
+  height: auto;           /* height based on content */
+  gap: 32px;
+  justify-content: space-between;
 }
 
+@media (max-width: 1024px) {
+  .services-detail__content {
+    width: 100%;
+  }
+}
 .services-detail__header {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 14px;
+  gap: 14px; 
+  width: 419px; 
+  height: 40px;
 }
 
 .services-detail__icon {
@@ -195,28 +231,43 @@
 
 .services-detail__line {
   flex: 1;
-  max-width: 365px;
-  height: 1px;
-  background: #7e7c7c;
-  transform: rotate(0.17deg);
+  width: 365px; 
+  height: 0px; 
+  border-top: 3px solid; 
+  border-image-source: linear-gradient(90deg, #C50D3E 15.51%, #FFFFFF 100%); 
+  border-image-slice: 1; 
+  transform: rotate(-0.17deg); 
+  opacity: 1; 
+  max-width: 365px; 
 }
 
 .services-detail__title {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: clamp(2.5rem, 5vw, 80px);
-  line-height: 100px;
-  color: #010101;
+  width: 568px; /* Matches your Figma width */
+  max-height: 180px; /* Matches your Figma height */
+  opacity: 1; /* Matches your Figma opacity */
+  
+  /* Typography Details */
+  font-family: var(--font-poppins), "Poppins", sans-serif; /* Updated from Oswald to Poppins */
+  font-weight: 600; /* SemiBold */
+  font-size: 55px; /* Matches your Figma font-size */
+  line-height: 1.2; /* Matches your Figma line-height */
+  letter-spacing: 0%; /* Matches your Figma letter-spacing */
+  
+  /* Color Logic */
+  color: #010101; /* Default color for 'Strength' */
   margin: 0;
 }
 
+/* Update these in 04-pages.css */
 .services-detail__who,
 .services-detail__benefits,
 .services-detail__duration {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  width: 568px; /* Keep your Figma width */
+  height: auto; /* CHANGE from 100px to auto to fix the overlap */
+  gap: 16px; /* Keep your Figma gap */
 }
 
 .services-detail__subheading {
@@ -257,7 +308,7 @@
 .services-detail__list-item {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-family: "Roboto", system-ui, sans-serif;
   font-weight: 400;
@@ -340,13 +391,21 @@
 .services-faq__title {
   font-family: var(--font-oswald), "Oswald", sans-serif;
   font-weight: 400;
-  font-size: clamp(2.5rem, 5vw, 80px);
-  line-height: 119px;
+  font-size: clamp(1.5rem, 4vw, 56px);
+  line-height: 1.2;
   text-align: center;
   color: #010101;
   margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;                   
 }
 
+@media (max-width: 768px) {
+  .services-faq__title {
+    white-space: normal;                 /* allow wrap on mobile */
+    font-size: clamp(1.5rem, 5vw, 36px);
+  }
+}
 .services-faq__list {
   display: flex;
   flex-direction: column;
@@ -2768,3 +2827,99 @@
 }
 
 /* ========== Mobile responsive overrides (do not affect desktop) ========== */
+
+@media (min-width: 1024px) {
+  .services-detail__row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .services-detail__row--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .services-detail__image-wrap {
+    width: 50%;           /* change from fixed 612px */
+    max-width: 612px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .services-detail__content {
+    flex: 1;
+    min-width: 0;         /* prevents overflow */
+    width: auto;
+    overflow: hidden;
+  }
+
+  .services-detail-inner {
+    max-width: 1240px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--navbar-container-px);
+    padding-right: var(--navbar-container-px);
+    box-sizing: border-box;
+  }
+  .services-detail__title,
+  .services-detail__who,
+  .services-detail__benefits,
+  .services-detail__duration {
+    width: 100%;        /* change from fixed 568px */
+    max-width: 568px;
+  }
+
+  .services-detail__header {
+    width: 100%;        /* change from fixed 419px */
+    max-width: 419px;
+  }
+
+  .services-detail__line {
+    max-width: 100%;    /* remove fixed 365px */
+  }
+}
+
+.services-detail__title-accent {
+  color: #C50D3E;
+}
+
+.services-faq__icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.services-faq__bottom-text {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #010101;
+  text-align: center;
+  margin: 0;
+}
+
+.services-faq__contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #C50D3E;
+  border-radius: 40px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.services-faq__contact-btn:hover {
+  opacity: 0.9;
+}

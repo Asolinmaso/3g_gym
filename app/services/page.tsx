@@ -7,7 +7,7 @@ export default function ServicesPage() {
     <main className="services-page flex-1" style={{ background: "#FDFDFD" }}>
       <ServicesHero />
       <section className="services-detail-section">
-        <div className="content-inner services-detail-inner">
+        <div className="services-detail-inner">
           {SERVICES_DETAIL.map((service) => (
             <ServicesDetailBlock key={service.id} service={service} />
           ))}
