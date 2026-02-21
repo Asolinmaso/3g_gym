@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Oswald, Poppins } from "next/font/google";
-import { Footer, Header } from "@/features/layout";
+import { Header } from "@/features/layout";
+import LayoutContent from "@/components/layout/LayoutContent";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -44,8 +45,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} ${poppins.variable} antialiased min-h-screen flex flex-col overflow-x-hidden`}
       >
         <Header />
-        {children}
-        <Footer />
+        <LayoutContent>{children}</LayoutContent>
       </body>
     </html>
   );

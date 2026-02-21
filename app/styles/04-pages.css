@@ -639,7 +639,7 @@
   font-size: clamp(2.5rem, 10vw, 120px);
   line-height: 1.2;
   text-align: center;
-  background: linear-gradient(177.69deg, #ffffff 50%, rgba(255, 255, 255, 0) 78.15%);
+  background: linear-gradient(177.69deg, #FFFFFF 50%, rgba(255, 255, 255, 0.25) 78.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1777,6 +1777,7 @@
 }
 
 .franchise-empire__inner {
+  position: relative;
   max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
@@ -1794,6 +1795,7 @@
   flex-direction: column;
   gap: 0;
   max-width: 578px;
+  order: 1;
 }
 
 .franchise-empire__heading {
@@ -1875,6 +1877,7 @@
   max-width: 635px;
   height: 593px;
   flex-shrink: 0;
+  order: 2;
 }
 
 /* Rectangle 2: 321×545, left 620px top 138px in frame → behind, red shadow */
@@ -1929,13 +1932,31 @@
   .franchise-empire__inner {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
+  /* Text block: top 28px per design, above first image (138px) */
   .franchise-empire__content {
-    flex: 0 0 auto;
+    flex: 0 0 578px;
+    padding-top: 28px;
+    position: relative;
+    z-index: 3;
+    overflow: visible;
   }
+  /* Headline in Figma is wider than paragraph and overlaps into image area */
+  .franchise-empire__heading {
+    width: 823px;
+    max-width: 823px;
+  }
+  .franchise-empire__heading-line--1 {
+    white-space: nowrap;
+  }
+  .franchise-empire__text {
+    max-width: 578px;
+  }
+  /* Images: first image at top 138px, so text block aligns above it */
   .franchise-empire__images {
     margin-left: auto;
+    flex-shrink: 0;
   }
 }
 
@@ -2244,7 +2265,7 @@
 }
 
 .franchise-blueprint__right-body {
-  padding: 24px 24px 48px 36px;
+  padding: 12px 24px 24px 36px;
   flex: 1;
   max-width: 715px;
   box-sizing: border-box;

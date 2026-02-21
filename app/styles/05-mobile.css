@@ -120,10 +120,13 @@
   }
   .testimonials-text {
     font-size: 18px;
-    line-height: 28px;
+    line-height: 1.6;
   }
-  .testimonials-attribution {
-    font-size: 18px;
+  .testimonials-author {
+    font-size: 16px;
+  }
+  .testimonials-role {
+    font-size: 14px;
   }
 
   /* Commitment */
@@ -1267,9 +1270,11 @@
     aspect-ratio: 646 / 517;
   }
 
-  .testimonials-attribution {
-    font-size: 24px;
-    line-height: 28px;
+  .testimonials-author {
+    font-size: 18px;
+  }
+  .testimonials-role {
+    font-size: 14px;
   }
 
   .pricing-section {
