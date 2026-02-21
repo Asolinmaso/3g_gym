@@ -24,10 +24,10 @@ export default function CareerApply() {
             <div className="career-apply-text">
               <h3 className="career-apply-label">Address</h3>
               <p className="career-apply-value">
-                10, Alamadhi Rd, Vetrivel Nagar, ganesh Nagar, New Vellanur, Tamil Nadu 600062
+                No. 10, ganesh nagar, alamathi main road, vellanur, chennai - 600062
               </p>
               <h3 className="career-apply-label">Contact</h3>
-              <p className="career-apply-value">+91-8190895694</p>
+              <p className="career-apply-value">+91 8190895694 / +91 8778359643</p>
               <p className="career-apply-note">
                 Immediate joining preferred. Salary based on experience & performance.
               </p>

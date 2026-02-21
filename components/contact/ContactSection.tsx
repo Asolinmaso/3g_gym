@@ -27,8 +27,7 @@ export default function ContactSection() {
               <div>
                 <h4>Location</h4>
                 <p>
-                  10, Alamadhi Rd, Vetrivel Nagar, Ganesh Nagar, New Vellanur,
-                  Tamil Nadu 600062
+                  No. 10, ganesh nagar, alamathi main road, vellanur, chennai - 600062
                 </p>
               </div>
             </div>
@@ -50,7 +49,7 @@ export default function ContactSection() {
               </span>
               <div>
                 <h4>Email</h4>
-                <p>Contact@3rdgenerationfitnessstudio.com</p>
+                <p>3rdgenerationfitnessstudio@gmail.com</p>
               </div>
             </div>
 
@@ -71,7 +70,7 @@ export default function ContactSection() {
               </span>
               <div>
                 <h4>Contact</h4>
-                <p>+91 8667378012 / +91 8778359643</p>
+                <p>+91 8190895694 / +91 8778359643</p>
               </div>
             </div>
 

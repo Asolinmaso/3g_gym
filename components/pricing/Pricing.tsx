@@ -14,7 +14,7 @@ function PlanCard({
   sessions?: string;
 }) {
   return (
-    <div className="pricing-card">
+    <a href="#contact" className="pricing-card">
       <h3 className="pricing-card__title">{title}</h3>
       <div className="pricing-card__prices">
         {priceLines.map((line) => (
@@ -28,17 +28,17 @@ function PlanCard({
         {FEATURES.map((f) => (
           <li key={f} className="pricing-card__feature">
             <svg className="pricing-card__icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden>
-              <path fill="rgba(255, 255, 255, 0.9)" d="M20 7h-2.5V5.5a1.5 1.5 0 0 0-3 0V7h-5V5.5a1.5 1.5 0 0 0-3 0V7H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2.5v5.5a1.5 1.5 0 0 0 3 0V13h5v5.5a1.5 1.5 0 0 0 3 0V13H20a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z" />
+              <path d="M20.57 14.86L22 13.43L20.57 12L17 15.57L8.43 7L12 3.43L10.57 2L9.14 3.43L7.71 2L5.57 4.14L4.14 2.71L2.71 4.14L4.14 5.57L2 7.71L3.43 9.14L2 10.57L3.43 12L7 8.43L15.57 17L12 20.57L13.43 22L14.86 20.57L16.29 22L18.43 19.86L19.86 21.29L21.29 19.86L19.86 18.43L22 16.29L20.57 14.86Z" fill="white" fillOpacity="0.9" />
             </svg>
             <span>{f}</span>
           </li>
         ))}
       </ul>
-      <a href="#contact" className="pricing-card__cta">
+      <span className="pricing-card__cta">
         Join Now
         <span className="pricing-card__cta-arrow" aria-hidden>&gt;</span>
-      </a>
-    </div>
+      </span>
+    </a>
   );
 }
 
@@ -75,9 +75,19 @@ export default function Pricing() {
   return (
     <section id="pricing" className="pricing-section">
       <div className="content-inner">
-        <h2 className="pricing-title">
-          Choose the <span className="pricing-title__accent">Plan</span> That Fits Your <span className="pricing-title__accent">Goals</span>
-        </h2>
+        <div className="pricing-title-wrap">
+          <span className="pricing-title-icon" aria-hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.57 14.86L22 13.43L20.57 12L17 15.57L8.43 7L12 3.43L10.57 2L9.14 3.43L7.71 2L5.57 4.14L4.14 2.71L2.71 4.14L4.14 5.57L2 7.71L3.43 9.14L2 10.57L3.43 12L7 8.43L15.57 17L12 20.57L13.43 22L14.86 20.57L16.29 22L18.43 19.86L19.86 21.29L21.29 19.86L19.86 18.43L22 16.29L20.57 14.86Z" fill="white" fillOpacity="0.9" />
+            </svg>
+          </span>
+          <h2 className="pricing-title">
+            <span className="pricing-title__gradient">Choose the </span>
+            <span className="pricing-title__accent">Plan</span>
+            <span className="pricing-title__gradient"> That Fits Your </span>
+            <span className="pricing-title__accent">Goals</span>
+          </h2>
+        </div>
 
         <div className="pricing-tabs">
           {TABS.map((tab) => (

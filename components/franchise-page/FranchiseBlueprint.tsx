@@ -34,7 +34,8 @@ export default function FranchiseBlueprint() {
             </h2>
           </div>
           <div className="franchise-blueprint__right-body">
-            <span className="franchise-blueprint__heading-accent franchise-blueprint__heading-get-started">Get Started</span>
+    
+            <span className="franchise-blueprint__heading-accent franchise-blueprint__heading-get-started">To Get Started</span>
           <p className="franchise-blueprint__text">
             We look for partners who are passionate about fitness and committed to delivering a premium experience.
           </p>

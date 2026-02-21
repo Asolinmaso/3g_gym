@@ -30,13 +30,15 @@ function MarqueeTrack() {
 export default function Marquee() {
   return (
     <section
-      className="bg-black py-4 md:py-5 overflow-hidden"
+      className="marquee-section"
       aria-label="Features ticker"
     >
-      <div className="flex w-max">
-        <div className="animate-marquee flex items-center gap-6 md:gap-10 pr-6 md:pr-10">
-          <MarqueeTrack />
-          <MarqueeTrack />
+      <div className="marquee-container">
+        <div className="marquee-track-wrap flex w-max">
+          <div className="animate-marquee flex items-center gap-6 md:gap-10 pr-6 md:pr-10">
+            <MarqueeTrack />
+            <MarqueeTrack />
+          </div>
         </div>
       </div>
     </section>

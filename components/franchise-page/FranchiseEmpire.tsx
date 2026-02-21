@@ -6,11 +6,11 @@ export default function FranchiseEmpire() {
       <div className="content-inner franchise-empire__inner">
         <div className="franchise-empire__content">
           <h2 className="franchise-empire__heading">
-            <span className="franchise-empire__heading-line">
-              <span className="franchise-empire__heading-black">Build your</span>{" "}
+            <span className="franchise-empire__heading-line franchise-empire__heading-line--1">
+              <span className="franchise-empire__heading-black">Build Your</span>{" "}
               <span className="franchise-empire__accent">Fitness Empire</span>
             </span>
-            <span className="franchise-empire__heading-line">
+            <span className="franchise-empire__heading-line franchise-empire__heading-line--2">
               <span className="franchise-empire__heading-black">At</span>{" "}
               <span className="franchise-empire__accent">3RD GEN</span>
             </span>

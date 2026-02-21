@@ -15,8 +15,8 @@ export default function About() {
             </div>
 
             <h2 className="about-heading">
-              More Than a <span style={{ color: "#c50d3e" }}>Gym </span>.<br />{" "}
-              A Place to<span style={{ color: "#c50d3e" }}> Transform</span>.
+              <span className="about-heading__line">More Than a <span className="about-heading__accent">Gym </span>.</span>
+              <span className="about-heading__line">A Place to <span className="about-heading__accent">Transform</span>.</span>
             </h2>
 
             <div className="about-content-row">

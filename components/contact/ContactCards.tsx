@@ -14,7 +14,7 @@ export default function ContactCards() {
             </span>
             <h3 className="contact-card__title">Contact</h3>
             <p className="contact-card__text">
-              +91 86673 78012
+              +91 8190895694
               <br />
               +91 8778359643
             </p>
@@ -32,7 +32,7 @@ export default function ContactCards() {
               </svg>
             </span>
             <h3 className="contact-card__title">Mail</h3>
-            <p className="contact-card__text">Contact@3rdgenerationfitnessstudio.com</p>
+            <p className="contact-card__text">3rdgenerationfitnessstudio@gmail.com</p>
           </article>
           <article className="contact-card">
             <span className="contact-card__icon contact-card__icon--address" aria-hidden>
@@ -48,7 +48,7 @@ export default function ContactCards() {
             </span>
             <h3 className="contact-card__title">Address</h3>
             <p className="contact-card__text">
-              10, Alamadhi Rd, Vetrivel Nagar, ganesh Nagar, New Vellanur, Tamil Nadu 600062
+              No. 10, ganesh nagar, alamathi main road, vellanur, chennai - 600062
             </p>
           </article>
         </div>
