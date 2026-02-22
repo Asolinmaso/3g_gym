@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CTA() {
   return (
@@ -10,14 +11,14 @@ export default function CTA() {
             Train with expert coaches, modern equipment, and programs designed
             to deliver real results.
           </p>
-          <a href="#contact" className="cta-btn">
+          <Link href="/contact" className="cta-btn">
             Contact Us
             <span className="cta-btn-arrow" aria-hidden>
               <svg width="9" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L8 8L1 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               </svg>
             </span>
-          </a>
+          </Link>
         </div>
         <div className="cta-image">
           <Image

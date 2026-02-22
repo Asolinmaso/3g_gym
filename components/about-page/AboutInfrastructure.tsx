@@ -10,7 +10,7 @@ export default function AboutInfrastructure() {
             <span className="about-infra__line" aria-hidden />
           </div>
           <h2 className="about-infra__heading">
-            Explore Our <span className="about-infra__heading-accent">Gym Space</span>
+            Explore <span className="about-infra__heading-accent">Our Gym Space</span>
           </h2>
           <p className="about-infra__text">
             From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.

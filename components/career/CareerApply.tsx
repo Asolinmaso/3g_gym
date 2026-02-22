@@ -22,15 +22,25 @@ export default function CareerApply() {
               />
             </div>
             <div className="career-apply-text">
-              <h3 className="career-apply-label">Address</h3>
-              <p className="career-apply-value">
-                No. 10, ganesh nagar, alamathi main road, vellanur, chennai - 600062
-              </p>
-              <h3 className="career-apply-label">Contact</h3>
-              <p className="career-apply-value">+91 8190895694 / +91 8778359643</p>
-              <p className="career-apply-note">
-                Immediate joining preferred. Salary based on experience & performance.
-              </p>
+              <div className="career-apply-block">
+                <h3 className="career-apply-label">Address</h3>
+                <p className="career-apply-value">
+                  No. 10, ganesh nagar, alamathi main road, vellanur, chennai - 600062
+                </p>
+              </div>
+              <div className="career-apply-block">
+                <h3 className="career-apply-label">Contact</h3>
+                <p className="career-apply-value">+91 8190895694 / +91 8778359643</p>
+              </div>
+              <div className="career-apply-block">
+                <h3 className="career-apply-label">E-mail</h3>
+                <p className="career-apply-value">3rdgenerationfitnessstudio@gmail.com</p>
+              </div>
+              <div className="career-apply-block">
+                <p className="career-apply-note">
+                  Immediate joining preferred. Salary based on experience & performance.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -47,6 +57,7 @@ export default function CareerApply() {
                 </div>
                 <input type="email" placeholder="E-mail" className="career-apply-input" />
                 <input type="text" placeholder="Job Position" className="career-apply-input" />
+                <input type="text" placeholder="Location" className="career-apply-input" />
                 <textarea placeholder="Message" className="career-apply-textarea" rows={4} />
                 <div className="career-apply-upload">
                   <div className="career-apply-upload-row">
@@ -74,9 +85,11 @@ export default function CareerApply() {
                     Drag & drop your file here (PDF, DOCX, JPG, PNG) Max size: 5MB
                   </p>
                 </div>
-                <button type="submit" className="career-apply-submit">
-                  Submit
-                </button>
+                <div className="career-apply-submit-wrap">
+                  <button type="submit" className="career-apply-submit">
+                    Submit
+                  </button>
+                </div>
               </div>
             </form>
           </div>

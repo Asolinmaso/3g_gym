@@ -196,7 +196,12 @@ export default function ServicesDetailBlock({
             <IconBlock type={icon} />
             <span className="services-detail__line" />
           </div>
-          <h2 className="services-detail__title">{title}</h2>
+          <h2 className="services-detail__title">
+  {title.split(' ').slice(0, -1).join(' ')}{' '}
+  <span style={{ color: '#C50D3E' }}>
+    {title.split(' ').slice(-1)[0]}
+  </span>
+</h2>
           <div className="services-detail__who">
             <h3 className="services-detail__subheading">Who It&apos;s For</h3>
             <p className="services-detail__text">{whoItFor}</p>
@@ -226,7 +231,7 @@ export default function ServicesDetailBlock({
             </p>
           </div>
           <a href="/contact" className="services-detail__cta">
-            Enquire Now <span aria-hidden>&gt;&gt;&gt;</span>
+            Enquire Now <span aria-hidden>&gt;</span>
           </a>
         </div>
       </div>

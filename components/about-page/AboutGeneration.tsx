@@ -22,7 +22,10 @@ export default function AboutGeneration() {
             />
             <div className="about-gen__card">
               <span className="about-gen__card-num">09+</span>
-              <span className="about-gen__card-label">Years Of Fitness Experience</span>
+              <span className="about-gen__card-label">
+                <span className="about-gen__card-label-line1">Years Of</span>
+                <span className="about-gen__card-label-line2">Fitness Experience</span>
+              </span>
             </div>
           </div>
           <div className="about-gen__right">
@@ -30,9 +33,10 @@ export default function AboutGeneration() {
               <span className="about-gen__line" aria-hidden />
               <span className="about-gen__subtitle">ABOUT 3RD GEN</span>
             </div>
-            <h2 className="about-gen__heading">
-              Always Provide Best Fitness Trainers.
-            </h2>
+            <h3 className="about-gen__heading">
+              <span className="about-gen__heading-line">Always Provide Best</span>
+              <span className="about-gen__heading-accent"> Fitness Trainers.</span>
+            </h3>
             <p className="about-gen__text">
               With over 9 years of experience, 3rd Gen Fitness delivers expert training designed to transform your strength, endurance, and confidence. Our certified trainers combine modern techniques with personalized programs to help you achieve real, lasting results in a motivating environment.
             </p>
