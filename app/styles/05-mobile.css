@@ -40,41 +40,33 @@
   .services-section {
     padding: 48px 0 56px;
   }
-
   .services-heading {
     font-size: clamp(1.75rem, 4vw, 40px);
   }
-
   .services-desc {
     font-size: 18px;
     line-height: 26px;
   }
-
   .services-grid {
     gap: 1rem;
   }
-
   .services-cards-inner {
     padding: 56px 1rem 64px;
   }
-
   .services-curve {
     height: 80px;
   }
-
   .services-card {
     height: clamp(260px, 70vw, 420px);
     max-width: 100%;
   }
-
   .services-grid--scroll .services-card {
     flex: 0 0 min(320px, 85vw);
     width: min(320px, 85vw);
-    height: clamp(300px, 60vw, 400px);  /* fix from hardcoded 400px */
+    height: 400px;
   }
-
   .services-card__title {
-    font-size: clamp(1rem, 3vw, 1.25rem);  /* scale with screen */
+    font-size: 1.25rem;
     line-height: 1.3;
   }
 
@@ -277,6 +269,66 @@
   .about-vm__watermark {
     font-size: clamp(2rem, 6vw, 64px);
     line-height: 1.2;
+  }
+
+  /* About Founder – mobile alignment (match screenshot flow) */
+  .about-founder {
+    padding: 48px 0 56px;
+  }
+  .about-founder__inner {
+    min-height: auto;
+  }
+  /* Show copy first, image second on mobile */
+  .about-founder__content {
+    order: 1;
+    padding: 0 var(--navbar-container-px, 16px) 24px;
+  }
+  .about-founder__image-wrap {
+    order: 2;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 400 / 444;
+  }
+  .about-founder__subtitle-wrap {
+    justify-content: flex-start;
+  }
+  .about-founder__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .about-founder__heading {
+    font-size: 32px;
+    line-height: 40px;
+    text-align: left;
+  }
+  .about-founder__text {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 404px;
+  }
+  .about-founder__deco {
+    width: 105px;
+    height: 105px;
+    right: 0;
+    top: 0;
+    opacity: 0.6;
+  }
+  /* Red name card overlay – tighter, centered on photo */
+  .about-founder__red-box {
+    width: min(317px, calc(100% - 40px));
+    height: auto;
+    padding: 16px;
+    border-radius: 0;
+  }
+  .about-founder__name {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 4px;
+  }
+  .about-founder__title {
+    font-size: 18px;
+    line-height: 21px;
   }
   .about-wcu {
     padding: 48px 0 56px;
@@ -805,23 +857,54 @@
   .about-vm__text {
     font-size: 16px;
   }
+  /* Why Choose Us – mobile alignment per Figma */
+  .about-wcu__header {
+    align-items: center;
+    text-align: center;
+  }
+  .about-wcu__header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+  .about-wcu__subtitle-wrap {
+    justify-content: center;
+  }
   .about-wcu__subtitle {
-    font-size: 24px;
+    font-size: 16px;
+    line-height: 24px;
   }
   .about-wcu__heading {
-    font-size: clamp(1.5rem, 6vw, 36px);
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
   }
   .about-wcu__text {
     font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    max-width: 100%;
   }
   .about-wcu__grid {
-    gap: 1.5rem;
+    gap: 24px;
+    justify-items: center;
+  }
+  .about-wcu__card {
+    width: 100%;
+    max-width: min(400px, calc(100vw - 2rem));
+    min-height: min(342px, 85vw);
   }
   .about-wcu__card-title {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
   }
   .about-wcu__card-text {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #F1E6E6;
+    max-width: 100%;
   }
   .about-trainers__subtitle {
     font-size: 24px;
@@ -1203,6 +1286,52 @@
   .results-title {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  /* About page (mobile – compact banner) */
+  .about-page-hero {
+    min-height: 380px;
+    height: auto;
+  }
+  .about-page-hero__inner {
+    min-height: 380px;
+  }
+  .about-page-hero__title {
+    font-size: clamp(48px, 12vw, 64px);
+    line-height: 96px;
+  }
+
+  /* Vision / Mission / Value cards + "PROFESSIONAL FITNESS" heading */
+  .about-vm {
+    padding: 48px 0 56px;
+  }
+  .about-vm__grid {
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .about-vm__card {
+    width: min(400px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
+    padding: 40px 20px;
+  }
+  .about-vm__icon-wrap {
+    border-radius: 0;
+  }
+  .about-vm__text {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 330px;
+  }
+  .about-vm__watermark {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 55px;
+    text-transform: uppercase;
+    color: #25050D;
+    margin: 0;
   }
   .results-subtitle {
     font-size: 18px;
