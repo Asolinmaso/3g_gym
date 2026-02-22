@@ -33,7 +33,7 @@ export default function Header() {
             {/* Logo – left, contained */}
             <div className="flex items-center shrink-0">
               <Image
-                src="/logo.png"
+                src="/logo1.png"
                 alt="3RD GENERATION FITNESS STUDIO"
                 width={180}
                 height={80}
