@@ -31,9 +31,6 @@ export default function AboutInfrastructure() {
           <div className="about-infra__image-wrap">
             <Image src="/images/about_page/about_infrastructure.png" alt="Gym space" fill className="about-infra__image" sizes="748px" />
           </div>
-          <div className="about-infra__red-bar">
-            <span className="about-infra__vertical-label">INFRASTRUCTURE</span>
-          </div>
         </div>
       </div>
     </section>

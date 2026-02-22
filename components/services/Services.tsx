@@ -4,7 +4,7 @@ import Image from 'next/image';
 const SERVICES = [
   { title: 'Weight Gain Program', image: '/services/weight_gain.png' },
   { title: 'Group Classes', image: '/services/group_class.png' },
-  { title: 'Strength training', image: '/services/strength_home.png' },
+  { title: 'Strength Training', image: '/services/strength_home.png' },
   { title: 'Weight Loss Program', image: '/services/weight_loss_home.png' },
   { title: 'Functional Training', image: '/services/functional_training.png' },
   { title: 'Personal Training', image: '/services/personel_train.png' },
