@@ -41,8 +41,11 @@
 }
 
 .pricing-title__accent {
-  color: #c50d3e;
-}
+  background: linear-gradient(0deg, #010101 19.5%, #C50D3E 49.75%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;}
 
 .pricing-title__gradient {
   background: linear-gradient(177.69deg, #FFFFFF 50%, #010101 78.15%);
@@ -2316,9 +2319,9 @@
 }
 
 .career-apply-info {
+  gap: 24px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .career-apply-image-wrap {
@@ -2336,37 +2339,47 @@
 .career-apply-text {
   display: flex;
   flex-direction: column;
+
+  align-items: flex-start;
   gap: 24px;
+  padding: 0;
+  text-align: left;
+}
+
+.career-apply-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .career-apply-label {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 500;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
   font-size: 32px;
-  line-height: 47px;
+  line-height: 32px;
   color: #000000;
   margin: 0;
 }
 
-.career-apply-value,
+.career-apply-value {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: #7E7C7C;
+  margin: 0;
+  text-align: left;
+}
+
 .career-apply-note {
   font-family: "Roboto", system-ui, sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 30px;
-  color: #7e7c7c;
+  font-size: 22px;
+  line-height: 28px;
+  color: #7E7C7C;
   margin: 0;
-}
-
-@media (min-width: 768px) {
-  .career-apply-value,
-  .career-apply-note {
-    font-size: 24px;
-  }
-
-  .career-apply-note {
-    line-height: 28px;
-  }
+  text-align: left;
 }
 
 .career-apply-form-wrap {
@@ -2385,25 +2398,26 @@
 }
 
 .career-apply-form-title {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 59px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 60px;
   text-align: center;
-  color: #c50d3e;
+  color: #C50D3E;
   margin: 0;
-}
-
-@media (min-width: 768px) {
-  .career-apply-form-title {
-    font-size: 40px;
-  }
 }
 
 .career-apply-form-fields {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 24px;
+}
+
+.career-apply-submit-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .career-apply-input,
@@ -2522,15 +2536,15 @@
   justify-content: center;
   padding: 12px 24px;
   width: 173px;
-  height: 60px;
-  background: #c50d3e;
+  height: 54px;
+  background: #C50D3E;
   border-radius: 32px;
   border: none;
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
-  color: #ffffff;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #FFFFFF;
   cursor: pointer;
 }
 

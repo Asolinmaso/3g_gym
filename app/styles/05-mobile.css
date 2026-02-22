@@ -28,12 +28,23 @@
     padding: 48px 0 56px;
   }
   .about-heading {
-    font-size: clamp(1.75rem, 5vw, 48px);
+    font-size: clamp(1.5rem, 5vw, 42px);
     line-height: 1.2;
+  }
+  .about-heading__line {
+    white-space: nowrap;
   }
   .about-desc {
     font-size: 18px;
     line-height: 28px;
+  }
+  .about-bottom-image {
+    min-height: 140px;
+    height: auto;
+    aspect-ratio: 1440 / 300;
+  }
+  .about-bottom-img {
+    object-fit: contain;
   }
 
   /* Services section – home */
@@ -63,10 +74,10 @@
   .services-grid--scroll .services-card {
     flex: 0 0 min(320px, 85vw);
     width: min(320px, 85vw);
-    height: 400px;
+    height: clamp(300px, 60vw, 400px);
   }
   .services-card__title {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
     line-height: 1.3;
   }
 
@@ -235,6 +246,10 @@
   }
   .about-gen {
     padding: 48px 0 56px;
+  }
+  .about-gen__image-wrap {
+    min-height: 440px;
+    height: min(580px, 85vh);
   }
   .about-gen__heading {
     font-size: clamp(1.75rem, 5vw, 48px);
@@ -553,8 +568,11 @@
     padding: 40px 0 48px;
   }
   .about-heading {
-    font-size: clamp(1.5rem, 8vw, 36px);
-    line-height: 1.15;
+    font-size: clamp(1.25rem, 6.5vw, 34px);
+    line-height: 1.2;
+  }
+  .about-heading__line {
+    white-space: nowrap;
   }
   .about-desc {
     max-width: 100%;
@@ -824,6 +842,10 @@
   .about-gen__subtitle {
     font-size: 24px;
   }
+  .about-gen__image-wrap {
+    min-height: 400px;
+    height: min(520px, 75vh);
+  }
   .about-gen__heading {
     font-size: clamp(1.5rem, 6vw, 36px);
   }
@@ -862,11 +884,8 @@
     align-items: center;
     text-align: center;
   }
-  .about-wcu__header-left {
-    display: flex;
-    flex-direction: column;
+  .about-wcu__header-row {
     align-items: center;
-    max-width: 100%;
   }
   .about-wcu__subtitle-wrap {
     justify-content: center;
@@ -1110,6 +1129,15 @@
   .career-apply-layout {
     flex-direction: column;
   }
+  .career-apply-label {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .career-apply-value,
+  .career-apply-note {
+    font-size: 18px;
+    line-height: 26px;
+  }
   .contact-form-wrap {
     padding: 1.5rem;
   }
@@ -1239,8 +1267,11 @@
     padding: 2rem 1rem 2.5rem;
   }
   .about-heading {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: clamp(1.125rem, 6vw, 28px);
+    line-height: 1.25;
+  }
+  .about-heading__line {
+    white-space: nowrap;
   }
   .about-desc {
     font-size: 18px;
@@ -1254,6 +1285,13 @@
     width: 148px;
     height: 48px;
     font-size: 16px;
+  }
+  .about-bottom-image {
+    min-height: 120px;
+    aspect-ratio: 16 / 5;
+  }
+  .about-bottom-img {
+    object-fit: contain;
   }
 
   .services-section {
@@ -1286,6 +1324,15 @@
   .results-title {
     font-size: 32px;
     line-height: 40px;
+  }
+  .about-gen__image-wrap {
+    min-height: 360px;
+    height: min(480px, 70vh);
+  }
+  .about-gen__card-label-line1,
+  .about-gen__card-label-line2 {
+    font-size: 18px;
+    line-height: 26px;
   }
 
   /* About page (mobile – compact banner) */
@@ -1330,7 +1377,7 @@
     font-size: 38px;
     line-height: 55px;
     text-transform: uppercase;
-    color: #25050D;
+    color: #010101;
     margin: 0;
   }
   .results-subtitle {
