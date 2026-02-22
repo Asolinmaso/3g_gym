@@ -40,33 +40,41 @@
   .services-section {
     padding: 48px 0 56px;
   }
+
   .services-heading {
     font-size: clamp(1.75rem, 4vw, 40px);
   }
+
   .services-desc {
     font-size: 18px;
     line-height: 26px;
   }
+
   .services-grid {
     gap: 1rem;
   }
+
   .services-cards-inner {
     padding: 56px 1rem 64px;
   }
+
   .services-curve {
     height: 80px;
   }
+
   .services-card {
     height: clamp(260px, 70vw, 420px);
     max-width: 100%;
   }
+
   .services-grid--scroll .services-card {
     flex: 0 0 min(320px, 85vw);
     width: min(320px, 85vw);
-    height: 400px;
+    height: clamp(300px, 60vw, 400px);  /* fix from hardcoded 400px */
   }
+
   .services-card__title {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);  /* scale with screen */
     line-height: 1.3;
   }
 

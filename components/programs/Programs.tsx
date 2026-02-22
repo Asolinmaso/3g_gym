@@ -1,6 +1,6 @@
 export default function Programs() {
   const programs = [
-    { id: 1, title: 'Strength Training', image: 'strength' },
+    { id: 1, title: '', image: 'strength' },
     { id: 2, title: 'Cardio Blast', image: 'cardio' },
     { id: 3, title: 'Yoga & Flexibility', image: 'yoga' },
     { id: 4, title: 'Crossfit', image: 'crossfit' },

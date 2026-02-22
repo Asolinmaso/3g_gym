@@ -37,7 +37,17 @@ export default function FAQ() {
   return (
     <section className="services-faq">
       <div className="content-inner services-faq__inner">
-        <h2 className="services-faq__title">Frequently Asked Questions</h2>
+         <div className="services-faq__icon-wrap" aria-hidden>
+          <svg width="120" height="120" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="10" width="38" height="30" rx="6" fill="#C50D3E"/>
+            <text x="10" y="31" fontSize="16" fontWeight="bold" fill="white">Q</text>
+            <rect x="20" y="0" width="38" height="30" rx="6" fill="#C50D3E"/>
+            <text x="30" y="21" fontSize="16" fontWeight="bold" fill="white">A</text>
+          </svg>
+        </div>
+        <h2 className="services-faq__title">
+          Frequently Asked <span style={{ color: '#C50D3E' }}>Questions</span>
+        </h2>
         <div className="services-faq__list">
           {FAQ_ITEMS.map((item) => {
             const isOpen = openId === item.id;
@@ -56,9 +66,15 @@ export default function FAQ() {
                 >
                   <span>{item.question}</span>
                   <span className="services-faq__chevron" aria-hidden>
-                    <svg width="12" height="22" viewBox="0 0 12 22" fill="currentColor">
-                      <path d="M1 1l10 10L1 21" stroke="currentColor" strokeWidth="2" fill="none" />
-                    </svg>
+                    {isOpen ? (
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M1 10l6-6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    ) : (
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M1 4l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    )}
                   </span>
                 </button>
                 <div
@@ -74,7 +90,14 @@ export default function FAQ() {
             );
           })}
         </div>
+        <p className="services-faq__bottom-text">
+          Still have questions? Contact us and we&apos;ll be happy to help.
+        </p>
+        <a href="/contact" className="services-faq__contact-btn">
+          Contact Us <span aria-hidden>&gt;</span>
+        </a>
       </div>
+      
     </section>
   );
 }
