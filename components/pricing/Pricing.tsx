@@ -76,6 +76,7 @@ export default function Pricing() {
     <section id="pricing" className="pricing-section">
       <div className="content-inner">
         <div className="pricing-title-wrap">
+         
           <h2 className="pricing-title">
             <span className="pricing-title__gradient">Choose the </span>
             <span className="pricing-title__accent">Plan</span>

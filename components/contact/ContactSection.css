@@ -26,8 +26,8 @@
 
 .contact-item {
   display: flex;
-  gap: 1rem;
-  margin-bottom: clamp(1.5rem, 3vw, 48px);
+  gap: 12px;
+  margin-bottom: 40px;
   align-items: flex-start;
 }
 
@@ -42,32 +42,38 @@
 }
 
 .contact-icon svg {
-  width: 1.5rem;
+  width: 28px;
   height: auto;
 }
 
 .contact-item h4 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(1.125rem, 2vw, 24px);
-  font-weight: 700;
-  color: #111;
+  margin: 0 0 8px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  color: #010101;
 }
 
 .contact-item p {
   margin: 0;
-  color: #6b6b6b;
-  line-height: 1.6;
-  font-size: clamp(0.875rem, 1.5vw, 15px);
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: #7E7C7C;
 }
 
 .contact-form-wrap {
   flex: 1 1 100%;
   min-width: 0;
+  max-width: 500px;
 }
 
 @media (min-width: 992px) {
   .contact-form-wrap {
-    flex: 1 1 min(55%, 600px);
+    flex: 0 0 500px;
+    max-width: 500px;
   }
 }
 
