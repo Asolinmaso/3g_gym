@@ -93,7 +93,8 @@
 .pricing-grid {
   display: grid;
   gap: 24px;
-  justify-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .pricing-grid--four {
@@ -270,7 +271,7 @@
   }
 
   .pricing-grid--three {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, max-content);
   }
 }
 
@@ -280,11 +281,11 @@
   }
 
   .pricing-grid--four {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, max-content);
   }
 
   .pricing-grid--two {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, max-content);
   }
 }
 
@@ -3267,7 +3268,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, rgba(1, 1, 1, 0.164), rgba(1, 1, 1, 0.011)),
-    url("/footer_bg.png") -280px -302px / 2000px 1333px no-repeat;
+              url("/footer_bg.png") center center / cover no-repeat;
   pointer-events: none;
   z-index: 0;
 }
