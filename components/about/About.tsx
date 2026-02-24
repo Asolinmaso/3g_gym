@@ -1,5 +1,66 @@
+"use client";
 import Image from "next/image";
 import "./about.css";
+import { useState, useEffect, useRef } from "react";
+
+interface CounterProps {
+  target: string; 
+  duration?: number;
+}
+
+export const Counter = ({ target, duration = 2000 }: CounterProps) => {
+  const [count, setCount] = useState(0);
+  const countRef = useRef<HTMLSpanElement>(null);
+  const hasStarted = useRef(false);
+
+  const targetNumber = parseInt(target.replace(/[^0-9]/g, ""), 10);
+  const suffix = target.replace(/[0-9]/g, "");
+
+  useEffect(() => {
+    let animationFrameId: number;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted.current) {
+          hasStarted.current = true;
+          let startTime: number | null = null;
+
+          const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            
+            // Easing function for smoother finish
+            const easeOutQuad = (t: number) => t * (2 - t);
+            const currentCount = Math.floor(easeOutQuad(progress) * targetNumber);
+            
+            setCount(currentCount);
+
+            if (progress < 1) {
+              animationFrameId = requestAnimationFrame(animate);
+            }
+          };
+
+          animationFrameId = requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (countRef.current) observer.observe(countRef.current);
+    
+    return () => {
+      observer.disconnect();
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
+  }, [targetNumber, duration]);
+
+  return (
+    <span ref={countRef}>
+      {target.startsWith('0') && count < 10 ? `0${count}` : count}
+      {suffix}
+    </span>
+  );
+};
 
 export default function About() {
   return (
@@ -77,18 +138,20 @@ export default function About() {
   </div>
 
   <div className="about-stats-content">
-    {[
-      { number: "1000+", label: "People Trained" },
-      { number: "09+", label: "Years Experience" },
-      { number: "100+", label: "Lives Transformed" },
-      { number: "10+", label: "Awards & Achievements" },
-    ].map((stat, index) => (
-      <div key={index} className="stat-item">
-        <h3 className="stat-number">{stat.number}</h3>
-        <p className="stat-label">{stat.label}</p>
-      </div>
-    ))}
-  </div>
+  {[
+    { number: "1000+", label: "People Trained" },
+    { number: "09+", label: "Years Experience" },
+    { number: "100+", label: "Lives Transformed" },
+    { number: "10+", label: "Awards & Achievements" },
+  ].map((stat, index) => (
+    <div key={index} className="stat-item">
+      <h3 className="stat-number">
+        <Counter target={stat.number} />
+      </h3>
+      <p className="stat-label">{stat.label}</p>
+    </div>
+  ))}
+</div>
   <div className="mobile-bars mobile-bars-bottom">
     <div className="bar thick" />
     <div className="bar thin" />
