@@ -9,7 +9,9 @@ export default function FranchiseContact() {
             <span className="franchise-contact__subtitle">Get In Touch</span>
             <span className="franchise-contact__line" aria-hidden />
           </div>
-          <h2 className="franchise-contact__heading">Let&apos;s Build Your Fitness Goals Together.</h2>
+          <h2 className="franchise-contact__heading">
+            Let&apos;s Build Your <span style={{ color: '#C50D3E' }}>Fitness Goals</span> Together.
+          </h2>
           <div className="franchise-contact__blocks">
             <div className="franchise-contact__block">
               <div className="franchise-contact__icon" aria-hidden>

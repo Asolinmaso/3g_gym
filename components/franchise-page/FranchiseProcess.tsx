@@ -40,7 +40,9 @@ export default function FranchiseProcess() {
           <span className="franchise-process__subtitle">THE JOURNEY</span>
           <span className="franchise-process__line" aria-hidden />
         </div>
-        <h2 className="franchise-process__heading">Franchise Process</h2>
+        <h2 className="franchise-process__heading">
+          Franchise <span style={{ color: '#C50D3E' }}>Process</span>
+        </h2>
         <div className="franchise-process__steps">
           {STEPS.map((step) => (
             <div key={step.num} className={`franchise-process__step ${step.red ? 'franchise-process__step--red' : 'franchise-process__step--black'}`}>

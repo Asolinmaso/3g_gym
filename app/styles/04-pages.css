@@ -1983,11 +1983,10 @@
 }
 
 .franchise-empire__content {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 578px;
-  order: 1;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .franchise-empire__heading {
@@ -2236,7 +2235,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  justify-content: end;
+  justify-content: center;
+  text-align: center;
   color: transparent;
 }
 
@@ -2906,8 +2906,8 @@
   font-family: "Roboto", system-ui, sans-serif;
   font-size: 20px;
   line-height: 23px;
-  color: #010101;
-  background: #ffffff;
+  color: #ffffff;
+  background: transparent;
   box-sizing: border-box;
 }
 
@@ -2924,7 +2924,7 @@
   padding: 0 16px;
   border: 1px solid #d9d9d9;
   border-radius: 8px;
-  background: #ffffff;
+  background: transparent;
   box-sizing: border-box;
 }
 
@@ -2946,6 +2946,10 @@
   border: none;
   padding: 0;
   height: auto;
+  background: transparent;
+  border: none;
+  border-left: 1px solid #D9D9D9;
+  padding-left: 10px;
 }
 
 .franchise-contact__input--contact:focus {
