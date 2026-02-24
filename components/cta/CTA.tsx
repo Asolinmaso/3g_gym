@@ -12,7 +12,7 @@ export default function CTA() {
             to deliver real results.
           </p>
           <Link href="/contact" className="cta-btn">
-            Contact Us
+            Know More
             <span className="cta-btn-arrow" aria-hidden>
               <svg width="9" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L8 8L1 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />

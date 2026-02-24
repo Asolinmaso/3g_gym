@@ -16,3 +16,183 @@
   object-fit: cover;
   object-position: center;
 }
+
+@media (max-width: 768px) {
+  .about-bottom-image {
+    height: auto;
+    aspect-ratio: 16 / 4;
+    overflow: visible;
+  }
+
+  .about-bottom-img {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+/* ===== Stats Section ===== */
+
+.about-stats-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 1;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.about-stats-bg {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.about-stats-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.stat-item {
+  text-align: center;
+  color: #ffffff;
+}
+
+.stat-number {
+  font-size: 64px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 20px;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1023px) {
+
+  .about-stats-section {
+    height: 120px;
+  }
+
+  .about-stats-content {
+    padding: 0 20px;
+    margin-left: 20px;
+  }
+
+  .stat-number {
+    font-size: 26px;   /* reduced more */
+  }
+
+  .stat-label {
+    font-size: 12px;   /* smaller */
+    line-height: 1.2;
+  }
+  .stat-item{
+    margin-right: 10px;
+  }
+}
+
+.mobile-bars {
+  display: none;
+}
+
+@media (max-width: 480px) {
+
+  /* ===== RESET ===== */
+  .about-stats-section {
+    position: relative;
+    height: auto;
+    aspect-ratio: unset;
+    overflow: visible;
+    padding: 40px 0;
+    background: #ffffff;
+  }
+
+  /* Hide desktop background image */
+  .about-stats-bg {
+    display: none;
+  }
+
+  /* ===== CENTER PILLAR (unchanged logic) ===== */
+  .about-stats-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 160px;
+    margin: 6px auto;
+    padding: 55px 12px;
+    background: linear-gradient(
+      180deg,
+      #d31245 0%,
+      #a6002f 100%
+    );
+  }
+
+  .stat-number {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    margin-top: 6px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* ===== MOBILE BARS (REAL DIVS) ===== */
+
+  .mobile-bars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .mobile-bars-top {
+    margin-bottom: 6px;
+  }
+
+  .mobile-bars-bottom {
+    margin-top: 6px;
+  }
+
+  .bar {
+    height: 20px;
+    border-radius: 6px;
+    background: linear-gradient(
+      180deg,
+      #d31245 0%,
+      #a6002f 100%
+    );
+  }
+
+  /* 70% width thick bar */
+  /* First bar (smaller) */
+  .mobile-bars-top .bar:first-child {
+    width: 60%;
+  }
+
+  /* Second bar (bigger) */
+  .mobile-bars-top .bar:last-child {
+    width: 70%;
+  }
+
+  /* ===== BOTTOM SECTION ===== */
+  /* First bar (bigger) */
+  .mobile-bars-bottom .bar:first-child {
+    width: 70%;
+  }
+
+  /* Second bar (smaller) */
+  .mobile-bars-bottom .bar:last-child {
+    width: 60%;
+  }
+
+}
