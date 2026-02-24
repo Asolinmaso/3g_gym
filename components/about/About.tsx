@@ -62,15 +62,38 @@ export default function About() {
         
       </div>
       {/* Bottom Stats Image */}
-        <div className="about-bottom-image">
-          <Image
-            src="/statsp.png" // <-- your stats strip image path
-            alt="About statistics"
-            fill
-            className="about-bottom-img"
-            
-          />
-        </div>
+        {/* ===== Stats Section ===== */}
+<div className="about-stats-section">
+  <Image
+    src="/images/home_page/Plain-stat-strip.png"
+    alt="Statistics background"
+    fill
+    priority
+    className="about-stats-bg"
+  />
+  <div className="mobile-bars mobile-bars-top">
+    <div className="bar thick" />
+    <div className="bar thin" />
+  </div>
+
+  <div className="about-stats-content">
+    {[
+      { number: "1000+", label: "People Trained" },
+      { number: "09+", label: "Years Experience" },
+      { number: "100+", label: "Lives Transformed" },
+      { number: "10+", label: "Awards & Achievements" },
+    ].map((stat, index) => (
+      <div key={index} className="stat-item">
+        <h3 className="stat-number">{stat.number}</h3>
+        <p className="stat-label">{stat.label}</p>
+      </div>
+    ))}
+  </div>
+  <div className="mobile-bars mobile-bars-bottom">
+    <div className="bar thick" />
+    <div className="bar thin" />
+  </div>
+</div>
       
     </section>
   );
