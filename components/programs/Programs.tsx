@@ -1,3 +1,7 @@
+'use client';
+
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
+
 export default function Programs() {
   const programs = [
     { id: 1, title: 'Strength Training', image: 'strength' },
@@ -11,6 +15,7 @@ export default function Programs() {
   return (
     <section id="programs" className="py-20 bg-white">
       <div className="content-inner">
+        <AnimateOnScroll>
         <div className="mb-12">
           <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Our Programs</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -24,7 +29,8 @@ export default function Programs() {
             View All Programs
           </button>
         </div>
-
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.15}>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {programs.map((program) => (
             <div
@@ -64,6 +70,7 @@ export default function Programs() {
             </div>
           ))}
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

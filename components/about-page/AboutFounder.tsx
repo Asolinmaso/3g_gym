@@ -1,9 +1,12 @@
+'use client';
+
 import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 export default function AboutFounder() {
   return (
     <section className="about-founder">
-      <div className="about-founder__inner">
+      <AnimateOnScroll className="about-founder__inner">
         <div className="about-founder__image-wrap">
           <Image
             src="/images/about_page/about_leadership.png"
@@ -31,7 +34,7 @@ export default function AboutFounder() {
             With a deep commitment to health and discipline, the founder established this gym to deliver professional training, modern facilities, and a positive fitness culture. Every decision is guided by the goal of helping members achieve lasting results.
           </p>
         </div>
-      </div>
+      </AnimateOnScroll>
     </section>
   );
 }

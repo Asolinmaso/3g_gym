@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const FEATURES = ['Steam bath - free', 'Diet chart - free', 'Workout plan - free'];
 
@@ -75,6 +76,7 @@ export default function Pricing() {
   return (
     <section id="pricing" className="pricing-section">
       <div className="content-inner">
+        <AnimateOnScroll>
         <div className="pricing-title-wrap">
          
           <h2 className="pricing-title">
@@ -84,7 +86,8 @@ export default function Pricing() {
             <span className="pricing-title__accent">Goals</span>
           </h2>
         </div>
-
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.1}>
         <div className="pricing-tabs">
           {TABS.map((tab) => (
             <button
@@ -97,7 +100,8 @@ export default function Pricing() {
             </button>
           ))}
         </div>
-
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.2}>
         <div className={`pricing-grid ${gridClass}`}>
           {plans.map((plan) => (
             <PlanCard
@@ -108,12 +112,14 @@ export default function Pricing() {
             />
           ))}
         </div>
-
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.3}>
         <div className="pricing-note">
           <span>Personal Training & other add-ons are not included.</span>
           <span>Student price applicable only with valid ID.</span>
           <span>Terms & conditions apply.</span>
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

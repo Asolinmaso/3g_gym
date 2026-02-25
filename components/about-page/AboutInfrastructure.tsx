@@ -1,9 +1,12 @@
+'use client';
+
 import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 export default function AboutInfrastructure() {
   return (
     <section className="about-infra">
-      <div className="about-infra__layout">
+      <AnimateOnScroll className="about-infra__layout">
         <div className="about-infra__left">
           <div className="about-infra__subtitle-wrap">
             <span className="about-infra__subtitle">INFRASTRUCTURE</span>
@@ -32,7 +35,7 @@ export default function AboutInfrastructure() {
             <Image src="/images/about_page/about_infrastructure.png" alt="Gym space" fill className="about-infra__image" sizes="748px" />
           </div>
         </div>
-      </div>
+      </AnimateOnScroll>
     </section>
   );
 }

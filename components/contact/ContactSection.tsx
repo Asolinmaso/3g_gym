@@ -1,9 +1,13 @@
 "use client";
+
 import "./ContactSection.css";
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
+
 export default function ContactSection() {
   return (
     <section className="contact-section">
       <div className="content-inner">
+        <AnimateOnScroll>
         <div className="contact-layout">
           {/* LEFT SIDE */}
           <div className="contact-left">
@@ -144,6 +148,8 @@ export default function ContactSection() {
             </form>
           </div>
         </div>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.15}>
         <div className="contact-map-wrap">
             <iframe
               title="3rd Generation Gym - Chennai, Tamil Nadu"
@@ -155,6 +161,7 @@ export default function ContactSection() {
             />
             <div className="contact-map-overlay" aria-hidden />
           </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const CARDS = [
   { title: 'Pro Equipment', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_choose1.png' },
@@ -10,6 +13,7 @@ export default function AboutWhyChoose() {
   return (
     <section className="about-wcu">
       <div className="content-inner about-wcu__inner">
+        <AnimateOnScroll>
         <div className="about-wcu__header">
           <div className="about-wcu__subtitle-wrap">
             <span className="about-wcu__line" aria-hidden />
@@ -25,6 +29,8 @@ export default function AboutWhyChoose() {
             </p>
           </div>
         </div>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.15}>
         <div className="about-wcu__grid">
           {CARDS.map((card) => (
             <div key={card.title} className="about-wcu__card">
@@ -37,6 +43,7 @@ export default function AboutWhyChoose() {
             </div>
           ))}
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

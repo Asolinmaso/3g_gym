@@ -1,7 +1,11 @@
+'use client';
+
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
+
 export default function Commitment() {
   return (
     <section id="commitment" className="commitment-section">
-      <div className="content-inner commitment-inner">
+      <AnimateOnScroll className="content-inner commitment-inner">
         <div className="commitment-label-wrap">
           <span className="commitment-label-line commitment-label-line--left" aria-hidden />
           <h2 className="commitment-label">Our Promise to You</h2>
@@ -18,7 +22,7 @@ export default function Commitment() {
         <p className="commitment-motto">
           Your transformation is our responsibility!
         </p>
-      </div>
+      </AnimateOnScroll>
     </section>
   );
 }

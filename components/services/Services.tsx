@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 /* All 9 services – horizontal scroll order per Figma */
 const SERVICES = [
@@ -20,7 +21,7 @@ export default function Services() {
     <section id="services" className="services-section">
       <div className="content-inner">
         {/* Header: SERVICES label + heading | description + Know More */}
-        <div className="services-header">
+        <AnimateOnScroll className="services-header">
           <div className="services-header__left">
             <div className="services-label-wrap">
               <span className="services-label-line" aria-hidden />
@@ -41,7 +42,7 @@ export default function Services() {
               <span className="services-cta-arrow" aria-hidden>&gt;</span>
             </a>
           </div>
-        </div>
+        </AnimateOnScroll>
       </div>
 
       {/* White curved card area – auto-scrolling marquee strip */}

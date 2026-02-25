@@ -1,3 +1,7 @@
+'use client';
+
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
+
 const CARD_ICONS = {
   marketing: (
     <svg width="55" height="58" viewBox="0 0 55 58" fill="none" xmlns="http://www.w3.org/2000/svg" className="franchise-support__card-icon" aria-hidden>
@@ -35,6 +39,7 @@ export default function FranchiseSupport() {
       <div className="franchise-support__blur franchise-support__blur--1" aria-hidden />
       <div className="franchise-support__blur franchise-support__blur--2" aria-hidden />
       <div className="content-inner franchise-support__inner">
+        <AnimateOnScroll>
         <div className="franchise-support__subtitle-wrap">
           <span className="franchise-support__line franchise-support__line--left" aria-hidden />
           <span className="franchise-support__subtitle">Why Partner With Us</span>
@@ -44,6 +49,8 @@ export default function FranchiseSupport() {
           <span className="franchise-support__heading-line">Unmatched</span>
           <span className="franchise-support__heading-line">Support</span>
         </h2>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.15}>
         <div className="franchise-support__grid">
           {CARDS.map((card) => (
             <div key={card.title} className={`franchise-support__card`}>
@@ -54,6 +61,7 @@ export default function FranchiseSupport() {
             </div>
           ))}
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
