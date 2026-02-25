@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 /* All 9 services – horizontal scroll order per Figma */
@@ -42,28 +44,48 @@ export default function Services() {
         </div>
       </div>
 
-      {/* White curved card area – horizontal swipeable/scrollable strip */}
+      {/* White curved card area – auto-scrolling marquee strip */}
       <div className="services-cards-wrap">
         <div className="services-curve services-curve--top" aria-hidden />
         <div className="services-curve services-curve--bottom" aria-hidden />
         <div className="services-cards-inner">
           <div className="services-scroll-wrap" role="region" aria-label="Services carousel">
-            <div className="services-grid services-grid--scroll">
-              {SERVICES.map((service) => (
-                <div key={service.title} className="services-card">
-                  <div className="services-card__image-wrap">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="services-card__image"
-                      sizes="357px"
-                    />
-                    <div className="services-card__overlay" aria-hidden />
+            <div className="services-marquee-track">
+              <div className="services-grid services-grid--scroll">
+                {SERVICES.map((service) => (
+                  <div key={service.title} className="services-card">
+                    <div className="services-card__image-wrap">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="services-card__image"
+                        sizes="357px"
+                      />
+                      <div className="services-card__overlay" aria-hidden />
+                    </div>
+                    <h3 className="services-card__title">{service.title}</h3>
                   </div>
-                  <h3 className="services-card__title">{service.title}</h3>
-                </div>
-              ))}
+                ))}
+              </div>
+              {/* Duplicate for seamless infinite loop */}
+              <div className="services-grid services-grid--scroll" aria-hidden>
+                {SERVICES.map((service) => (
+                  <div key={`dup-${service.title}`} className="services-card">
+                    <div className="services-card__image-wrap">
+                      <Image
+                        src={service.image}
+                        alt=""
+                        fill
+                        className="services-card__image"
+                        sizes="357px"
+                      />
+                      <div className="services-card__overlay" aria-hidden />
+                    </div>
+                    <h3 className="services-card__title">{service.title}</h3>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
