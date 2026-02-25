@@ -30,6 +30,7 @@ export default function ContactHero() {
           width={600}
           height={750}
           className="contact-hero-model-img"
+          
         />
       </div>
 
