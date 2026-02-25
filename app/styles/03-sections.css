@@ -1856,9 +1856,10 @@
 .career-hero {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  aspect-ratio: 16 / 6;
   margin-top: 96px;
   overflow: hidden;
+  min-height: 250px;
 }
 
 .career-hero-bg {
@@ -2158,6 +2159,26 @@
   object-fit: cover;
 }
 
+@media (min-width: 481px) and (max-width: 1023px) {
+  .career-apply-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 0;                    /* collapse height */
+    padding-top: 66.77%;          /* 406/608 * 100 = 66.77% — mimics aspect ratio */
+    max-height: unset;
+    overflow: hidden;
+  }
+
+  .career-apply-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
 .career-apply-text {
   display: flex;
   flex-direction: column;
