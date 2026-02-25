@@ -1204,7 +1204,6 @@
 /* Products / Career / Contact page mobile */
 @media (max-width: 1023px) {
   .products-hero-title,
-  .career-hero-title,
   .contact-hero-title {
     font-size: clamp(2.5rem, 10vw, 72px);
     line-height: 1.2;
@@ -1228,7 +1227,6 @@
 
 @media (max-width: 767px) {
   .products-hero-title,
-  .career-hero-title,
   .contact-hero-title {
     font-size: clamp(2rem, 12vw, 48px);
   }

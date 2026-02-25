@@ -423,29 +423,33 @@
   box-shadow: none;
 }
 
-/* Horizontal scroll container – swipeable/scrollable */
+/* Horizontal scroll container – auto-scrolling marquee */
 .services-scroll-wrap {
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
   padding: 0 var(--navbar-container-px, 1rem);
   margin: 0 calc(-1 * var(--navbar-container-px, 1rem));
 }
 
-.services-scroll-wrap::-webkit-scrollbar {
-  height: 8px;
+/* Marquee track – duplicated content for infinite loop */
+.services-marquee-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: services-marquee 100s linear infinite;
 }
 
-.services-scroll-wrap::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 4px;
+.services-marquee-track:hover {
+  animation-play-state: paused;
 }
 
-.services-scroll-wrap::-webkit-scrollbar-thumb {
-  background: #c50d3e;
-  border-radius: 4px;
+@keyframes services-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .services-grid {
@@ -1848,215 +1852,31 @@
   min-height: 100vh;
 }
 
-/* Career hero – contact bg, rects, image 20, ellipses, CAREERS text, Frame 65, front image */
+/* Career hero – banner_bg only */
 .career-hero {
   position: relative;
   width: 100%;
-  /* No fixed height – image determines height, no clipping */
-  /* Push hero below fixed navbar (h-24/md:h-28/lg:h-32) */
+  min-height: 400px;
   margin-top: 96px;
-  padding-top: 0;
-  box-sizing: border-box;
-  background: #010101;
   overflow: hidden;
+}
+
+.career-hero-bg {
+  object-fit: cover;
+  object-position: center center;
 }
 
 @media (min-width: 768px) {
   .career-hero {
     margin-top: 112px;
+    min-height: 500px;
   }
 }
 
 @media (min-width: 1024px) {
   .career-hero {
     margin-top: 128px;
-  }
-}
-
-/* contact bg – base black */
-.career-hero-base {
-  position: absolute;
-  inset: 0;
-  background: #010101;
-}
-
-/* Rectangle 30 – gradient right, flipped (fluid) */
-.career-hero-rect30 {
-  position: absolute;
-  width: min(937px, 65vw);
-  height: 120%;
-  min-height: 600px;
-  left: min(778px, 54vw);
-  top: -10%;
-  background: linear-gradient(155.54deg, #c50d3e 2.21%, rgba(95, 6, 30, 0.5) 91.53%);
-  transform: scaleX(-1);
-  pointer-events: none;
-}
-
-/* Rectangle 31 – gradient + border right, flipped (fluid) */
-.career-hero-rect31 {
-  position: absolute;
-  box-sizing: border-box;
-  width: min(937px, 65vw);
-  height: 120%;
-  min-height: 600px;
-  left: min(933px, 64.8vw);
-  top: -8%;
-  background: linear-gradient(155.54deg, rgba(1, 1, 1, 0.59) 2.21%, rgba(95, 6, 30, 0.295) 91.53%);
-  border: 14px solid rgba(0, 0, 0, 0.31);
-  transform: scaleX(-1);
-  pointer-events: none;
-}
-
-/* image 20 – gradient overlay + background image */
-.career-hero-image-layer {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.career-hero-image-layer .career-hero-bg-image {
-  object-fit: cover;
-  object-position: center center;
-}
-
-.career-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(197, 13, 62, 0.2), rgba(197, 13, 62, 0.2));
-  pointer-events: none;
-}
-
-/* Ellipse 1 – red blur left (design: top calc(50% - 523/2 + 161.5) = 50% - 100px) */
-.career-hero-ellipse--1 {
-  position: absolute;
-  width: min(222px, 15vw);
-  height: min(523px, 60vh);
-  left: 224px;
-  top: calc(50% - 100px);
-  background: #c50d3e;
-  filter: blur(150px);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* Ellipse 2 – black blur right (design: left 1189px, top calc(50% - 8px)) */
-.career-hero-ellipse--2 {
-  position: absolute;
-  width: min(222px, 15vw);
-  height: min(523px, 60vh);
-  right: 29px;
-  left: auto;
-  top: calc(50% - 8px);
-  background: #010101;
-  filter: blur(150px);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* CAREERS – gradient text behind front image (z-index below image) */
-.career-hero-inner {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50px;
-  width: 100%;
-  z-index: 1;
-  padding: 0 1rem;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
-
-.career-hero-title {
-  font-family: var(--font-poppins), "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: clamp(48px, 15vw, 210px);
-  line-height: 200px;
-  margin: 0;
-  text-align: center;
-  width: 100%;
-  background: linear-gradient(177.69deg, #ffffff 50%, rgba(255, 255, 255, 0.25) 78.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.career-hero-rect10 {
-  position: absolute;
-  width: 161px;
-  height: 169px;
-  left: 0;
-  top: 0;
-  background: #c50d3e;
-}
-
-.career-hero-rect11 {
-  position: absolute;
-  width: 77px;
-  height: 73px;
-  left: 85.41px;
-  top: 13.44px;
-  background: #c50d3e;
-  transform: matrix(0.02, -1, -1, -0.02, 0, 0);
-}
-
-/* Rectangle 59 – front image, full visibility, no fixed height clipping */
-.career-hero-front-image {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  z-index: 3;
-  filter: drop-shadow(9px 1px 0 #c50d3e);
-  aspect-ratio: 1200 / 800;
-}
-
-.career-hero-front-img {
-  object-fit: contain;
-  object-position: center center;
-}
-
-/* Desktop: image flows naturally, no clipping */
-@media (min-width: 1024px) {
-  .career-hero-front-image {
-    aspect-ratio: 1200 / 800;
-    min-height: 450px;
-  }
-}
-
-/* Mobile: center image, compact layout */
-@media (max-width: 767px) {
-  .career-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .career-hero-inner {
-    position: relative;
-    top: 0;
-    padding: 1rem 0;
-  }
-  .career-hero-front-image {
-    position: relative;
-    width: 100%;
-    max-width: min(100%, 480px);
-    margin: 0 auto;
-  }
-  .career-hero-front-img {
-    object-fit: contain;
-    object-position: center center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .career-hero-title {
-    font-size: 210px;
-    line-height: 200px;
+    min-height: 600px;
   }
 }
 
