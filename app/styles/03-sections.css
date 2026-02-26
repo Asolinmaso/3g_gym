@@ -841,18 +841,7 @@
 }
 
 .results-card__badge {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 8px;
-  background: #c50d3e;
-  border-radius: 4px;
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 47px;
-  color: #ffffff;
+  display: none;
 }
 
 .results-card__badge--before {
