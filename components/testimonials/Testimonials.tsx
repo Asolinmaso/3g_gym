@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const TESTIMONIALS = [
   {
@@ -29,6 +30,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="testimonials-section">
       <div className="content-inner testimonials-inner">
+        <AnimateOnScroll>
         <div className="testimonials-subtitle-wrap">
           <span className="testimonials-subtitle-line testimonials-subtitle-line--left" aria-hidden />
           <h2 className="testimonials-subtitle">What Our Members Say</h2>
@@ -38,6 +40,7 @@ export default function Testimonials() {
         <h3 className="testimonials-heading">
           <span>Real </span><span className="testimonials-heading--red">Stories. </span><span>Honest </span><span className="testimonials-heading--red">Results.</span>
         </h3>
+        </AnimateOnScroll>
 
         {/* Carousel – Loom-style blockquote layout */}
         <div className="testimonials-carousel" style={{ '--carousel-index': activeIndex } as React.CSSProperties}>

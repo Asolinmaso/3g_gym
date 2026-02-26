@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const CARDS = [
   { title: 'OUR VISION', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_vision.png' },
@@ -14,6 +17,7 @@ export default function AboutVisionMission() {
       <div className="about-vm__blur about-vm__blur--2" aria-hidden />
       <div className="about-vm__blur about-vm__blur--3" aria-hidden />
       <div className="content-inner about-vm__inner">
+        <AnimateOnScroll>
         <div className="about-vm__grid">
           {CARDS.map((card) => (
             <div key={card.title} className={`about-vm__card ${card.highlight ? 'about-vm__card--highlight' : ''}`}>
@@ -25,7 +29,10 @@ export default function AboutVisionMission() {
             </div>
           ))}
         </div>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.2}>
         <p className="about-vm__watermark" aria-hidden>Professional Fitness</p>
+        </AnimateOnScroll>
       </div>
     </section>
   );

@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const PINK_CARDS = [
   { label: 'Modern Facilities', icon: true },
@@ -11,6 +14,7 @@ export default function AboutGeneration() {
   return (
     <section className="about-gen">
       <div className="content-inner about-gen__inner">
+        <AnimateOnScroll>
         <div className="about-gen__layout">
           <div className="about-gen__image-wrap">
             <Image
@@ -55,6 +59,7 @@ export default function AboutGeneration() {
             </div>
           </div>
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

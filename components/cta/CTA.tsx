@@ -1,11 +1,14 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 export default function CTA() {
   return (
     <section id="contact" className="cta-section">
       <div className="cta-inner">
-        <div className="cta-banner">
+        <AnimateOnScroll className="cta-banner">
           <h2 className="cta-heading">Start Your Fitness Journey <span style={{color:"#ffffff"}}>Today</span>.</h2>
           <p className="cta-desc">
             Train with expert coaches, modern equipment, and programs designed
@@ -19,8 +22,8 @@ export default function CTA() {
               </svg>
             </span>
           </Link>
-        </div>
-        <div className="cta-image">
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.2} className="cta-image">
           <Image
             src="/home/homeService.png"
             alt="Fitness training"
@@ -28,7 +31,7 @@ export default function CTA() {
             className="cta-img"
             sizes="(max-width: 1023px) 100vw, 701px"
           />
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

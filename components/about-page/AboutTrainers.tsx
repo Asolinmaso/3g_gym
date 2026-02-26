@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const TRAINERS = [
   { name: 'JOHN MICHAEL', role: 'Personal Trainer', image: '/about_us/small_image.png', barLeft: true },
@@ -10,6 +13,7 @@ export default function AboutTrainers() {
   return (
     <section className="about-trainers">
       <div className="content-inner about-trainers__inner">
+        <AnimateOnScroll>
         <div className="about-trainers__subtitle-wrap">
           <span className="about-trainers__line about-trainers__line--left" aria-hidden />
           <span className="about-trainers__subtitle">TRAINERS</span>
@@ -18,6 +22,8 @@ export default function AboutTrainers() {
         <h2 className="about-trainers__heading">
           Team Of <span className="about-trainers__heading-accent">Expert</span> Coaches.
         </h2>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.15}>
         <div className="about-trainers__grid">
           {TRAINERS.map((t) => (
             <div key={t.name} className="about-trainers__card">
@@ -30,6 +36,7 @@ export default function AboutTrainers() {
             </div>
           ))}
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

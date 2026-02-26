@@ -319,7 +319,7 @@
   flex: 0 0 80px;
   height: 0;
   border: 0;
-  border-top: 3px solid #c50d3e;
+  border-bottom: 3px solid #c50d3e;
 }
 
 .services-label {
@@ -596,7 +596,7 @@
   flex: 0 0 80px;
   height: 0;
   border: 0;
-  border-top: 3px solid #C50D3E;
+  border-bottom: 3px solid #C50D3E;
 }
 
 .about-label {
@@ -955,7 +955,8 @@
   width: 80px;
   height: 0;
   top: 37px;
-  border: 3px solid #c50d3e;
+  border: 0;
+  border-bottom: 3px solid #c50d3e;
 }
 
 .testimonials-subtitle-line--left {
@@ -1169,13 +1170,15 @@
   margin: 0;  
 }
 
+/* Underscore style (____) instead of dash (----) */
 .commitment-label-line {
   position: absolute;
   width: 80px;
   height: 0;
   top: 50%;
   margin-top: -1px;
-  border-top: 2px solid #c50d3e;
+  border: 0;
+  border-bottom: 2px solid #c50d3e;
 }
 
 .commitment-label-line--left {
@@ -1856,10 +1859,9 @@
 .career-hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 6;
+  min-height: 400px;
   margin-top: 96px;
   overflow: hidden;
-  min-height: 250px;
 }
 
 .career-hero-bg {
@@ -2159,26 +2161,6 @@
   object-fit: cover;
 }
 
-@media (min-width: 481px) and (max-width: 1023px) {
-  .career-apply-image-wrap {
-    position: relative;
-    width: 100%;
-    height: 0;                    /* collapse height */
-    padding-top: 66.77%;          /* 406/608 * 100 = 66.77% — mimics aspect ratio */
-    max-height: unset;
-    overflow: hidden;
-  }
-
-  .career-apply-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-}
 .career-apply-text {
   display: flex;
   flex-direction: column;

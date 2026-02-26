@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import './Result.css';
+import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const TRANSFORMATIONS = [
   {
@@ -18,9 +21,11 @@ export default function Results() {
       <div className="results-ellipse results-ellipse--right" aria-hidden />
 
       <div className="content-inner results-inner">
-        <h2 className="results-title">Real <span className='result-span'>People.</span> Real <span className='result-span'>Results.</span></h2>
-        <p className="results-subtitle">Transformations That Inspire.</p>
-
+        <AnimateOnScroll>
+          <h2 className="results-title">Real <span className='result-span'>People.</span> Real <span className='result-span'>Results.</span></h2>
+          <p className="results-subtitle">Transformations That Inspire.</p>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.15}>
         <div className="results-grid">
           {TRANSFORMATIONS.map((t) => (
             <div key={t.image} className="results-card">
@@ -45,6 +50,7 @@ export default function Results() {
             </div>
           ))}
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );
