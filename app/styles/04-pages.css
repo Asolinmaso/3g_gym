@@ -2986,6 +2986,12 @@
 }
 
 /* ========== Mobile responsive overrides (do not affect desktop) ========== */
+.footer-follow--mobile {
+  display: none;
+}
+.footer-mobile-description {
+  display: none;
+}
 
 .footer-equipment {
   position: relative;

@@ -5,24 +5,6 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-
-  /* Hero banner – home */
-  .hero-banner-section {
-    min-height: auto;
-    padding-bottom: 2rem;
-  }
-  .hero-banner__headline {
-    font-size: clamp(2rem, 8vw, 80px);
-    line-height: 1.3;
-  }
-  .hero-banner__copy {
-    max-width: 100%;
-  }
-  .hero-banner__paragraph {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
   /* About section – home */
   .about-section {
     padding: 48px 0 56px;
@@ -635,22 +617,7 @@
     padding-right: 0.75rem;
   }
 
-  .hero-banner-section {
-    padding-top: clamp(60px, 10vh, 100px);
-    padding-bottom: 2rem;
-  }
-  .hero-banner__headline {
-    font-size: clamp(1.75rem, 10vw, 48px);
-    line-height: 1.2;
-  }
-  .hero-banner__paragraph {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  .hero-banner__copy {
-    gap: 1.5rem;
-    padding: 0 0.5rem;
-  }
+ 
   .hero-get-started-btn {
     min-width: 140px;
     height: 48px;
@@ -1425,6 +1392,38 @@
 
 }
 
+@media (max-width: 480px) {
+  .franchise-contact__form-wrap {
+    position: relative !important;
+    background: #0d0005 !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    padding: 36px 24px !important;
+  }
+
+  .franchise-contact__form-wrap::before {
+    content: '' !important;
+    position: absolute !important;
+    width: 269px !important;
+    height: 498px !important;
+    top: -174px !important;
+    left: -69px !important;
+    background: #C50D3E !important;
+    filter: blur(500px) !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+  }
+
+  /* Push all form children above the blur */
+  .franchise-contact__form-title,
+  .franchise-contact__form-desc,
+  .franchise-contact__form {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
+
 /* Mobile 440px (Figma spec) – home page only, no desktop changes */
 @media (max-width: 480px) {
   .navbar-inner,
@@ -1432,103 +1431,6 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-
-  .hero-banner-section {
-    position: relative;
-    min-height: 609px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    gap: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: visible !important;
-  }
-  .hero-banner__badge {
-    font-size: 35px;
-    line-height: 24px;
-    margin-bottom: 20px;
-  }
-  .hero-banner__headline {
-    font-size: 40px;
-    line-height: 48px;
-    margin-bottom: 0.75rem;
-    text-align: center;
-  }
-  .hero-banner__line--1,
-  .hero-banner__line--2,
-  .hero-banner__line--3 {
-    display: block;
-    white-space: nowrap;
-    line-height: 48px; 
-    font-size: 40px;  
-  }
-  .hero-banner__copy {
-    gap: 1.5rem;
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .hero-banner__paragraph {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 363px;
-  }
-  .hero-banner-section .hero-get-started-btn {
-    width: 151px;
-    height: 48px;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .hero-banner__chevrons {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 100% 80% at center,
-      rgba(197, 13, 62, 0.35) 0%,
-      rgba(197, 13, 62, 0.15) 40%,
-      transparent 75%
-    );
-    width: 80px;
-    height: 100px;
-  }
-
-  .hero-banner__chevrons--left {
-    left: 0;
-  }
-
-  .hero-banner__chevrons--right {
-    right: 0;
-    left: auto;
-  }
-  .hero-banner__chevrons--left,
-  .hero-banner__chevrons--right {
-    transform: rotate(270deg);   /* 270 + 270 = 540 = 180 = UP */
-  }
-
-  /* ── SVG: size + point UP ── */
-  .hero-banner__chevrons svg {
-    width: 30px;
-    height: 63px;
-  }
-
-  /* ── Chevron fill: black ── */
-  .hero-banner__chevrons svg path {
-    fill: #010101 !important;
-  }
-  
-
   .about-section {
     padding: 2.5rem 0 2.5rem;
     padding-top: 65px;
@@ -1556,6 +1458,7 @@
   .about-heading {
     font-size: clamp(1.125rem, 6vw, 28px);
     line-height: 1.25;
+    font-weight: 700;
   }
   .about-heading__line {
     white-space: nowrap;
@@ -1563,11 +1466,13 @@
   .about-desc {
     font-size: 18px;
     line-height: 24px;
+    font-weight: 400;
   }
   .about-label {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 18px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0%;
+    font-weight: 400;
   }
 
   .about-label-line {
@@ -1649,16 +1554,48 @@
 
   /* About page (mobile – compact banner) */
   .about-page-hero {
-    min-height: 380px;
     height: auto;
+    min-height: 480px;
+    margin-top: 80px;
+    overflow: hidden;
   }
   .about-page-hero__inner {
-    min-height: 380px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 480px;
+    min-height: 480px;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 70px;
   }
+
   .about-page-hero__title {
-    font-size: clamp(48px, 12vw, 64px);
-    line-height: 96px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 70px;
+    line-height: 1.1;
+    text-align: center;
+    width: 100%;
+    z-index: 3;
   }
+
+  .about-page-hero__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    max-width: 100%;
+    aspect-ratio: unset;
+    margin: 0;
+    bottom: -7px;
+    z-index: 2;
+  }
+
 
   /* Vision / Mission / Value cards + "PROFESSIONAL FITNESS" heading */
   .about-vm {
@@ -1715,6 +1652,53 @@
   .testimonials-text {
     font-size: 18px;
     line-height: 32px;
+  }
+  .franchise-page-hero {
+    height: 480px !important;
+    min-height: 480px !important;
+    margin-top: 80px !important;
+    overflow: hidden !important;
+  }
+
+  .franchise-page-hero__bg {
+    min-height: 500px !important;
+    background-size: 200% 100% !important;
+    background-position: 90% center !important;
+  }
+
+  .franchise-page-hero__inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;   
+    height: 480px !important;
+    min-height: 480px !important;
+    padding: 0 16px !important;
+    gap: 0 !important;                    
+  }
+
+  .franchise-page-hero__image-wrap {
+    width: 200px !important;              
+    height: 200px !important;
+    aspect-ratio: 1 !important;
+    padding-top: 0 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .franchise-page-hero__title {
+    font-size: 48px !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    align-self: center !important;
+  }
+  .franchise-empire__inner{
+    margin-top: 35px;
+  }
+  .franchise-empire__heading{
+    font-weight: bold;
+    font-size: 30px;
   }
   /* Contact page mobile – fixed height for consistency */
   .franchise-contact__subtitle {
@@ -1923,8 +1907,27 @@
   margin-top: 0;
 }
 
+.career-hero {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    margin-top: 80px !important;
+    overflow: hidden !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .career-hero-bg {
+    object-fit: cover !important;
+    object-position: center center !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+
   .commitment-section {
     padding: 2rem 1rem 2.5rem;
+    margin-top: 35px;
   }
   .commitment-heading {
     font-size: 32px;
@@ -1932,7 +1935,8 @@
   }
   .commitment-label {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 100%;
+    font-weight: 400;
   }
   .commitment-text {
     font-size: 18px;
@@ -1942,10 +1946,28 @@
     font-size: 20px;
     line-height: 30px;
   }
+  .commitment-label-line {
+  position: absolute;
+  width: 40px; /* reduced from 80px */
+  height: 0;
+  top: 50%;
+  margin-top: -1px;
+  border: 0;
+  border-bottom: 3px solid #c50d3e;
+}
 
+.commitment-label-line--left {
+  right: calc(100% + 5px);
+}
+
+.commitment-label-line--right {
+  left: calc(100% + 5px);
+}
   .footer-tagline {
-    font-size: 18px;
-    line-height: 24px;
+    display: none;
+  }
+  .footer-col--about .footer-follow {
+    display: none;
   }
   .footer-link,
   .footer-contact-text {
@@ -1955,6 +1977,47 @@
   .footer-heading,
   .footer-follow-title {
     font-size: 18px;
+  }
+  .footer-logo {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .footer-mobile-description {
+    display: block;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  /* Show Follow Us clone at bottom */
+  .footer-follow--mobile {
+    display: block;
+    margin-bottom: 16px;
+  }
+  .footer-follow-title{
+    margin-bottom: 13px;
+    font-size: 16px;
+  }
+   .footer-social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-social-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .footer-social {
+    gap: 16px;
+  }
+
+  .footer-follow-title {
+    font-size: 18px;
+    margin-bottom: 12px;
   }
 
   .franchise-support__subtitle {
@@ -1990,27 +2053,40 @@
   line-height: 1.2;
   margin: 0 0 12px;
 }
+
 .franchise-blueprint__left {
-  min-height: 400px;
-}
+    position: relative !important;
+    width: 100% !important;
+    min-height: 380px !important;
+    height: 380px !important;
+  }
 
-.franchise-blueprint__img-main {
-  width: 100%;
-  max-width: 100%;
-  height: 280px;
-  position: relative;
-  left: 0;
-  top: 0;
-}
+  .franchise-blueprint__gradient-strip {
+    display: none !important;
+  }
 
-.franchise-blueprint__img-sub {
-  width: min(240px, 70%);
-  height: 180px;
-  left: auto;
-  right: 0;
-  bottom: 0;
-  transform: none;
-}
+  .franchise-blueprint__img-main {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 65% !important;
+    max-width: none !important;
+    z-index: 1 !important;
+  }
+
+  .franchise-blueprint__img-sub {
+    position: absolute !important;
+    width: 55% !important;
+    height: 50% !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    border: 6px solid #fff !important;
+    box-sizing: border-box !important;
+    z-index: 2 !important;
+  }
 
 .franchise-blueprint__header-strip {
   padding: 16px 20px;
@@ -2046,6 +2122,28 @@
 .franchise-blueprint__card-value {
   font-size: 18px;
   line-height: 24px;
+  font-weight: bold;
+}
+.franchise-process{
+  padding-top:0px;
+}
+.franchise-process__line{
+  width: 40px;
+}
+.franchise-process__subtitle-wrap{
+  gap:7px;
+}
+.franchise-process__subtitle{
+  font-size: 15px;
+}
+.franchise-process__heading{
+  margin-bottom: 0;
+}
+.franchise-contact{
+  padding-top: 0px;
+}
+.franchise-process__stack{
+  padding-bottom: 0px;
 }
 }
 
@@ -2296,10 +2394,69 @@
 }
 
 @media (max-width: 480px) {
+  .about-gen__inner{
+    margin-top: 30px;
+  }
+  .about-gen__line{
+    width: 40px;
+  }
+  .about-gen__subtitle{
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .about-gen__subtitle-wrap{
+    margin-bottom: 0px;
+  }
+  .about-gen__text{
+    line-height: 24px;
+  }
+  .about-founder__inner{
+    margin-top: 30px;
+  }
+  .about-founder__subtitle{
+    font-size: 15px;
+  }
   .about-gen__layout {
     flex-direction: column;
   }
-
+  .about-wcu__heading{
+    font-weight: bold;
+    font-size: 34px;
+    width: 340px;
+  }
+  .about-infra__subtitle{
+    font-size: 15px;
+  }
+  .about-infra__subtitle-wrap{
+    gap: 3px;
+  }
+  .about-infra__line{
+    width: 40px;
+  }
+  .about-infra__heading{
+    width: 250px;
+    font-size: 30px;
+  }
+  .about-infra__text{
+    margin-bottom: 1rem;
+  }
+  .about-infra__icon{
+    height: 40px;
+    width: 40px;
+  }
+  .about-infra__icon svg{
+    height: 19px;
+    width: 19px;
+  }
+  .about-infra__icons{
+    gap: 12px;
+  }
+  .about-wcu{
+    padding-top: 24px;
+  }
+  .about-wcu__line{
+    width: 40px;
+  }
   .about-gen__right {
     order: 1;
   }
@@ -2328,6 +2485,7 @@
   .about-gen__pink-label {
     font-size: 14px;
     line-height: 22px;
+    font-weight: 600;
   }
   .about-gen__image-wrap {
     overflow: visible;
@@ -2428,6 +2586,86 @@
     background-color: transparent;
     clip-path: none;
     z-index: 10;
+  }
+  /*.services-detail__line{
+    max-width: 260px;
+  }
+  .services-detail__title{
+    font-weight: bold;
+  }*/
+  .services-faq__icon-wrap {
+    display: none;
+  }
+  .services-detail-inner{
+    padding-top: 50px !important;
+  }
+  .services-detail__row,
+  .services-detail__row--reverse {
+    flex-direction: column !important;
+    gap: 0;
+  }
+
+  .services-detail__image-wrap {
+    position: relative !important;
+    width: 100% !important;
+    height: 260px !important;
+    aspect-ratio: unset !important;
+    align-self: auto !important;
+  }
+
+  
+  .services-detail__content,
+  .services-detail__title,
+  .services-detail__who,
+  .services-detail__benefits,
+  .services-detail__duration,
+  .services-detail__header {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .services-detail__content {
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .services-detail__title {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+
+  .services-detail__line {
+    max-width: calc(100% - 54px) !important; /* icon width + gap */
+  }
+
+  .services-detail__subheading {
+    font-size: 16px !important;
+  }
+
+  .services-detail__text,
+  .services-detail__meta,
+  .services-detail__list-item {
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+
+  .services-detail__list-item {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .services-detail__cta {
+    width: auto !important;
+    min-width: 160px !important;
+  }
+  .services-detail-section{
+    padding: 0 0 0;
+  }
+  .services-faq__title{
+    font-weight: bold;
+    font-size: 32px;
+    width: 70%;
   }
 }
 
@@ -2562,5 +2800,494 @@
   .about-infra {
     overflow: visible;
     padding: 0;
+  }
+}
+
+/* ============================================================
+   HERO BANNER – COMPLETE, SELF-CONTAINED CSS
+   Remove every other .hero-banner-* rule from both CSS files
+   and replace with this block only.
+   ============================================================ */
+
+/* ── Base (all viewports) ─────────────────────────────────── */
+.hero-banner-section {
+  position: relative;
+  width: 100%;
+  background: #010101;
+  overflow: hidden;
+}
+
+.hero-banner__blur {
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-banner__blur--left {
+  width: 222px;
+  height: 523px;
+  left: -211px;
+  top: calc(50% - 523px / 2 + 364px);
+  background: #c50d3e;
+  filter: blur(250px);
+}
+
+.hero-banner__blur--right-top {
+  width: 156px;
+  height: 283px;
+  left: 1401px;
+  top: calc(50% - 283px / 2 + 29px);
+  background: #c50d3e;
+  filter: blur(250px);
+}
+
+.hero-banner__blur--center {
+  width: 222px;
+  height: 523px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(50% - 523px / 2 - 147px);
+  background: rgba(197, 13, 62, 0.44);
+  filter: blur(150px);
+}
+
+.hero-banner__blur--right-bottom {
+  width: 222px;
+  height: 523px;
+  left: 1410px;
+  top: calc(50% - 523px / 2 + 302px);
+  background: #c50d3e;
+  filter: blur(250px);
+}
+
+/* Chevron decorations */
+.hero-banner__chevrons {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-banner__chevrons--left {
+  left: 27px;
+  top: 497px;
+  transform: rotate(-90deg);
+}
+
+.hero-banner__chevrons--right {
+  left: 1190px;
+  top: 497px;
+  transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+.hero-banner__chevron {
+  width: 50px;
+  height: 80px;
+  margin: 0 -40px;
+  opacity: 0.5;
+}
+
+.hero-banner__chevron:first-child { margin-left: 0; }
+.hero-banner__chevron:last-child  { margin-right: 0; }
+
+/* Gradient text helpers */
+.hero-banner__gradient-light {
+  background: linear-gradient(177.69deg, #ffffff 50%, #010101 78.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-banner__gradient-red {
+  background: linear-gradient(0deg, #010101 19.5%, #c50d3e 49.75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-banner__line       { display: block; }
+.hero-banner__line--1    { margin-bottom: 0; }
+.hero-banner__line--2    { margin-bottom: 0; }
+
+/* CTA button */
+.hero-banner-section .hero-get-started-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 204px;
+  height: 52px;
+  padding: 0 24px;
+  background: #c50d3e;
+  border-radius: 40px;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.hero-banner-section .hero-get-started-btn:hover { opacity: 0.9; }
+
+.hero-banner__cta-arrow {
+  color: #ffffff;
+  margin-left: 2px;
+}
+
+.hero-banner__paragraph {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #7e7c7c;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .hero-banner-section {
+    min-height: 867px;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    /* NO display:flex here – children are position:absolute */
+  }
+  .hero-banner__line--1,
+  .hero-banner__line--2 {
+    display: inline;  /* TRAIN HARD SEE RESULTS. on one line */
+  }
+
+  .hero-banner__line--3 {
+    display: block;   /* LIVE STRONG. on new line */
+  }
+  .hero-banner__blur--right-top  { left: calc(100% - 39px); }
+  .hero-banner__blur--right-bottom { left: calc(100% - 30px); }
+
+  /* Absolutely positioned elements – Figma pixel values */
+  .hero-banner__badge {
+    position: absolute;
+    width: 545px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 160px;
+    margin: 0;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: 128px;
+    line-height: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px #c50d3e;
+    z-index: 2;
+  }
+
+  .hero-banner__headline {
+    position: absolute;
+    width: 1269px;
+    max-width: 1269px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 268px;
+    margin: 0;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .hero-banner__copy {
+    position: absolute;
+    width: 728px;
+    max-width: calc(100% - 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .hero-banner__paragraph {
+    width: 100%;
+    max-width: 728px;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #7e7c7c;
+  }
+
+  /* Show desktop decorations */
+  .hero-banner__blur--left,
+  .hero-banner__blur--right-top,
+  .hero-banner__blur--right-bottom,
+  .hero-banner__blur--center,
+  .hero-banner__chevrons--left,
+  .hero-banner__chevrons--right {
+    display: block;
+  }
+}
+
+
+/* ── TABLET  769px – 1279px  (flow layout, no absolute pos) ─ */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .hero-banner-section {
+    min-height: 600px;
+    padding-top: 100px;
+    padding-bottom: 60px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Hide absolute-only decorations at this size */
+  .hero-banner__blur--left,
+  .hero-banner__blur--right-top,
+  .hero-banner__blur--right-bottom,
+  .hero-banner__blur--center,
+  .hero-banner__chevrons--left,
+  .hero-banner__chevrons--right {
+    display: none;
+  }
+
+  /* Switch children out of absolute positioning */
+  .hero-banner__badge {
+    position: static;
+    transform: none;
+    width: auto;
+    margin: 0 0 1.25rem;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px #c50d3e;
+    z-index: 2;
+  }
+
+  .hero-banner__headline {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1.25rem;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: clamp(40px, 7vw, 80px);
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .hero-banner__copy {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 728px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .hero-banner__paragraph {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+  }
+}
+
+
+/* ── MOBILE  ≤ 768px ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-banner-section {
+    min-height: auto;
+    padding-top: clamp(60px, 10vh, 100px);
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Hide desktop-only decorations */
+  .hero-banner__blur--left,
+  .hero-banner__blur--right-top,
+  .hero-banner__blur--right-bottom,
+  .hero-banner__blur--center,
+  .hero-banner__chevrons--left,
+  .hero-banner__chevrons--right {
+    display: none;
+  }
+
+  .hero-banner__badge {
+    position: static;
+    transform: none;
+    width: auto;
+    margin: 0 0 1rem;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: clamp(28px, 8vw, 64px);
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px #c50d3e;
+    z-index: 2;
+  }
+
+  .hero-banner__headline {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem;
+    padding: 0;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 10vw, 48px);
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .hero-banner__copy {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: min(728px, 100%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .hero-banner__paragraph {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-get-started-btn {
+    min-width: 140px;
+    height: 48px;
+    padding: 0 20px;
+    font-size: 18px;
+  }
+}
+
+
+/* ── SMALL MOBILE  ≤ 480px ────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-banner-section {
+    min-height: 609px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 0;
+    overflow: visible !important;
+  }
+
+  .hero-banner__badge {
+    font-size: 35px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  .hero-banner__headline {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-banner__line--1,
+  .hero-banner__line--2,
+  .hero-banner__line--3 {
+    display: block;
+    white-space: nowrap;
+    line-height: 48px;
+    font-size: 40px;
+  }
+
+  .hero-banner__copy {
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-banner__paragraph {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 363px;
+  }
+
+  .hero-banner-section .hero-get-started-btn {
+    width: 151px;
+    height: 48px;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Restore chevrons as decorative bottom accent */
+  .hero-banner__chevrons {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 100% 80% at center,
+      rgba(197, 13, 62, 0.35) 0%,
+      rgba(197, 13, 62, 0.15) 40%,
+      transparent 75%
+    );
+    width: 80px;
+    height: 100px;
+  }
+
+  .hero-banner__chevrons--left  { left: 0; }
+  .hero-banner__chevrons--right { right: 0; left: auto; }
+
+  .hero-banner__chevrons--left,
+  .hero-banner__chevrons--right {
+    transform: rotate(270deg);
+  }
+
+  .hero-banner__chevrons svg {
+    width: 30px;
+    height: 63px;
+  }
+
+  .hero-banner__chevrons svg path {
+    fill: #010101 !important;
   }
 }
