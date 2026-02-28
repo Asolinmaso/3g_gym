@@ -58,11 +58,7 @@ export default function Footer() {
               width={156}
               height={156}
               className="footer-logo"
-        />
-        {/* Mobile-only description */}
-        <p className="footer-mobile-description">
-          We are a results-driven fitness center focused on strength, transformation, and long-term wellness. With expert trainers and modern facilities, we help you train smarter and achieve real results.
-        </p>
+            />
         <div className="footer-grid">
           {/* Column 1: Logo, tagline, Follow Us (Frame 60) – Figma Frame 55 */}
           <div className="footer-col footer-col--about">
@@ -127,6 +123,7 @@ export default function Footer() {
                 </span>
                 <span className="footer-contact-text">
                   <a href="tel:+918190895694">+91 8190895694</a>
+                  <a href="tel:+918778359643">+91 8778359643</a>
                 </span>
               </li>
               <li className="footer-contact-item">
@@ -154,19 +151,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        {/* Mobile-only Follow Us at bottom */}
-        <div className="footer-follow footer-follow--mobile">
-          <p className="footer-follow-title">Follow Us -</p>
-          <div className="footer-social">
-            {social.map(({ name, href, icon }) => (
-              <a key={name} href={href} className="footer-social-link" aria-label={name}>
-                <svg className="footer-social-icon" fill="currentColor" viewBox="0 0 24 24">
-                  {icon}
-                </svg>
-              </a>
-            ))}
-          </div>
-        </div>
+
         {/* Line 54 + Copyright */}
         <div className="footer-bottom">
           <p className="footer-copyright">

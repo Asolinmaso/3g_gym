@@ -67,60 +67,59 @@
   object-position: bottom;
   display: block !important;
 }
-@media (max-width: 480px) {
-  .contact-hero-bg-image {
-    object-fit: fill !important;
-  }
-  .contact-hero {
-    height: auto !important;
-    min-height: unset !important;
-    aspect-ratio: 3 / 4 !important;
-    padding-top: 24px !important;
-    justify-content: flex-start !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
 
+@media (max-width: 480px) {
+  .contact-hero {
+    height: 480px;
+    min-height: 480px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 1.5rem;
+    gap: 0;
+  }
   .contact-hero-title-bg {
-    position: relative !important;
-    transform: none !important;
-    top: unset !important;
-    left: unset !important;
-    font-size: 56px !important;
-    text-align: center !important;
-    white-space: normal !important;
-    margin: 0 !important;
-    z-index: 3 !important;
-    flex-shrink: 0 !important;
+    position: static;
+    transform: none;
+    white-space: normal;
+    text-align: center;
+    font-size: 52px;
+    line-height: 1.0;
+    margin-bottom: -40px;     /* aggressive negative margin to close gap */
+    z-index: 3;               /* above model */
+    flex-shrink: 0;
   }
 
   .contact-hero-title-line1,
   .contact-hero-title-line2 {
-    display: block !important;
+    display: block;
   }
 
   .contact-hero-model {
-    position: relative !important;   /* 👈 back to relative, not absolute */
-    bottom: unset !important;
-    left: unset !important;
-    transform: none !important;
-    width: 100% !important;
-    max-width: none !important;
-    height: auto !important;
-    flex: 1 !important;
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: center !important;
-    z-index: 2 !important;
-    overflow: hidden !important;
-    margin-top: 0px !important;
+    width: 100%;
+    flex: 1;
+    min-height: 200px;       /* force minimum space */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible;        /* changed from hidden */
+    position: relative;
+    z-index: 2;
   }
 
   .contact-hero-model-img {
-    width: 90vw !important;
-    height: 65vw !important;         /* 👈 fixed height relative to viewport */
-    object-fit: contain !important;
-    object-position: bottom !important;
+    width: 320px !important;  /* force override Next.js */
+    height: 320px !important; /* force override Next.js */
+    max-width: none;
+    object-fit: contain;
+    object-position: bottom;
+    display: block;
+    margin-bottom: 0;
+  }
+   .contact-hero-bg-image {
+    object-fit: fill;        /* show full image, no crop */
+    object-position: center center;
+    background-color: #1a0a0a;
   }
 }
 

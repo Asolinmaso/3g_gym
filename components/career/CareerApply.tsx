@@ -1,10 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { CountryCodeSelect } from '@/components/ui/CountryCodeSelect';
 
 export default function CareerApply() {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [countryCode, setCountryCode] = useState('+91');
 
   return (
     <section className="career-apply">
@@ -51,8 +53,11 @@ export default function CareerApply() {
               <div className="career-apply-form-fields">
                 <input type="text" placeholder="Name" className="career-apply-input" />
                 <div className="career-apply-contact-row">
-                  <span className="career-apply-prefix">+91</span>
-                  <span className="career-apply-dropdown" aria-hidden />
+                  <CountryCodeSelect
+                    variant="career-apply"
+                    value={countryCode}
+                    onChange={setCountryCode}
+                  />
                   <input type="tel" placeholder="Contact" className="career-apply-input career-apply-input--contact" />
                 </div>
                 <input type="email" placeholder="E-mail" className="career-apply-input" />

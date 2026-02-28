@@ -35,7 +35,7 @@ export default function AboutGeneration() {
           <div className="about-gen__right">
             <div className="about-gen__subtitle-wrap">
               <span className="about-gen__line" aria-hidden />
-              <span className="about-gen__subtitle">ABOUT 3RD GENERATION</span>
+              <span className="about-gen__subtitle">ABOUT 3RD GEN</span>
             </div>
             <h3 className="about-gen__heading">
               <span className="about-gen__heading-line">Always Provide Best</span>
