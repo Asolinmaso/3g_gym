@@ -30,10 +30,17 @@ export default function AboutInfrastructure() {
             </a>
           </div>
         </div>
-        <div className="about-infra__right">
+        
+      <div className="about-infra__right">
+
           <div className="about-infra__image-wrap">
+
             <Image src="/images/about_page/about_infrastructure.png" alt="Gym space" fill className="about-infra__image" sizes="748px" />
+
           </div>
+
+          <div className="about-infra__red-bar" />    
+
         </div>
       </AnimateOnScroll>
     </section>

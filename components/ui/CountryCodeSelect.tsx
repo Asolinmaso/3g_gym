@@ -51,11 +51,8 @@ interface CountryCodeSelectProps {
   className?: string;
   triggerClassName?: string;
   dropdownClassName?: string;
-  /** For career form use 'career-apply', for contact/franchise use their prefix */
   variant?: 'career-apply' | 'contact-form' | 'franchise-contact';
 }
-
-const defaultVariant = 'career-apply';
 
 export function CountryCodeSelect({
   value = '+91',
@@ -63,7 +60,7 @@ export function CountryCodeSelect({
   className = '',
   triggerClassName = '',
   dropdownClassName = '',
-  variant = defaultVariant,
+  variant = 'career-apply',
 }: CountryCodeSelectProps) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(value);
@@ -111,11 +108,7 @@ export function CountryCodeSelect({
         </span>
       </button>
       {open && (
-        <div
-          role="listbox"
-          className={`${p}-dropdown ${dropdownClassName}`.trim()}
-          aria-label="Country code list"
-        >
+        <div role="listbox" className={`${p}-dropdown ${dropdownClassName}`.trim()} aria-label="Country code list">
           {COUNTRY_CODES.map(({ code, country }) => (
             <button
               key={code}

@@ -46,6 +46,7 @@ export default function Services() {
       </div>
 
       {/* White curved card area – auto-scrolling marquee strip */}
+      <AnimateOnScroll>
       <div className="services-cards-wrap">
         <div className="services-curve services-curve--top" aria-hidden />
         <div className="services-curve services-curve--bottom" aria-hidden />
@@ -91,6 +92,7 @@ export default function Services() {
           </div>
         </div>
       </div>
+      </AnimateOnScroll>
     </section>
   );
 }

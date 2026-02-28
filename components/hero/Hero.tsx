@@ -88,14 +88,19 @@ export default function Hero() {
       {/* 3RD GEN – outlined text */}
       <h2 className="hero-banner__badge">3RD GEN</h2>
 
-      {/* Desktop: "TRAIN HARD SEE RESULTS." (one line) + "LIVE STRONG." (one line) */}
       <h1 className="hero-banner__headline">
         <span className="hero-banner__line hero-banner__line--1">
-          <span className="hero-banner__gradient-light">TRAIN</span> <span className="hero-banner__gradient-red">HARD</span> <span className="hero-banner__gradient-light">SEE</span> <span className="hero-banner__gradient-red">RESULTS.</span>
-        </span>
-        <span className="hero-banner__line hero-banner__line--2">
-          <span className="hero-banner__gradient-light">LIVE</span> <span className="hero-banner__gradient-red">STRONG.</span>
-        </span>
+        <span className="hero-banner__gradient-light">TRAIN</span>{" "}
+        <span className="hero-banner__gradient-red">HARD</span>
+      </span>
+      <span className="hero-banner__line hero-banner__line--2">
+        <span className="hero-banner__gradient-light">SEE</span>{" "}
+        <span className="hero-banner__gradient-red">RESULTS.</span>
+      </span>
+      <span className="hero-banner__line hero-banner__line--3">
+        <span className="hero-banner__gradient-light">LIVE</span>{" "}
+        <span className="hero-banner__gradient-red">STRONG.</span>
+      </span>
       </h1>
 
       {/* Copy + CTA – centered */}

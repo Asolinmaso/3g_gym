@@ -53,11 +53,7 @@ export default function CareerApply() {
               <div className="career-apply-form-fields">
                 <input type="text" placeholder="Name" className="career-apply-input" />
                 <div className="career-apply-contact-row">
-                  <CountryCodeSelect
-                    variant="career-apply"
-                    value={countryCode}
-                    onChange={setCountryCode}
-                  />
+                  <CountryCodeSelect variant="career-apply" value={countryCode} onChange={setCountryCode} />
                   <input type="tel" placeholder="Contact" className="career-apply-input career-apply-input--contact" />
                 </div>
                 <input type="email" placeholder="E-mail" className="career-apply-input" />
