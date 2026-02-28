@@ -4,10 +4,8 @@
   --foreground: #171717;
   --navbar-container-px: 1.5rem;
   --navbar-container-max: 80rem;
-  /* Shared rounded 3D curve for Services + Results cards */
   --card-curve-radius: 24px;
   --card-curve-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  /* Services section wave – same curve depth top and bottom */
   --services-wave-h: 50%;
   --services-wave-v: 50%;
 }

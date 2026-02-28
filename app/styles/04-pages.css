@@ -2919,7 +2919,6 @@
   color: #d9d9d9;
 }
 
-/* Contact field – same structure as Contact us screen */
 .franchise-contact__input-row {
   display: flex;
   flex-direction: row;
@@ -2984,3 +2983,31 @@
 }
 
 /* ========== Mobile responsive overrides (do not affect desktop) ========== */
+.footer-follow--mobile {
+  display: none;
+}
+.footer-mobile-description {
+  display: none;
+}
+
+.footer-equipment {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 30vw, 380px);   /* keep desktop the same, scale down on small screens */
+  overflow: hidden;
+  background: #fff;
+}
+
+.footer-equipment-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill;
+  object-position: bottom;  /* important */
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-equipment.in-view .footer-equipment-img {
+  transform: translateY(0);
+}
