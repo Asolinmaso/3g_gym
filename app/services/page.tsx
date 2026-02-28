@@ -1,11 +1,8 @@
-'use client';
 import Image from "next/image";
-import { useSlideUpOnScroll } from "@/hooks/useSlideUpOnScroll";
 import { FAQ, SERVICES_DETAIL, ServicesDetailBlock, ServicesHero } from "@/features/services";
 import "./page.css";
 
 export default function ServicesPage() {
-  const equipmentRef = useSlideUpOnScroll<HTMLElement>();
   return (
     <main className="services-page flex-1" style={{ background: "#FDFDFD" }}>
       <ServicesHero />
@@ -17,9 +14,9 @@ export default function ServicesPage() {
         </div>
       </section>
       <FAQ />
-      <section className="footer-equipment" ref={equipmentRef}>
+      <section className="footer-equipment">
         <Image
-          src="/footer_image2.png"
+          src="/footer_image.png"
           alt="Gym Equipment"
           width={300}
           height={400}

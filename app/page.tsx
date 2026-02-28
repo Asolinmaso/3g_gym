@@ -1,6 +1,4 @@
-'use client';
 import Image from "next/image";
-import { useSlideUpOnScroll } from "@/hooks/useSlideUpOnScroll";
 import {
   About,
   Commitment,
@@ -15,8 +13,6 @@ import {
 import "./page.css";
 
 export default function Home() {
-  const equipmentRef = useSlideUpOnScroll<HTMLElement>();
-  
   return (
     <main className="min-h-screen flex-1">
       <Hero />
@@ -28,9 +24,9 @@ export default function Home() {
       <Pricing />
       <Commitment />
       <CTA />
-      <section className="footer-equipment" ref={equipmentRef}>
+      <section className="footer-equipment">
         <Image
-          src="/footer_image2.png"
+          src="/footer_image.png"
           alt="Gym Equipment"
           width={300}
           height={400}
