@@ -1289,7 +1289,36 @@
     padding: 1.25rem;
   }
 }
+@media (max-width: 480px) {
 
+  /* Heading — different color like desktop */
+  .career-positions-heading span{
+    color: #C50D3E !important;
+    text-align: left !important;
+  }
+
+  /* Card content — left aligned */
+  .career-job-card {
+    text-align: left !important;
+  }
+
+  .career-job-card__title {
+    text-align: left !important;
+  }
+
+  .career-job-card__details {
+    text-align: left !important;
+    font-size: 17px;
+  }
+
+  .career-job-card__title-row {
+    justify-content: flex-start !important;
+  }
+
+  .career-jobs-grid {
+    max-width: 100% !important;
+  }
+}
 /* Touch-friendly tap targets on mobile */
 @media (max-width: 767px) {
   .footer-join-btn,
@@ -1639,7 +1668,7 @@
   }
 
   .testimonials-section {
-    padding: 2rem 1rem 2.5rem;
+    padding: 4.7rem 1rem 2.5rem;
   }
   .testimonials-subtitle {
     font-size: 16px;
@@ -1699,7 +1728,7 @@
   }
   .franchise-empire__heading{
     font-weight: bold;
-    font-size: 30px;
+    font-size: 24px;
   }
   /* Contact page mobile – fixed height for consistency */
   .franchise-contact__subtitle {
@@ -2053,39 +2082,6 @@
   margin: 0 0 12px;
 }
 
-.franchise-blueprint__left {
-    position: relative !important;
-    width: 100% !important;
-    min-height: 380px !important;
-    height: 380px !important;
-  }
-
-  .franchise-blueprint__gradient-strip {
-    display: none !important;
-  }
-
-  .franchise-blueprint__img-main {
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    height: 65% !important;
-    max-width: none !important;
-    z-index: 1 !important;
-  }
-
-  .franchise-blueprint__img-sub {
-    position: absolute !important;
-    width: 55% !important;
-    height: 50% !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: auto !important;
-    top: auto !important;
-    border: 6px solid #fff !important;
-    box-sizing: border-box !important;
-    z-index: 2 !important;
-  }
 
 .franchise-blueprint__header-strip {
   padding: 16px 20px;
@@ -2213,32 +2209,42 @@
   .testimonials-heading{
     margin-bottom: 1.5rem !important;
   }
-  
- /*.testimonials-subtitle-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 15px;
-  margin-bottom: 20px;
 }
+@media (max-width: 480px) {
 
-.testimonials-subtitle {
-  margin: 0;
-  line-height: 1;
-  
-}
+  .testimonials-subtitle-wrap {
+    height: auto !important;           /* let height grow with content */
+    max-width: 100% !important;
+    padding: 0 60px !important;        /* reserve space for lines on each side */
+    margin-bottom: 0.5rem !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
 
-.testimonials-subtitle-line--left,
-.testimonials-subtitle-line--right {
-  width: 50px;              
-  height: 2px;              
-  background-color: #C40233;
-  flex-shrink: 0;
-  min-width: 0;
-  height: 2px;              
-}
-*/
+  .testimonials-subtitle {
+    font-size: 16px !important;
+    line-height: 26px !important;
+    white-space: nowrap !important;    /* prevent text wrapping to 2 lines */
+  }
+
+  .testimonials-subtitle-line {
+    width: 40px !important;
+    top: 70% !important;               /* align to vertical center of container */
+    transform: translateY(-50%) !important;
+    border-bottom: 3px solid #c50d3e !important;
+  }
+
+  .testimonials-subtitle-line--left {
+    left: 0 !important;
+  }
+
+  .testimonials-subtitle-line--right {
+    right: 0 !important;
+  }
+
+  .testimonials-heading {
+    margin-bottom: 1.5rem !important;
+  }
 }
 
 @media (max-width: 420px) {
@@ -2258,8 +2264,16 @@
   }
 
   .cta-image {
-    width: 65%;
-    height: 260px;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 58% !important;
+    transform: translateX(-50%) !important;
+    width: 105% !important;
+    height: 58% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    margin: 0 !important;
+    right: auto !important;
   }
   
 }
@@ -2329,7 +2343,69 @@
 }
 }
 
+@media (max-width: 480px) {
 
+  /* Container — fixed height */
+  .franchise-blueprint__left {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 480px !important;
+    height: 480px !important;
+    overflow: visible !important;
+  }
+
+  /* Red gradient strip */
+  .franchise-blueprint__gradient-strip {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 45% !important;
+    width: 50% !important;
+    height: 100px !important;
+    background: linear-gradient(90deg, #C50D3E 0%, #000000 38.48%) !important;
+    z-index: 1 !important;
+  }
+
+  /* Top image wrapper */
+  .franchise-blueprint__img-main {
+    position: absolute !important;
+    left: 16px !important;           /* left padding */
+    right: 16px !important;          /* right padding */
+    top: 0 !important;
+    width: calc(100% - 32px) !important;
+    height: 75% !important;
+    max-width: none !important;
+    z-index: 2 !important;
+    transform: none !important;
+  }
+
+  /* Top image itself */
+  .franchise-blueprint__img-main .franchise-blueprint__img {
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  /* Bottom image wrapper */
+  .franchise-blueprint__img-sub {
+    position: absolute !important;
+    width: 55% !important;
+    height: 30% !important;
+    right: 0 !important;
+    bottom: 0 !important;        /* push down below container */
+    left: auto !important;
+    top: auto !important;
+    border: 6px solid #fff !important;
+    box-sizing: border-box !important;
+    z-index: 3 !important;
+    transform: none !important;
+  }
+
+  /* Bottom image itself */
+  .franchise-blueprint__img-sub .franchise-blueprint__img {
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+}
 
 /* ========== AboutGeneration – mobile & tablet layout fix ========== */
 
@@ -2501,6 +2577,9 @@
   .about-founder__image-wrap {
     overflow: visible;
     margin-bottom: 55px;
+    width: calc(100% - 40px) !important;  /* 20px padding each side */
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .about-founder__red-box {
     top: auto;
@@ -3208,7 +3287,7 @@
   .hero-banner-section {
     min-height: 609px;
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
     padding-left: 20px;
     padding-right: 20px;
     gap: 0;
@@ -3269,8 +3348,8 @@
       rgba(197, 13, 62, 0.15) 40%,
       transparent 75%
     );
-    width: 80px;
-    height: 100px;
+    width: 85px;
+    height: 105px;
   }
 
   .hero-banner__chevrons--left  { left: 0; }
@@ -3282,11 +3361,138 @@
   }
 
   .hero-banner__chevrons svg {
-    width: 30px;
-    height: 63px;
+    width: 40px;
+    height: 73px;
   }
 
   .hero-banner__chevrons svg path {
     fill: #010101 !important;
+  }
+}
+@media (max-width: 480px) {
+  /* 1️⃣ Parent container adjustment */
+  .services-cards-inner {
+    padding: 40px 0 100px !important; 
+    overflow: visible !important;
+  }
+
+  /* 2️⃣ Hide the blocking white curves */
+  .services-curve {
+    display: none !important; 
+  }
+
+  /* 3️⃣ The Card, Image, and OVERLAY Fix */
+  /* Added .services-card__overlay to this group */
+  .services-card,
+  .services-card__image-wrap,
+  .services-card__overlay {
+    /* Set aspect ratio to match Figma card proportions */
+    aspect-ratio: 4 / 5 !important;
+    height: auto !important;
+    position: relative !important;
+    
+    /* 1. Remove border-radius to prevent flat corners */
+    border-radius: 0 !important; 
+    
+    /* 2. Apply the specific Elliptical Clip-Path:
+       180% X: Pushes the side curves way out so the sides look straight.
+       82% Y: Forces the top and bottom edges to curve inward/outward. */
+    clip-path: ellipse(180% 82% at 50% 50%) !important;
+    
+    /* 3. Ensure no parent container is slicing the card before the curve */
+    overflow: visible !important;
+  }
+
+  .services-card__image {
+    /* Ensure the actual image adheres to the same shape */
+    clip-path: inherit;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  /* 5️⃣ Padding for the marquee track */
+  .services-grid--scroll {
+    padding-bottom: 60px !important; /* Extra room so the bottom arc is visible */
+    display: flex !important;
+    gap: 24px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* Section full width */
+  .franchise-blueprint {
+    padding: 80px 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Layout — full viewport width, 2 columns */
+  .franchise-blueprint__layout {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    min-height: 743px !important;
+  }
+
+  /* Left side — unchanged from base, gradient strip keeps its original position */
+  .franchise-blueprint__left {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 614px !important;
+  }
+
+  /* Gradient strip — restore original size, just ensure left:0 */
+  .franchise-blueprint__gradient-strip {
+    position: absolute !important;
+    left: 0 !important;
+    top: 270px !important;
+    width: 100% !important;
+    max-width: 464px !important;   /* original value restored */
+    height: 177px !important;
+  }
+
+  /* Right column — full bleed to right edge */
+  .franchise-blueprint__right {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Header strip — this is the one that must touch the RIGHT screen edge */
+  .franchise-blueprint__header-strip {
+    width: 100% !important;
+    padding: 24px 60px 24px 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Right body text — inner padding for readability */
+  .franchise-blueprint__right-body {
+    padding: 12px 60px 24px 48px !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-carousel__card-inner {
+    align-items: center;
+    text-align: center;
+  }
+  .testimonials-quote-mark {
+    position: static !important;
+    margin-bottom: 1rem;
+  }
+  .testimonials-text {
+    padding-top: 0;
+    text-align: center;
+  }
+  .testimonials-attribution {
+    align-items: center;
   }
 }

@@ -166,11 +166,10 @@
 /* Marquee section – Frame 20: 1440×100, bg #010101, centered, padding & alignment */
 .marquee-section {
   width: 100%;
-  min-height: 100px;
   background: #010101;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
   overflow: hidden;
 }
 .marquee-container {
@@ -182,10 +181,9 @@
   padding-right: var(--navbar-container-px, 1rem);
   display: flex;
   align-items: center;
-  min-height: 100px;
+  margin-bottom: 10px;
 }
 .marquee-track-wrap {
   display: flex;
   align-items: center;
-  min-height: 100px;
 }

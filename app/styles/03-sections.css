@@ -2036,8 +2036,8 @@
 }
 
 .career-job-card__title {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 500;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
   font-size: 24px;
   line-height: 47px;
   color: #010101;
@@ -2389,7 +2389,8 @@
 
 .career-apply-country-value {
   font-weight: 500;
-  color: #010101;
+  color: #A5A5A5;
+;
 }
 
 .career-apply-country-chevron {
@@ -2756,13 +2757,14 @@
 }
 
 .contact-form-title {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: 59px;
   text-align: center;
   color: #c50d3e;
   margin: 0;
+  letter-spacing: 0%;
 }
 
 @media (min-width: 768px) {
@@ -2844,7 +2846,7 @@
   background: #c50d3e;
   border-radius: 32px;
   border: none;
-  font-family: var(--font-oswald), "Oswald", sans-serif;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 500;
   font-size: clamp(1rem, 2vw, 24px);
   line-height: 1.5;
