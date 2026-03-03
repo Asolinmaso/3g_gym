@@ -66,8 +66,8 @@ export default function Pricing() {
   ];
 
   const bodyPlans = [
-    { title: '90 Days Plan', priceLines: ['Rs. 20,000'], highlighted: false },
-    { title: '150 Days Plan', priceLines: ['Rs. 35,000'], highlighted: true },
+    { title: '75 + 15 Days Plan', priceLines: ['Rs. 20,000'], highlighted: false },
+    { title: '130 + 20  Days Plan', priceLines: ['Rs. 35,000'], highlighted: true },
   ];
 
   const plans = activeTab === 'general' ? generalPlans : activeTab === 'personal' ? personalPlans : bodyPlans;

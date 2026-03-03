@@ -24,7 +24,7 @@ export default function OpenPositions() {
   return (
     <section className="career-positions">
       <div className="content-inner">
-        <h2 className="career-positions-heading">Open Positions</h2>
+        <h2 className="career-positions-heading">Open <span> Positions</span></h2>
         <div className="career-jobs-grid">
           {jobsOnPage.map((job) => (
             <article
@@ -41,7 +41,12 @@ export default function OpenPositions() {
                     </svg>
                   </span>
                 </div>
-                <p className="career-job-card__details">{job.details}</p>
+                <div className="career-job-card__details">
+                  <p>Morning shift : {job.morningShift}</p>
+                  <p>Evening shift : {job.eveningShift}</p>
+                  <p>Vacancies : {job.vacancies}</p>
+                  <p>Salary : {job.salary}</p>
+                </div>
               </div>
             </article>
           ))}

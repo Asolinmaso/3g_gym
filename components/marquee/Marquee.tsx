@@ -11,7 +11,7 @@ const items = [
 
 function MarqueeTrack() {
   return (
-    <div className="flex items-center gap-6 md:gap-10 shrink-0">
+    <div className="flex items-end gap-6 md:gap-10 shrink-0">
       {items.map((label, i) => (
         <span key={i} className="flex items-center gap-6 md:gap-10">
           <span className="text-[#C50D3E] font-bold text-lg md:text-xl lg:text-2xl whitespace-nowrap">

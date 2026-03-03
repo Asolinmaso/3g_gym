@@ -67,7 +67,7 @@
   object-position: bottom;
   display: block !important;
 }
-@media (max-width: 480px) {
+/*@media (max-width: 480px) {
   .contact-hero-bg-image {
     object-fit: fill !important;
   }
@@ -100,7 +100,7 @@
   }
 
   .contact-hero-model {
-    position: relative !important;   /* 👈 back to relative, not absolute */
+    position: relative !important;   
     bottom: unset !important;
     left: unset !important;
     transform: none !important;
@@ -118,12 +118,71 @@
 
   .contact-hero-model-img {
     width: 90vw !important;
-    height: 65vw !important;         /* 👈 fixed height relative to viewport */
+    height: 65vw !important;         
+    object-fit: contain !important;
+    object-position: bottom !important;
+  }
+}*/
+@media (max-width: 480px) {
+
+  .contact-hero-bg-image {
+    object-fit: fill !important;
+  }
+
+  .contact-hero {
+    height: auto !important;
+    min-height: unset !important;
+    aspect-ratio: 3 / 4 !important;
+    padding-top: 16px !important;
+    justify-content: flex-start !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .contact-hero-title-bg {
+    position: relative !important;
+    transform: none !important;
+    top: 50px !important;
+    left: unset !important;
+    font-size: 56px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    margin: 0 0 10px !important;
+    line-height: 1 !important;
+    z-index: 3 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .contact-hero-title-line1,
+  .contact-hero-title-line2 {
+    display: block !important;
+  }
+
+  .contact-hero-model {
+    position: relative !important;
+    bottom: unset !important;
+    left: unset !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    flex: 1 !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    z-index: 2 !important;
+    overflow: hidden !important;
+    margin-top: 0 !important;
+  }
+
+  .contact-hero-model-img {
+    width: 95vw !important;
+    max-width: none !important;
+    height: 80vw !important;
     object-fit: contain !important;
     object-position: bottom !important;
   }
 }
-
 @media (min-width: 481px) and (max-width: 1023px) {
   .contact-hero {
     height: 480px;
