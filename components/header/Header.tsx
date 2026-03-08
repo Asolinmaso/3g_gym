@@ -73,7 +73,7 @@ export default function Header() {
             <div className="flex items-center justify-end shrink-0">
               <Link
                 href="/#contact"
-                className="hidden lg:inline-flex bg-[#C50D3E] text-[20px] text-white h-[52px] min-w-[163px] px-6 rounded-[40px] font-normal hover:opacity-90 transition-opacity items-center justify-center gap-1.5 whitespace-nowrap footer-join-btn"
+                className="hidden lg:inline-flex bg-[#C50D3E] text-white h-[52px] min-w-[163px] px-6 rounded-[40px] hover:opacity-90 transition-opacity items-center justify-center gap-1.5 whitespace-nowrap footer-join-btn font-poppins font-semibold text-[20px] leading-[24px]"
               >
                 Join 3rd Gen
                 <span className="text-base" aria-hidden>

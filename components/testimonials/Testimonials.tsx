@@ -51,7 +51,11 @@ export default function Testimonials() {
                 className={`testimonials-carousel__card ${i === activeIndex ? 'testimonials-carousel__card--active' : ''}`}
               >
                 <blockquote className="testimonials-carousel__card-inner">
-                  <span className="testimonials-quote-mark" aria-hidden>&ldquo;</span>
+                  <span className="testimonials-quote-mark" aria-hidden>
+                    <svg width="50" height="40" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 36V22.5C0 15.9 2.1 10.5 6.3 6.3C10.5 2.1 16.2 0 23.4 0V6C19.8 6 16.8 7.2 14.4 9.6C12 12 10.8 15 10.8 18.6H18V36H0ZM26 36V22.5C26 15.9 28.1 10.5 32.3 6.3C36.5 2.1 42.2 0 49.4 0V6C45.8 6 42.8 7.2 40.4 9.6C38 12 36.8 15 36.8 18.6H44V36H26Z" fill="#C50D3E"/>
+                    </svg>
+                  </span>
                   <p className="testimonials-text">{t.text}</p>
                   <footer className="testimonials-attribution">
                     <cite className="testimonials-author">{t.author}</cite>

@@ -541,7 +541,7 @@
   .services-header {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-bottom: 48px;
+    margin-bottom: 0px;
   }
 
   .services-cards-wrap {
@@ -549,7 +549,7 @@
   }
 
   .services-cards-inner {
-    padding: 56px 0 80px;
+    padding:0px 0 80px;
   }
 
   .services-scroll-wrap {
@@ -632,13 +632,38 @@
 
 /* Desktop: force exactly 2 lines, no wrap – scale font to fit */
 @media (min-width: 1024px) {
+  .about-label-wrap{
+    margin-bottom: 0;
+  }
   .about-heading {
     font-size: clamp(40px, 4.5vw, 64px);
     line-height: 80px;
+    margin-bottom: 2rem;
   }
   .about-heading__line {
     white-space: nowrap;
   }
+  .about-left {
+    gap: 0rem; /* increase gap between heading and content row */
+  }
+
+  .about-content-row {
+    grid-template-columns: auto 1fr;
+    align-items: stretch;
+  }
+
+  .about-image-small-wrap {
+    aspect-ratio: unset;
+    align-self: stretch;
+  }
+
+  .about-content-text {
+    justify-content: space-between;
+  }
+  .services-header {
+    align-items: end; /* change from 'start' to 'end' */
+  }
+  
 }
 
 .about-content-row {
@@ -2011,8 +2036,8 @@
 }
 
 .career-job-card__title {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 500;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
   font-size: 24px;
   line-height: 47px;
   color: #010101;
@@ -2364,7 +2389,8 @@
 
 .career-apply-country-value {
   font-weight: 500;
-  color: #010101;
+  color: #A5A5A5;
+;
 }
 
 .career-apply-country-chevron {
@@ -2731,13 +2757,14 @@
 }
 
 .contact-form-title {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 400;
   font-size: 32px;
   line-height: 59px;
   text-align: center;
   color: #c50d3e;
   margin: 0;
+  letter-spacing: 0%;
 }
 
 @media (min-width: 768px) {
@@ -2819,7 +2846,7 @@
   background: #c50d3e;
   border-radius: 32px;
   border: none;
-  font-family: var(--font-oswald), "Oswald", sans-serif;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 500;
   font-size: clamp(1rem, 2vw, 24px);
   line-height: 1.5;
@@ -2854,9 +2881,9 @@
 /* Header / Hero CTA buttons – Figma: 163×52, padding 24px 13px, Oswald 24px */
 .footer-join-btn,
 .hero-get-started-btn {
-  font-family: var(--font-oswald), "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 20px;
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
   line-height: 24px;
 }
 
@@ -2910,9 +2937,21 @@
 
 @media (min-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 350px 1fr 300px 1fr;
-    gap: 40px;
+    grid-template-columns: 280px 160px 260px 1fr;
+    gap: 60px;
     align-items: start;
+  }
+
+  .footer-col {
+    gap: 24px;
+  }
+
+  .footer-list {
+    gap: 12px;
+  }
+
+  .footer-contact-list {
+    gap: 20px;
   }
 }
 
@@ -3112,4 +3151,20 @@
   }
 }
 
-/* ========== Services page ========== */
+@media (min-width: 1024px) {
+  .testimonials-carousel__card-inner {
+    align-items: center;
+    text-align: center;
+  }
+  .testimonials-quote-mark {
+    position: static !important;
+    margin-bottom: 1rem;
+  }
+  .testimonials-text {
+    padding-top: 0;
+    text-align: center;
+  }
+  .testimonials-attribution {
+    align-items: center;
+  }
+}
