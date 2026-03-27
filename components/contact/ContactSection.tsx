@@ -2,8 +2,101 @@
 
 import "./ContactSection.css";
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
-
+import { useState } from "react";
 export default function ContactSection() {
+  const [form, setForm] = useState({
+  name: "",
+  phone: "",
+  email: "",
+  location: "",
+  message: "",
+});
+
+const [loading, setLoading] = useState(false);
+const [emailError, setEmailError] = useState("");
+
+const handleChange = (e: any) => {
+  const { name, value } = e.target;
+
+  let newValue = value;
+
+  // ✅ NAME (only letters + space)
+  if (name === "name") {
+    newValue = value.replace(/[^a-zA-Z\s]/g, "");
+  }
+
+  // ✅ PHONE (only numbers, max 10 digits)
+  if (name === "phone") {
+    newValue = value.replace(/[^0-9]/g, "").slice(0, 10);
+  }
+
+  // ✅ LOCATION (only letters + space)
+  if (name === "location") {
+    newValue = value.replace(/[^a-zA-Z\s]/g, "");
+  }
+
+  // ✅ MESSAGE (letters, numbers, space, basic punctuation)
+  if (name === "message") {
+    newValue = value.replace(/[^a-zA-Z0-9\s.,]/g, "");
+  }
+
+  // EMAIL → no restriction here (let browser handle format)
+  if (name === "email") {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (value && !emailRegex.test(value)) {
+    setEmailError("Invalid email format");
+  } else {
+    setEmailError("");
+  }
+}
+
+  setForm({ ...form, [name]: newValue });
+};
+const handleSubmit = async (e: any) => {
+  e.preventDefault();
+
+  if (loading) return;
+  if (emailError) {
+    alert("Please fix errors before submitting ❌");
+    return;
+  }
+
+  try {
+    setLoading(true);
+
+    const res = await fetch("/api/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        type: "contact",
+        data: form,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Form submitted successfully ✅");
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        location: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong ❌");
+    }
+
+  } catch (error) {
+    alert("Server error ❌");
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <section className="contact-section">
       <div className="content-inner">
@@ -110,7 +203,7 @@ export default function ContactSection() {
 
             {/* RIGHT SIDE */}
             <div className="contact-form-wrap">
-              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <form className="contact-form" onSubmit={handleSubmit}>
                 <h3 className="contact-form-title">Get In Touch</h3>
                 <div className="contact-form-fields">
                   <input
@@ -120,6 +213,9 @@ export default function ContactSection() {
                     required
                     pattern="^[a-zA-Z\s]{2,50}$"
                     title="Please enter a valid name (2-50 characters, letters only)"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
                   />
                   <div className="contact-form-contact-row">
                     <span className="contact-form-prefix">+91</span>
@@ -131,6 +227,9 @@ export default function ContactSection() {
                       required
                       pattern="[0-9]{10}"
                       title="Please enter a valid 10-digit phone number"
+                      name="phone"
+                      value={form.phone}
+                      onChange={handleChange}
                     />
                   </div>
                   <input
@@ -138,11 +237,20 @@ export default function ContactSection() {
                     placeholder="E-mail"
                     className="contact-form-input"
                     required
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
                   />
+                  {emailError && (
+                    <p style={{ color: "red", fontSize: "12px" }}>{emailError}</p>
+                  )}
                   <input
                     type="text"
                     placeholder="Location"
                     className="contact-form-input"
+                    name="location"
+                    value={form.location}
+                    onChange={handleChange}
                     required
                   />
                   <textarea
@@ -151,9 +259,12 @@ export default function ContactSection() {
                     rows={4}
                     required
                     minLength={10}
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
                   />
-                  <button type="submit" className="btn-pill btn--black">
-                    Submit
+                  <button type="submit" className="btn-pill btn--black" disabled={loading || !!emailError}>
+                    {loading ? "Sending..." : "Submit"}
                     <span className="btn-pill__arrow" aria-hidden>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
