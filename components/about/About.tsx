@@ -76,8 +76,8 @@ export default function About() {
             </div>
 
             <h2 className="about-heading">
-              <span className="about-heading__line">More Than a <span className="about-heading__accent">Gym </span>.</span>
-              <span className="about-heading__line">A Place to <span className="about-heading__accent">Transform</span>.</span>
+              <span className="about-heading__line">More Than a <span className="about-heading__accent">Gym.</span></span>
+              <span className="about-heading__line">A Place to <span className="about-heading__accent">Transform.</span></span>
             </h2>
 
             <div className="about-content-row">
@@ -97,11 +97,11 @@ export default function About() {
                   designed by certified experts and backed by proven training
                   methods that deliver real, lasting results.
                 </p>
-                <a href="/about" className="btn-pill btn--red">
+                <a href="/about" className="about-cta">
                   Know More
-                  <span className="btn-pill__arrow" aria-hidden>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <span className="about-cta-arrow" aria-hidden>
+                    <svg viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1l6 7-6 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </span>
                 </a>

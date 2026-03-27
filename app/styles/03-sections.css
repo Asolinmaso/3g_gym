@@ -154,27 +154,30 @@
 }
 
 .pricing-card:hover .pricing-card__cta {
-  background: #010101;
+  background: #010101 !important;
+  color: #ffffff !important;
+  opacity: 1;
 }
 
-.pricing-card__chevrons {
+.pricing-card .pricing-card__chevrons {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover .pricing-card__chevrons {
+  opacity: 1;
 }
 
 .pricing-card__chevrons--tl {
   top: 12px;
   left: 12px;
-  transform: rotate(-90deg);
 }
 
 .pricing-card__chevrons--br {
   bottom: 12px;
   right: 12px;
-  transform: rotate(90deg);
 }
 
 .pricing-card__title {
@@ -234,12 +237,10 @@
 
 .pricing-card__cta {
   margin-top: auto;
-  width: 146px;
-  height: 52px;
-  border-radius: 40px;
+  border-radius: 100px;
   background: #c50d3e;
   color: #ffffff;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -247,8 +248,10 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
+  padding: 14px 32px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease, opacity 0.2s;
 }
 
 .pricing-card__cta:hover {
@@ -1025,7 +1028,8 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  overflow: visible; /* Show neighbors */
+  overflow: visible;
+  /* Show neighbors */
   --card-w: 800px;
   --card-g: 24px;
   --card-offset: calc(50% - (var(--card-w) / 2));
@@ -1044,18 +1048,21 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50vw; /* Wide enough to cover to section edges */
+  width: 50vw;
+  /* Wide enough to cover to section edges */
   pointer-events: none;
   z-index: 10;
 }
 
 .testimonials-carousel__gradient--left {
-  right: calc(100% - (var(--card-offset) + 4px)); /* Slight overlap into active card */
+  right: calc(100% - (var(--card-offset) + 4px));
+  /* Slight overlap into active card */
   background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #ffffff 150px, #ffffff 100%);
 }
 
 .testimonials-carousel__gradient--right {
-  left: calc(100% - (var(--card-offset) + 4px)); /* Slight overlap into active card */
+  left: calc(100% - (var(--card-offset) + 4px));
+  /* Slight overlap into active card */
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 150px, #ffffff 100%);
 }
 
@@ -1076,7 +1083,8 @@
 .testimonials-carousel__card-inner {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centered content */
+  align-items: center;
+  /* Centered content */
   padding: 48px 40px 40px;
   gap: 0;
   background: rgba(197, 13, 62, 0.05);
@@ -1102,17 +1110,20 @@
   font-size: 20px;
   line-height: 1.6;
   color: #010101;
-  text-align: center; /* Centered text */
+  text-align: center;
+  /* Centered text */
   margin: 0 0 32px;
   padding-top: 5px;
   flex: 1;
-  max-width: 600px; /* Improve readability */
+  max-width: 600px;
+  /* Improve readability */
 }
 
 .testimonials-attribution {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centered attribution */
+  align-items: center;
+  /* Centered attribution */
   gap: 4px;
   margin: 0;
   font-style: normal;
@@ -1155,10 +1166,23 @@
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .testimonials-nav-btn:hover {
   opacity: 0.9;
+}
+
+.testimonials-nav-btn:active {
+  background: #c50d3e;
+  opacity: 0.8;
+  outline: none;
+}
+
+.testimonials-nav-btn:focus-visible {
+  outline: 2px solid #c50d3e;
+  outline-offset: 3px;
 }
 
 @media (max-width: 900px) {
@@ -1361,7 +1385,7 @@
 
 
 /* Desktop: Figma – Group 6 1308×570. Card 443px tall @ top 127px. Image 701×570 full height @ left 707px so it exceeds card. */
-@media (min-width: 1408px) {
+@media (min-width: 1024px) {
   .cta-section {
     padding: 64px var(--navbar-container-px) 80px;
   }
@@ -1383,47 +1407,50 @@
 
   .cta-banner {
     position: absolute;
-    left: 100px;
-    top: 127px;
+    left: 0;
+    bottom: 0;
     width: 1240px;
     height: 443px;
     max-width: none;
     margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 0 100px;
     border-radius: 60px;
     box-sizing: border-box;
     z-index: 1;
   }
 
   .cta-heading {
-    position: absolute;
-    left: 100px;
-    top: 50px;
+    position: relative;
+    left: 0;
+    top: 0;
     width: 581px;
     font-size: 64px;
-    line-height: 90px;
+    line-height: 1.1;
     color: #010101;
-    margin: 0;
+    margin: 0 0 24px;
     z-index: 2;
   }
 
   .cta-desc {
-    position: absolute;
-    left: 100px;
-    top: 254px;
+    position: relative;
+    left: 0;
+    top: 0;
     width: 499px;
     font-size: 24px;
-    line-height: 32px;
+    line-height: 1.3;
     color: #010101;
-    margin: 0;
+    margin: 0 0 32px;
     z-index: 2;
   }
 
   .cta-btn {
-    position: absolute;
-    left: 100px;
-    top: 342px;
-    min-width: 180px;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: fit-content;
     z-index: 2;
   }
 
@@ -2434,6 +2461,13 @@
   transition: transform 0.2s ease;
 }
 
+.career-apply-country-divider {
+  width: 1px;
+  height: 20px;
+  background: #e0e0e0;
+  margin-left: 6px;
+}
+
 .career-apply-country-wrap:has(button[aria-expanded="true"]) .career-apply-country-chevron {
   transform: rotate(180deg);
 }
@@ -2442,11 +2476,11 @@
   position: absolute;
   left: 0;
   top: calc(100% + 6px);
-  min-width: 220px;
+  min-width: 240px;
   max-height: 280px;
   overflow-y: auto;
   background: #ffffff;
-  border: 1px solid #a5a5a5;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 20;
@@ -2462,27 +2496,165 @@
   border: none;
   background: none;
   cursor: pointer;
-  font-family: "Roboto", system-ui, sans-serif;
+  font-family: inherit;
   font-size: 16px;
   line-height: 1.4;
-  color: #010101;
+  color: #333333;
   text-align: left;
   transition: background 0.15s ease;
 }
 
-.career-apply-country-option span:first-child {
+.career-apply-country-option-code {
   font-weight: 500;
   margin-right: 12px;
 }
 
-.career-apply-country-option:hover,
-.career-apply-country-option--selected {
-  background: rgba(197, 13, 62, 0.08);
+.career-apply-country-option-country {
+  color: #666666;
+  font-size: 14px;
+}
+
+.career-apply-country-option:hover {
+  background: #f8f8f8;
 }
 
 .career-apply-country-option--selected {
+  background: #fff5f7;
   color: #c50d3e;
+}
+
+/* Common Country Selector Styles */
+.contact-form-country-wrap,
+.franchise-contact-country-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contact-form-country-trigger,
+.franchise-contact-country-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px 0 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  color: #a5a5a5;
+  transition: all 0.2s ease;
+}
+
+.contact-form-country-trigger:hover,
+.franchise-contact-country-trigger:hover {
+  color: #010101;
+}
+
+.contact-form-country-value,
+.franchise-contact-country-value {
   font-weight: 500;
+  color: #a5a5a5;
+}
+
+.contact-form-country-chevron,
+.franchise-contact-country-chevron {
+  display: inline-flex;
+  color: #a5a5a5;
+  transition: transform 0.2s ease;
+  font-size: 12px;
+}
+
+.contact-form-country-wrap:has(button[aria-expanded="true"]) .contact-form-country-chevron,
+.franchise-contact-country-wrap:has(button[aria-expanded="true"]) .franchise-contact-country-chevron {
+  transform: rotate(180deg);
+}
+
+.contact-form-country-divider,
+.franchise-contact-country-divider {
+  width: 1px;
+  height: 24px;
+  background: #e0e0e0;
+  margin-left: 4px;
+}
+
+.contact-form-country-dropdown,
+.franchise-contact-country-dropdown {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  width: 280px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 4px 0;
+}
+
+/* Custom Scrollbar for Dropdown */
+.contact-form-country-dropdown::-webkit-scrollbar,
+.franchise-contact-country-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contact-form-country-dropdown::-webkit-scrollbar-track,
+.franchise-contact-country-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contact-form-country-dropdown::-webkit-scrollbar-thumb,
+.franchise-contact-country-dropdown::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.contact-form-country-option,
+.franchise-contact-country-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  color: #333333;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.contact-form-country-option-code,
+.franchise-contact-country-option-code {
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+.contact-form-country-option-country,
+.franchise-contact-country-option-country {
+  color: #666666;
+  font-size: 14px;
+}
+
+.contact-form-country-option:hover,
+.franchise-contact-country-option:hover {
+  background: none;
+}
+
+.contact-form-country-option--selected,
+.franchise-contact-country-option--selected {
+  background: #fff5f7 !important;
+  color: #C50D3E !important;
+}
+
+.contact-form-country-option--selected .contact-form-country-option-code,
+.contact-form-country-option--selected .contact-form-country-option-country,
+.franchise-contact-country-option--selected .franchise-contact-country-option-code,
+.franchise-contact-country-option--selected .franchise-contact-country-option-country {
+  color: #C50D3E !important;
 }
 
 .career-apply-upload {
@@ -2793,7 +2965,7 @@
 
 .contact-form-title {
   font-family: var(--font-poppins), "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 32px;
   line-height: 59px;
   text-align: center;

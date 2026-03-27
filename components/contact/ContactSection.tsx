@@ -1,8 +1,9 @@
 "use client";
-
+import { CountryCodeSelect } from '@/components/ui/CountryCodeSelect';
+import { useState } from 'react';
 import "./ContactSection.css";
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
-import { useState } from "react";
+
 export default function ContactSection() {
   const [form, setForm] = useState({
   name: "",
@@ -14,6 +15,7 @@ export default function ContactSection() {
 
 const [loading, setLoading] = useState(false);
 const [emailError, setEmailError] = useState("");
+const [countryCode, setCountryCode] = useState('+91');
 
 const handleChange = (e: any) => {
   const { name, value } = e.target;
@@ -124,7 +126,7 @@ const handleSubmit = async (e: any) => {
                 <div>
                   <h4>Location</h4>
                   <p>
-                    No. 10, ganesh nagar, alamathi main road, New vellanur, chennai - 600062
+                    10, Alamadhi  main road, Vetrivel Nagar, Ganesh Nagar, New Vellanur, Avadi, Chennai- 600062
                   </p>
                 </div>
               </div>
@@ -147,6 +149,7 @@ const handleSubmit = async (e: any) => {
                 <div>
                   <h4>Email</h4>
                   <p>3rdgenerationfitnessstudio@gmail.com</p>
+                  <p>contact@3rdgenerationfitnessstudio.com</p>
                 </div>
               </div>
 
@@ -218,8 +221,7 @@ const handleSubmit = async (e: any) => {
                     onChange={handleChange}
                   />
                   <div className="contact-form-contact-row">
-                    <span className="contact-form-prefix">+91</span>
-                    <span className="contact-form-dropdown" aria-hidden />
+                    <CountryCodeSelect variant="career-apply" value={countryCode} onChange={setCountryCode} />
                     <input
                       type="tel"
                       placeholder="Contact"
