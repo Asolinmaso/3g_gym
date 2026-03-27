@@ -209,6 +209,11 @@
   white-space: nowrap;
 }
 
+.btn-pill:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 /* When a button has an arrow, compensate left padding so text stays visually centered */
 .btn-pill:has(.btn-pill__arrow) {
   padding-left: calc(36px + 20px + 12px);  /* left = base + arrow + gap */

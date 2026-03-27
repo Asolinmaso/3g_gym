@@ -184,7 +184,6 @@
 
   .contact-form-input--contact {
     border: none;
-    border-left: 1px solid #A5A5A5;  /* vertical divider */
     padding-left: 10px;
     outline: none;
     flex: 1;
@@ -284,7 +283,6 @@
 
   .contact-form-input--contact {
     border: none;
-    border-left: 1px solid #A5A5A5;
     padding-left: 12px;
     outline: none;
     flex: 1;
@@ -390,7 +388,6 @@
 
   .contact-form-input--contact {
     border: none;
-    border-left: 1px solid #A5A5A5;
     padding-left: 12px;
     outline: none;
     flex: 1;

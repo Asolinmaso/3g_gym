@@ -1,8 +1,105 @@
 'use client';
+import { useState } from "react";
 
 import { CountryCodeSelect } from '@/components/ui/CountryCodeSelect';
 
 export default function FranchiseContact() {
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    city: "",
+    investment: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState("");
+
+  const handleChange = (e: any) => {
+  const { name, value } = e.target;
+  let newValue = value;
+
+  // ✅ NAME → only letters + space
+  if (name === "name") {
+    newValue = value.replace(/[^a-zA-Z\s]/g, "");
+  }
+
+  // ✅ PHONE → only numbers, max 10 digits
+  if (name === "phone") {
+    newValue = value.replace(/[^0-9]/g, "").slice(0, 10);
+  }
+
+  // ✅ CITY → only letters + space
+  if (name === "city") {
+    newValue = value.replace(/[^a-zA-Z\s]/g, "");
+  }
+
+  // ✅ INVESTMENT → only numbers (₹ values)
+  if (name === "investment") {
+    newValue = value.replace(/[^0-9]/g, "");
+  }
+
+  if (name === "email") {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (value && !emailRegex.test(value)) {
+    setEmailError("Invalid email format");
+  } else {
+    setEmailError("");
+  }
+}
+
+  setForm({ ...form, [name]: newValue });
+};
+
+const handleSubmit = async (e: any) => {
+  e.preventDefault();
+  if (loading) return;
+
+  if (!form.name || !form.phone || !form.email || !form.city || !form.investment) {
+  alert("Please fill all fields ❌");
+  return;
+}
+
+  if (emailError) {
+    alert("Please fix errors before submitting ❌");
+    return;
+  }
+
+  try {
+    setLoading(true);
+
+    const res = await fetch("/api/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        type: "franchise",
+        data: form,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Enquiry submitted ✅");
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        city: "",
+        investment: "",
+      });
+    } else {
+      alert("Something went wrong ❌");
+    }
+
+  } catch (error) {
+    alert("Server error ❌");
+  } finally {
+    setLoading(false); // ✅ ALWAYS runs
+  }
+};
   return (
     <section id="franchise-contact" className="franchise-contact">
       <div className="content-inner franchise-contact__inner">
@@ -48,17 +145,20 @@ export default function FranchiseContact() {
         <div className="franchise-contact__form-wrap">
           <h3 className="franchise-contact__form-title">Start Your Application</h3>
           <p className="franchise-contact__form-desc">Fill out the form below and our franchise manager will contact you within 24 hours.</p>
-          <form className="franchise-contact__form" onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Name" className="franchise-contact__input" aria-label="Name" required pattern="^[a-zA-Z\s]{2,50}$" title="Please enter a valid name (2-50 characters, letters only)" />
+          <form className="franchise-contact__form" onSubmit={handleSubmit}>
+            <input type="text" placeholder="Name" className="franchise-contact__input"  name="name" value={form.name} onChange={handleChange} aria-label="Name" required pattern="^[a-zA-Z\s]{2,50}$" title="Please enter a valid name (2-50 characters, letters only)"  />
             <div className="franchise-contact__input-row">
               <CountryCodeSelect variant="franchise-contact" />
-              <input type="tel" placeholder="Contact" className="franchise-contact__input franchise-contact__input--contact" aria-label="Contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" />
+              <input type="tel" placeholder="Contact" className="franchise-contact__input franchise-contact__input--contact" name="phone" value={form.phone} onChange={handleChange} aria-label="Contact" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" />
             </div>
-            <input type="email" placeholder="Email" className="franchise-contact__input" aria-label="Email" required />
-            <input type="text" placeholder="City" className="franchise-contact__input" aria-label="City" required />
-            <input type="text" placeholder="Investment Capacity" className="franchise-contact__input" aria-label="Investment Capacity" required />
-            <button type="submit" className="btn-pill btn--red">
-              Submit Enquiry
+            <input type="email" placeholder="Email" className="franchise-contact__input" name="email" value={form.email} onChange={handleChange} aria-label="Email" required />
+            {emailError && (
+              <p style={{ color: "red", fontSize: "12px" }}>{emailError}</p>
+            )}
+            <input type="text" placeholder="City"  name="city" value={form.city} onChange={handleChange} className="franchise-contact__input" aria-label="City" required />
+            <input type="text" placeholder="Investment Capacity" name="investment" value={form.investment} onChange={handleChange} className="franchise-contact__input" aria-label="Investment Capacity" required />
+            <button type="submit" className="btn-pill btn--red" disabled={loading || !!emailError}>
+              {loading ? "Submitting..." : "Submit Enquiry"}
               <span className="btn-pill__arrow" aria-hidden>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
