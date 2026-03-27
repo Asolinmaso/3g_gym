@@ -16,6 +16,17 @@ function PlanCard({
 }) {
   return (
     <a href="/contact" className="pricing-card">
+      <div className="pricing-card__chevrons pricing-card__chevrons--tl" aria-hidden>
+        <svg width="36" height="48" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 3l5 5 5-5M7 11l5 5 5-5M7 19l5 5 5-5" stroke="pink" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <div className="pricing-card__chevrons pricing-card__chevrons--br" aria-hidden>
+        <svg width="36" height="48" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 13l5-5 5 5M7 21l5-5 5 5M7 29l5-5 5 5" stroke="pink" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+
       <h3 className="pricing-card__title">{title}</h3>
       <div className="pricing-card__prices">
         {priceLines.map((line) => (
@@ -35,11 +46,11 @@ function PlanCard({
           </li>
         ))}
       </ul>
-      <span className="btn-pill btn--red">
+      <span className="btn-pill btn--red pricing-card__cta">
         Join Now
         <span className="btn-pill__arrow" aria-hidden>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
       </span>
@@ -81,48 +92,48 @@ export default function Pricing() {
     <section id="pricing" className="pricing-section">
       <div className="content-inner">
         <AnimateOnScroll>
-        <div className="pricing-title-wrap">
-         
-          <h2 className="pricing-title">
-            <span className="pricing-title__gradient">Choose the </span>
-            <span className="pricing-title__accent">Plan</span>
-            <span className="pricing-title__gradient"> That Fits Your </span>
-            <span className="pricing-title__accent">Goals</span>
-          </h2>
-        </div>
+          <div className="pricing-title-wrap">
+
+            <h2 className="pricing-title">
+              <span className="pricing-title__gradient">Choose the </span>
+              <span className="pricing-title__accent">Plan</span>
+              <span className="pricing-title__gradient"> That Fits Your </span>
+              <span className="pricing-title__accent">Goals</span>
+            </h2>
+          </div>
         </AnimateOnScroll>
         <AnimateOnScroll delay={0.1}>
-        <div className="pricing-tabs">
-          {TABS.map((tab) => (
-            <button
-              key={tab.id}
-              type="button"
-              className={`pricing-tab ${activeTab === tab.id ? 'pricing-tab--active' : ''}`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+          <div className="pricing-tabs">
+            {TABS.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                className={`pricing-tab ${activeTab === tab.id ? 'pricing-tab--active' : ''}`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </AnimateOnScroll>
         <AnimateOnScroll delay={0.2}>
-        <div className={`pricing-grid ${gridClass}`}>
-          {plans.map((plan) => (
-            <PlanCard
-              key={plan.title + plan.priceLines[0] + ((plan as { sessions?: string }).sessions ?? '')}
-              title={plan.title}
-              priceLines={plan.priceLines}
-              sessions={(plan as { sessions?: string }).sessions}
-            />
-          ))}
-        </div>
+          <div className={`pricing-grid ${gridClass}`}>
+            {plans.map((plan) => (
+              <PlanCard
+                key={plan.title + plan.priceLines[0] + ((plan as { sessions?: string }).sessions ?? '')}
+                title={plan.title}
+                priceLines={plan.priceLines}
+                sessions={(plan as { sessions?: string }).sessions}
+              />
+            ))}
+          </div>
         </AnimateOnScroll>
         <AnimateOnScroll delay={0.3}>
-        <div className="pricing-note">
-          <span>Personal Training & other add-ons are not included.</span>
-          <span>Student price applicable only with valid ID.</span>
-          <span>Terms & conditions apply.</span>
-        </div>
+          <div className="pricing-note">
+            <span>Personal Training & other add-ons are not included.</span>
+            <span>Student price applicable only with valid ID.</span>
+            <span>Terms & conditions apply.</span>
+          </div>
         </AnimateOnScroll>
       </div>
     </section>

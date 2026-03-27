@@ -209,6 +209,12 @@
   white-space: nowrap;
 }
 
+/* When a button has an arrow, compensate left padding so text stays visually centered */
+.btn-pill:has(.btn-pill__arrow) {
+  padding-left: calc(36px + 20px + 12px);  /* left = base + arrow + gap */
+  padding-right: 36px;
+}
+
 .btn-pill:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);

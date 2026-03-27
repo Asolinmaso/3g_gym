@@ -30,7 +30,10 @@ export default function ContactCards() {
               </svg>
             </span>
             <h3 className="contact-card__title">Mail</h3>
-            <p className="contact-card__text">3rdgenerationfitnessstudio@gmail.com</p>
+            <div className="contact-card__text">
+              <p>3rdgenerationfitnessstudio@gmail.com</p>
+              <p>contact@3rdgenerationfitnessstudio.com</p>
+            </div>
           </article>
           <article className="contact-card">
             <span className="contact-card__icon contact-card__icon--address" aria-hidden>
@@ -46,7 +49,7 @@ export default function ContactCards() {
             </span>
             <h3 className="contact-card__title">Address</h3>
             <p className="contact-card__text">
-              No. 10, ganesh nagar, alamathi main road, New vellanur, chennai - 600062
+              10, Alamadhi  main road, Vetrivel Nagar, Ganesh Nagar, New Vellanur, Avadi, Chennai- 600062
             </p>
           </article>
         </div>

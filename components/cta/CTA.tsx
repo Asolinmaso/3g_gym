@@ -9,16 +9,16 @@ export default function CTA() {
     <section id="contact" className="cta-section">
       <div className="cta-inner">
         <AnimateOnScroll className="cta-banner">
-          <h2 className="cta-heading">Start Your Fitness Journey <span style={{color:"#ffffff"}}>Today</span>.</h2>
+          <h2 className="cta-heading">Start Your Fitness Journey <span style={{ color: "#ffffff" }}>Today</span>.</h2>
           <p className="cta-desc">
             Train with expert coaches, modern equipment, and programs designed
             to deliver real results.
           </p>
-          <Link href="/contact" className="btn-pill btn--black">
+          <Link href="/contact" className="btn-pill btn--black cta-btn">
             Contact Us
             <span className="btn-pill__arrow" aria-hidden>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
           </Link>

@@ -6,7 +6,7 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 export default function AboutInfrastructure() {
   return (
     <section className="about-infra">
-      <AnimateOnScroll className="content-inner about-infra__layout">
+      <AnimateOnScroll className="about-infra__layout">
         <div className="about-infra__left">
           <div className="about-infra__subtitle-wrap">
             <span className="about-infra__subtitle">INFRASTRUCTURE</span>

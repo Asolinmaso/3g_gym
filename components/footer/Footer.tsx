@@ -43,19 +43,19 @@ const social = [
     ),
   },
   {
-  name: 'Instagram',
-  href: 'https://www.instagram.com/3rdgenerationfitnessstudio?igsh=MnF4M3cxdTJmdXZ5&utm_source=qr',
-  icon: (
-    <>
-      {/* White filled rounded square background */}
-      <rect x="2" y="2" width="20" height="20" rx="6" fill="currentColor" />
-      {/* Red outlined circle (ring) */}
-      <circle cx="12" cy="12" r="3.8" fill="none" stroke="#C50D3E" strokeWidth="2" />
-      {/* Red dot */}
-      <circle cx="17" cy="7" r="1.5" fill="#C50D3E" />
-    </>
-  ),
-},
+    name: 'Instagram',
+    href: 'https://www.instagram.com/3rdgenerationfitnessstudio?igsh=MnF4M3cxdTJmdXZ5&utm_source=qr',
+    icon: (
+      <>
+        {/* White filled rounded square background */}
+        <rect x="2" y="2" width="20" height="20" rx="6" fill="currentColor" />
+        {/* Red outlined circle (ring) */}
+        <circle cx="12" cy="12" r="3.8" fill="none" stroke="#C50D3E" strokeWidth="2" />
+        {/* Red dot */}
+        <circle cx="17" cy="7" r="1.5" fill="#C50D3E" />
+      </>
+    ),
+  },
 ];
 
 export default function Footer() {
@@ -63,11 +63,11 @@ export default function Footer() {
     <footer className="footer-root">
       <div className="content-inner footer-inner">
         <Image
-              src="/logo1.png"
-              alt="3RD GENERATION FITNESS STUDIO"
-              width={156}
-              height={156}
-              className="footer-logo"
+          src="/logo1.png"
+          alt="3RD GENERATION FITNESS STUDIO"
+          width={156}
+          height={156}
+          className="footer-logo"
         />
         {/* Mobile-only description */}
         <p className="footer-mobile-description">
@@ -76,7 +76,7 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Column 1: Logo, tagline, Follow Us (Frame 60) – Figma Frame 55 */}
           <div className="footer-col footer-col--about">
-            
+
             <p className="footer-tagline">Let's Transform Your Life</p>
             <div className="footer-follow">
               <p className="footer-follow-title">Follow Us -</p>
@@ -132,7 +132,7 @@ export default function Footer() {
               <li className="footer-contact-item">
                 <span className="footer-contact-icon" aria-hidden>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
                   </svg>
                 </span>
                 <span className="footer-contact-text">
@@ -146,9 +146,10 @@ export default function Footer() {
                     <path d="M22 6l-10 7L2 6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <a href="mailto:3rdgenerationfitnessstudio@gmail.com" className="footer-link footer-contact-text">
-                  3rdgenerationfitnessstudio@gmail.com
-                </a>
+                <div className="footer-contact-text">
+                  <a href="mailto:3rdgenerationfitnessstudio@gmail.com">3rdgenerationfitnessstudio@gmail.com</a>
+                  <a href="mailto:contact@3rdgenerationfitnessstudio.com">contact@3rdgenerationfitnessstudio.com</a>
+                </div>
               </li>
               <li className="footer-contact-item footer-contact-item--address">
                 <span className="footer-contact-icon" aria-hidden>
@@ -158,7 +159,7 @@ export default function Footer() {
                   </svg>
                 </span>
                 <span className="footer-contact-text">
-                  No. 10, ganesh nagar, alamathi main road, New vellanur, chennai - 600062
+                  10, Alamadhi  main road, Vetrivel Nagar, Ganesh Nagar, New Vellanur, Avadi, Chennai- 600062
                 </span>
               </li>
             </ul>
