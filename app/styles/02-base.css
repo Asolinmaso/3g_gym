@@ -155,10 +155,12 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
+
 .animate-marquee {
   animation: marquee-scroll 30s linear infinite;
 }
@@ -172,6 +174,7 @@
   justify-content: flex-end;
   overflow: hidden;
 }
+
 .marquee-container {
   width: 100%;
   max-width: 1440px;
@@ -183,6 +186,7 @@
   align-items: center;
   margin-bottom: 10px;
 }
+
 .marquee-track-wrap {
   display: flex;
   align-items: center;
@@ -197,7 +201,7 @@
   justify-content: center;
   gap: 12px;
   padding: 14px 36px;
-  border-radius: 100px;
+  border-radius: 9px;
   font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 600;
   font-size: 20px;
@@ -214,9 +218,9 @@
   cursor: not-allowed;
   pointer-events: none;
 }
-/* When a button has an arrow, compensate left padding so text stays visually centered */
-.btn-pill:has(.btn-pill__arrow) {
-  padding-left: calc(36px + 20px + 12px);  /* left = base + arrow + gap */
+
+.btn-pill:has() {
+  padding-left: calc(36px + 20px + 12px);
   padding-right: 36px;
 }
 
@@ -236,25 +240,12 @@
 }
 
 .btn--black {
-  background-color: #010101;
+  background-color: #c50d3e;
   color: #ffffff;
-}
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
 
-.btn-pill__arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.btn-pill__arrow svg {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.3s ease;
-}
-
-.btn-pill:hover .btn-pill__arrow svg {
-  transform: translateX(4px);
 }
 
 /* Mobile Adjustments */
@@ -264,9 +255,6 @@
     font-size: 16px;
     gap: 8px;
   }
-  
-  .btn-pill__arrow svg {
-    width: 16px;
-    height: 16px;
-  }
+
+
 }
