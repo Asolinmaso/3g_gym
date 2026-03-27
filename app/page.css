@@ -1,5 +1,24 @@
-
 .footer-root {
   position: relative;
   z-index: 2;
+}
+
+/* Global Hero intense glow for both mobile and laptop per user request */
+.hero-banner__blur {
+  background: #da1b4e99 !important;
+  filter: blur(250px) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero-banner__blur--center {
+  background: rgba(205, 24, 72, 0.4) !important;
+  filter: blur(150px) !important;
+}
+
+/* Refined design for background arrows (chevrons) per user reference */
+.hero-banner__chevrons svg path {
+  fill: #010101 !important;
+  fill-opacity: 1 !important;
+
 }

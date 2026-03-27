@@ -90,6 +90,7 @@ export function CountryCodeSelect({
   };
 
   const p = variant === 'career-apply' ? 'career-apply-country' : variant === 'franchise-contact' ? 'franchise-contact-country' : 'contact-form-country';
+
   return (
     <div ref={containerRef} className={`${p}-wrap ${className}`.trim()}>
       <button
@@ -106,6 +107,7 @@ export function CountryCodeSelect({
             <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
+        <span className={`${p}-divider`} aria-hidden />
       </button>
       {open && (
         <div role="listbox" className={`${p}-dropdown ${dropdownClassName}`.trim()} aria-label="Country code list">
@@ -118,8 +120,8 @@ export function CountryCodeSelect({
               className={`${p}-option ${selected === code ? `${p}-option--selected` : ''}`.trim()}
               onClick={() => handleSelect(code)}
             >
-              <span>{code}</span>
-              <span>{country}</span>
+              <span className={`${p}-option-code`}>{code}</span>
+              <span className={`${p}-option-country`}>{country}</span>
             </button>
           ))}
         </div>

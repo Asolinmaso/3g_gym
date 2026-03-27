@@ -17,7 +17,7 @@ export default function Hero() {
         aria-hidden
       />
 
-      {/* Chevron decorations – left */}
+      {/* Chevron decorations – left: pointing UP */}
       <div
         className="hero-banner__chevrons hero-banner__chevrons--left"
         aria-hidden
@@ -25,7 +25,7 @@ export default function Hero() {
         <svg
           width="250"
           height="345"
-          viewBox="0 0 250 345"
+          viewBox="0 0 270 355"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{ transform: "rotate(270deg)" }}
@@ -51,7 +51,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Chevron decorations – right */}
+      {/* Chevron decorations – right: pointing DOWN */}
       <div
         className="hero-banner__chevrons hero-banner__chevrons--right"
         aria-hidden
@@ -90,17 +90,17 @@ export default function Hero() {
 
       <h1 className="hero-banner__headline">
         <span className="hero-banner__line hero-banner__line--1">
-        <span className="hero-banner__gradient-light">TRAIN</span>{" "}
-        <span className="hero-banner__gradient-red">HARD</span>
-      </span>{" "}
-      <span className="hero-banner__line hero-banner__line--2">
-        <span className="hero-banner__gradient-light">SEE</span>{" "}
-        <span className="hero-banner__gradient-red">RESULTS.</span>
-      </span>
-      <span className="hero-banner__line hero-banner__line--3">
-        <span className="hero-banner__gradient-light">LIVE</span>{" "}
-        <span className="hero-banner__gradient-red">STRONG.</span>
-      </span>
+          <span className="hero-banner__gradient-light">TRAIN</span>{" "}
+          <span className="hero-banner__gradient-red">HARD</span>
+        </span>{" "}
+        <span className="hero-banner__line hero-banner__line--2">
+          <span className="hero-banner__gradient-light">SEE</span>{" "}
+          <span className="hero-banner__gradient-red">RESULTS.</span>
+        </span>
+        <span className="hero-banner__line hero-banner__line--3">
+          <span className="hero-banner__gradient-light">LIVE</span>{" "}
+          <span className="hero-banner__gradient-red">STRONG.</span>
+        </span>
       </h1>
 
       {/* Copy + CTA – centered */}
@@ -113,7 +113,7 @@ export default function Hero() {
           Get Started
           <span className="btn-pill__arrow" aria-hidden>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
         </a>

@@ -26,28 +26,28 @@ export default function Results() {
           <p className="results-subtitle">Transformations That Inspire.</p>
         </AnimateOnScroll>
         <AnimateOnScroll delay={0.15}>
-        <div className="results-grid">
-          {TRANSFORMATIONS.map((t) => (
-            <div key={t.image} className="results-card">
-              <div className="results-card__image-wrap">
-                <Image
-                  src={t.image}
-                  alt="Result"
-                  width={603}
-                  height={550}
-                  className="results-card__image"
-                  sizes="(max-width: 1023px) 100vw, 603px"
-                />
-                <span className="results-card__badge results-card__badge--before">
-                  Before
-                </span>
-                <span className="results-card__badge results-card__badge--after">
-                  After
-                </span>
+          <div className="results-grid">
+            {TRANSFORMATIONS.map((t) => (
+              <div key={t.image} className="results-card">
+                <div className="results-card__image-wrap">
+                  <Image
+                    src={t.image}
+                    alt="Result"
+                    width={603}
+                    height={550}
+                    className="results-card__image"
+                    sizes="(max-width: 1023px) 100vw, 603px"
+                  />
+                  <span className="results-card__badge results-card__badge--before">
+                    Before
+                  </span>
+                  <span className="results-card__badge results-card__badge--after">
+                    After
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </AnimateOnScroll>
       </div>
     </section>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const TESTIMONIALS = [
@@ -22,10 +22,32 @@ const TESTIMONIALS = [
 ];
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  // We use a larger set (3x) for smoother infinite scrolling and fast clicking
+  const items = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
+  const [activeIndex, setActiveIndex] = useState(TESTIMONIALS.length); // Start at the middle set (index 3)
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const totalOriginal = TESTIMONIALS.length;
 
-  const goPrev = () => setActiveIndex((i) => (i === 0 ? TESTIMONIALS.length - 1 : i - 1));
-  const goNext = () => setActiveIndex((i) => (i === TESTIMONIALS.length - 1 ? 0 : i + 1));
+  const goPrev = () => {
+    setIsTransitioning(true);
+    setActiveIndex((prev) => prev - 1);
+  };
+
+  const goNext = () => {
+    setIsTransitioning(true);
+    setActiveIndex((prev) => prev + 1);
+  };
+
+  const handleTransitionEnd = () => {
+    // If we've drifted into the first or third set, jump back to the middle set seamlessly
+    if (activeIndex < totalOriginal) {
+      setIsTransitioning(false);
+      setActiveIndex(activeIndex + totalOriginal);
+    } else if (activeIndex >= totalOriginal * 2) {
+      setIsTransitioning(false);
+      setActiveIndex(activeIndex - totalOriginal);
+    }
+  };
 
   return (
     <section id="testimonials" className="testimonials-section">
@@ -47,8 +69,14 @@ export default function Testimonials() {
           <div className="testimonials-carousel__gradient testimonials-carousel__gradient--left" aria-hidden />
           <div className="testimonials-carousel__gradient testimonials-carousel__gradient--right" aria-hidden />
           
-          <div className="testimonials-carousel__track">
-            {TESTIMONIALS.map((t, i) => (
+          <div 
+            className="testimonials-carousel__track"
+            onTransitionEnd={handleTransitionEnd}
+            style={{ 
+              transition: isTransitioning ? 'transform 0.4s ease' : 'none'
+            }}
+          >
+            {items.map((t, i) => (
               <div
                 key={i}
                 className={`testimonials-carousel__card ${i === activeIndex ? 'testimonials-carousel__card--active' : ''}`}

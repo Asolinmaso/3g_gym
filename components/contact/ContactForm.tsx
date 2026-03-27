@@ -1,5 +1,7 @@
 'use client';
 
+import { CountryCodeSelect } from '@/components/ui/CountryCodeSelect';
+
 export default function ContactForm() {
   return (
     <section className="contact-form-section">
@@ -11,8 +13,7 @@ export default function ContactForm() {
               <div className="contact-form-fields">
                 <input type="text" placeholder="Name" className="contact-form-input" />
                 <div className="contact-form-contact-row">
-                  <span className="contact-form-prefix">+91</span>
-                  <span className="contact-form-dropdown" aria-hidden />
+                  <CountryCodeSelect variant="contact-form" />
                   <input
                     type="tel"
                     placeholder="Contact"

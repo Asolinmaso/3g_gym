@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 const CARDS = [
-  { title: 'OUR VISION', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_vision.png' },
-  { title: 'OUR MISSION', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_mission.png', highlight: true },
-  { title: 'OUR VALUE', text: 'From strength to fat loss, our expert-led programs help you train smarter and achieve real results at any fitness level.', image: '/images/about_page/about_value.png' },
+  { title: 'OUR VISION', text: 'We aim to create a community where every individual is empowered to become stronger, healthier, and more confident inside and out.', image: '/images/about_page/about_vision.png' },
+  { title: 'OUR MISSION', text: 'Our mission is to provide expert guidance, personalized training, and a motivating environment that helps you achieve your fitness goals faster and sustainably.', image: '/images/about_page/about_mission.png', highlight: true },
+  { title: 'OUR VALUE', text: 'We believe in dedication, integrity, and supporting every member’s journey with the right mindset, tools, and encouragement.', image: '/images/about_page/about_value.png' },
 ];
 
 export default function AboutVisionMission() {

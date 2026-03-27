@@ -1,9 +1,13 @@
 "use client";
 
+import { useState } from 'react';
 import "./ContactSection.css";
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
+import { CountryCodeSelect } from '@/components/ui/CountryCodeSelect';
 
 export default function ContactSection() {
+  const [countryCode, setCountryCode] = useState('+91');
+
   return (
     <section className="contact-section">
       <div className="content-inner">
@@ -31,7 +35,7 @@ export default function ContactSection() {
                 <div>
                   <h4>Location</h4>
                   <p>
-                    No. 10, ganesh nagar, alamathi main road, New vellanur, chennai - 600062
+                    10, Alamadhi  main road, Vetrivel Nagar, Ganesh Nagar, New Vellanur, Avadi, Chennai- 600062
                   </p>
                 </div>
               </div>
@@ -54,6 +58,7 @@ export default function ContactSection() {
                 <div>
                   <h4>Email</h4>
                   <p>3rdgenerationfitnessstudio@gmail.com</p>
+                  <p>contact@3rdgenerationfitnessstudio.com</p>
                 </div>
               </div>
 
@@ -122,8 +127,7 @@ export default function ContactSection() {
                     title="Please enter a valid name (2-50 characters, letters only)"
                   />
                   <div className="contact-form-contact-row">
-                    <span className="contact-form-prefix">+91</span>
-                    <span className="contact-form-dropdown" aria-hidden />
+                    <CountryCodeSelect variant="career-apply" value={countryCode} onChange={setCountryCode} />
                     <input
                       type="tel"
                       placeholder="Contact"
@@ -152,14 +156,16 @@ export default function ContactSection() {
                     required
                     minLength={10}
                   />
-                  <button type="submit" className="btn-pill btn--black">
-                    Submit
-                    <span className="btn-pill__arrow" aria-hidden>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </button>
+                  <div className="career-apply-submit-wrap">
+                    <button type="submit" className="btn-pill btn--black">
+                      Submit
+                      <span className="btn-pill__arrow" aria-hidden>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
