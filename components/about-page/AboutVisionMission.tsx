@@ -18,20 +18,20 @@ export default function AboutVisionMission() {
       <div className="about-vm__blur about-vm__blur--3" aria-hidden />
       <div className="content-inner about-vm__inner">
         <AnimateOnScroll>
-        <div className="about-vm__grid">
-          {CARDS.map((card) => (
-            <div key={card.title} className={`about-vm__card ${card.highlight ? 'about-vm__card--highlight' : ''}`}>
-              <div className="about-vm__icon-wrap">
-                <Image src={card.image} alt="" fill className="about-vm__card-image" sizes="92px" />
+          <div className="about-vm__grid">
+            {CARDS.map((card) => (
+              <div key={card.title} className={`about-vm__card ${card.highlight ? 'about-vm__card--highlight' : ''}`}>
+                <div className="about-vm__icon-wrap">
+                  <Image src={card.image} alt="" fill className="about-vm__card-image" sizes="92px" />
+                </div>
+                <h3 className="about-vm__title">{card.title}</h3>
+                <p className="about-vm__text">{card.text}</p>
               </div>
-              <h3 className="about-vm__title">{card.title}</h3>
-              <p className="about-vm__text">{card.text}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </AnimateOnScroll>
         <AnimateOnScroll delay={0.2}>
-        <p className="about-vm__watermark" aria-hidden>Professional Fitness</p>
+          <p className="about-vm__watermark" aria-hidden>Professional Fitness</p>
         </AnimateOnScroll>
       </div>
     </section>

@@ -15,8 +15,6 @@ export default function ContactCards() {
             <h3 className="contact-card__title">Contact</h3>
             <p className="contact-card__text">
               +91 8190895694
-              <br />
-              +91 8778359643
             </p>
           </article>
           <article className="contact-card">
@@ -48,7 +46,7 @@ export default function ContactCards() {
             </span>
             <h3 className="contact-card__title">Address</h3>
             <p className="contact-card__text">
-              No. 10, ganesh nagar, alamathi main road, vellanur, chennai - 600062
+              No. 10, ganesh nagar, alamathi main road, New vellanur, chennai - 600062
             </p>
           </article>
         </div>

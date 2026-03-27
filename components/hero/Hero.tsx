@@ -92,7 +92,7 @@ export default function Hero() {
         <span className="hero-banner__line hero-banner__line--1">
         <span className="hero-banner__gradient-light">TRAIN</span>{" "}
         <span className="hero-banner__gradient-red">HARD</span>
-      </span>
+      </span>{" "}
       <span className="hero-banner__line hero-banner__line--2">
         <span className="hero-banner__gradient-light">SEE</span>{" "}
         <span className="hero-banner__gradient-red">RESULTS.</span>
@@ -109,10 +109,12 @@ export default function Hero() {
           Premium training plans, certified experts & a community built for
           success, start your fitness transformation today.
         </p>
-        <a href="#contact" className="hero-get-started-btn hero-banner__cta">
+        <a href="/contact" className="btn-pill btn--red">
           Get Started
-          <span className="hero-banner__cta-arrow" aria-hidden>
-            &gt;
+          <span className="btn-pill__arrow" aria-hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </span>
         </a>
       </div>

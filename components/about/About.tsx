@@ -97,11 +97,11 @@ export default function About() {
                   designed by certified experts and backed by proven training
                   methods that deliver real, lasting results.
                 </p>
-                <a href="/about" className="about-cta">
+                <a href="/about" className="btn-pill btn--red">
                   Know More
-                  <span className="about-cta-arrow" aria-hidden>
-                    <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1L8 8L1 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                  <span className="btn-pill__arrow" aria-hidden>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </span>
                 </a>

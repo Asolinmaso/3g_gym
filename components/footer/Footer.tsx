@@ -13,15 +13,15 @@ const quickLinks = [
 ];
 
 const programs = [
-  'Strength Training',
-  'Weight Loss Program',
-  'Functional Training',
-  'Personal Training',
-  'Group Classes',
-  'Nutrition Guidance',
-  'Weight Gain Program',
-  'Zumba Class',
-  'Contest Preparation',
+  { name: 'Strength Training', id: 'strength' },
+  { name: 'Weight Loss Program', id: 'weight-loss' },
+  { name: 'Functional Training', id: 'functional' },
+  { name: 'Personal Training', id: 'personal' },
+  { name: 'Group Classes', id: 'group' },
+  { name: 'Nutrition Guidance', id: 'nutrition' },
+  { name: 'Weight Gain Program', id: 'weight-gain' },
+  { name: 'Zumba Class', id: 'zumba' },
+  { name: 'Contest Preparation', id: 'contest' },
 ];
 
 const social = [
@@ -115,9 +115,9 @@ export default function Footer() {
           <div className="footer-col footer-col--programs">
             <h3 className="footer-heading">Our Programs</h3>
             <ul className="footer-list">
-              {programs.map((name) => (
+              {programs.map(({ name, id }) => (
                 <li key={name}>
-                  <Link href="/services" className="footer-link">
+                  <Link href={`/services#${id}`} className="footer-link">
                     {name}
                   </Link>
                 </li>
@@ -158,7 +158,7 @@ export default function Footer() {
                   </svg>
                 </span>
                 <span className="footer-contact-text">
-                  No. 10, ganesh nagar, alamathi main road, vellanur, chennai - 600062
+                  No. 10, ganesh nagar, alamathi main road, New vellanur, chennai - 600062
                 </span>
               </li>
             </ul>
