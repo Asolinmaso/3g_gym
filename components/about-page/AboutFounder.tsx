@@ -6,7 +6,7 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 export default function AboutFounder() {
   return (
     <section className="about-founder">
-      <AnimateOnScroll className="about-founder__inner">
+      <AnimateOnScroll className="content-inner about-founder__inner">
         <div className="about-founder__image-wrap">
           <Image
             src="/images/about_page/about_leadership.png"

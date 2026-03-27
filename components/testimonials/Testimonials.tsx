@@ -44,6 +44,9 @@ export default function Testimonials() {
 
         {/* Carousel – Loom-style blockquote layout */}
         <div className="testimonials-carousel" style={{ '--carousel-index': activeIndex } as React.CSSProperties}>
+          <div className="testimonials-carousel__gradient testimonials-carousel__gradient--left" aria-hidden />
+          <div className="testimonials-carousel__gradient testimonials-carousel__gradient--right" aria-hidden />
+          
           <div className="testimonials-carousel__track">
             {TESTIMONIALS.map((t, i) => (
               <div
@@ -52,8 +55,8 @@ export default function Testimonials() {
               >
                 <blockquote className="testimonials-carousel__card-inner">
                   <span className="testimonials-quote-mark" aria-hidden>
-                    <svg width="50" height="40" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 36V22.5C0 15.9 2.1 10.5 6.3 6.3C10.5 2.1 16.2 0 23.4 0V6C19.8 6 16.8 7.2 14.4 9.6C12 12 10.8 15 10.8 18.6H18V36H0ZM26 36V22.5C26 15.9 28.1 10.5 32.3 6.3C36.5 2.1 42.2 0 49.4 0V6C45.8 6 42.8 7.2 40.4 9.6C38 12 36.8 15 36.8 18.6H44V36H26Z" fill="#C50D3E"/>
+                    <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 17.6471C0 7.86275 7.41176 0 16.549 0V6.52941C11.9804 6.52941 10.1176 9.62745 9.78431 12.4118H16.549V30H0V17.6471ZM25.451 17.6471C25.451 7.86275 32.8627 0 42 0V6.52941C37.4314 6.52941 35.5686 9.62745 35.2353 12.4118H42V30H25.451V17.6471Z" fill="#C50D3E"/>
                     </svg>
                   </span>
                   <p className="testimonials-text">{t.text}</p>

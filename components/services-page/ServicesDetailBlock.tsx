@@ -178,7 +178,7 @@ export default function ServicesDetailBlock({
   } = service;
 
   return (
-    <div className="services-detail">
+    <div id={service.id} className="services-detail">
       <div
         className={`services-detail__row ${imageLeft ? "" : "services-detail__row--reverse"}`}
       >

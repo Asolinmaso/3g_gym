@@ -15,7 +15,7 @@ function PlanCard({
   sessions?: string;
 }) {
   return (
-    <a href="#contact" className="pricing-card">
+    <a href="/contact" className="pricing-card">
       <h3 className="pricing-card__title">{title}</h3>
       <div className="pricing-card__prices">
         {priceLines.map((line) => (
@@ -35,9 +35,13 @@ function PlanCard({
           </li>
         ))}
       </ul>
-      <span className="pricing-card__cta">
+      <span className="btn-pill btn--red">
         Join Now
-        <span className="pricing-card__cta-arrow" aria-hidden>&gt;</span>
+        <span className="btn-pill__arrow" aria-hidden>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </span>
       </span>
     </a>
   );

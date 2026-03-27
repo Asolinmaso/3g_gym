@@ -72,7 +72,7 @@ export default function Header() {
             {/* Right: Join Now (desktop) + Hamburger (mobile) */}
             <div className="flex items-center justify-end shrink-0">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="hidden lg:inline-flex bg-[#C50D3E] text-white h-[52px] min-w-[163px] px-6 rounded-[40px] hover:opacity-90 transition-opacity items-center justify-center gap-1.5 whitespace-nowrap footer-join-btn font-poppins font-semibold text-[20px] leading-[24px]"
               >
                 Join 3rd Gen
@@ -169,7 +169,7 @@ export default function Header() {
                 );
               })}
               <Link
-                href="/#contact"
+                href="/contact"
                 onClick={() => setIsMenuOpen(false)}
                 className="mobile-menu-cta"
               >

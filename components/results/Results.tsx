@@ -33,7 +33,8 @@ export default function Results() {
                 <Image
                   src={t.image}
                   alt="Result"
-                  fill
+                  width={603}
+                  height={550}
                   className="results-card__image"
                   sizes="(max-width: 1023px) 100vw, 603px"
                 />
@@ -43,9 +44,6 @@ export default function Results() {
                 <span className="results-card__badge results-card__badge--after">
                   After
                 </span>
-              </div>
-              <div className="results-card__bar">
-               
               </div>
             </div>
           ))}
