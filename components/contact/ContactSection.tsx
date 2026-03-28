@@ -6,99 +6,99 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 export default function ContactSection() {
   const [form, setForm] = useState({
-  name: "",
-  phone: "",
-  email: "",
-  location: "",
-  message: "",
-});
+    name: "",
+    phone: "",
+    email: "",
+    location: "",
+    message: "",
+  });
 
-const [loading, setLoading] = useState(false);
-const [emailError, setEmailError] = useState("");
-const [countryCode, setCountryCode] = useState('+91');
+  const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [countryCode, setCountryCode] = useState('+91');
 
-const handleChange = (e: any) => {
-  const { name, value } = e.target;
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
 
-  let newValue = value;
+    let newValue = value;
 
-  // ✅ NAME (only letters + space)
-  if (name === "name") {
-    newValue = value.replace(/[^a-zA-Z\s]/g, "");
-  }
-
-  // ✅ PHONE (only numbers, max 10 digits)
-  if (name === "phone") {
-    newValue = value.replace(/[^0-9]/g, "").slice(0, 10);
-  }
-
-  // ✅ LOCATION (only letters + space)
-  if (name === "location") {
-    newValue = value.replace(/[^a-zA-Z\s]/g, "");
-  }
-
-  // ✅ MESSAGE (letters, numbers, space, basic punctuation)
-  if (name === "message") {
-    newValue = value.replace(/[^a-zA-Z0-9\s.,]/g, "");
-  }
-
-  // EMAIL → no restriction here (let browser handle format)
-  if (name === "email") {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (value && !emailRegex.test(value)) {
-    setEmailError("Invalid email format");
-  } else {
-    setEmailError("");
-  }
-}
-
-  setForm({ ...form, [name]: newValue });
-};
-const handleSubmit = async (e: any) => {
-  e.preventDefault();
-
-  if (loading) return;
-  if (emailError) {
-    alert("Please fix errors before submitting ❌");
-    return;
-  }
-
-  try {
-    setLoading(true);
-
-    const res = await fetch("/api/form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        type: "contact",
-        data: form,
-      }),
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      alert("Form submitted successfully ✅");
-      setForm({
-        name: "",
-        phone: "",
-        email: "",
-        location: "",
-        message: "",
-      });
-    } else {
-      alert("Something went wrong ❌");
+    // ✅ NAME (only letters + space)
+    if (name === "name") {
+      newValue = value.replace(/[^a-zA-Z\s]/g, "");
     }
 
-  } catch (error) {
-    alert("Server error ❌");
-  } finally {
-    setLoading(false);
-  }
-};
+    // ✅ PHONE (only numbers, max 10 digits)
+    if (name === "phone") {
+      newValue = value.replace(/[^0-9]/g, "").slice(0, 10);
+    }
+
+    // ✅ LOCATION (only letters + space)
+    if (name === "location") {
+      newValue = value.replace(/[^a-zA-Z\s]/g, "");
+    }
+
+    // ✅ MESSAGE (letters, numbers, space, basic punctuation)
+    if (name === "message") {
+      newValue = value.replace(/[^a-zA-Z0-9\s.,]/g, "");
+    }
+
+    // EMAIL → no restriction here (let browser handle format)
+    if (name === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (value && !emailRegex.test(value)) {
+        setEmailError("Invalid email format");
+      } else {
+        setEmailError("");
+      }
+    }
+
+    setForm({ ...form, [name]: newValue });
+  };
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    if (loading) return;
+    if (emailError) {
+      alert("Please fix errors before submitting ❌");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          data: form,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert("Form submitted successfully ✅");
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          location: "",
+          message: "",
+        });
+      } else {
+        alert("Something went wrong ❌");
+      }
+
+    } catch (error) {
+      alert("Server error ❌");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <section className="contact-section">
       <div className="content-inner">
@@ -198,7 +198,7 @@ const handleSubmit = async (e: any) => {
                   <h4>Open Hours</h4>
                   <p>
                     Monday - Sunday
-                    <br />5 AM - 11 PM
+                    <br />5:30 AM - 10:00 PM
                   </p>
                 </div>
               </div>
@@ -267,11 +267,6 @@ const handleSubmit = async (e: any) => {
                   />
                   <button type="submit" className="btn-pill btn--black" disabled={loading || !!emailError}>
                     {loading ? "Sending..." : "Submit"}
-                    <span className="btn-pill__arrow" aria-hidden>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
                   </button>
                 </div>
               </form>

@@ -1698,7 +1698,7 @@
 
 .about-infra__left {
   padding: 2rem 0;
-  max-width: 469px;
+  max-width: 700px;
   width: 100%;
 }
 
@@ -1712,31 +1712,35 @@
 
 .about-infra__subtitle {
   font-family: var(--font-poppins), "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 48px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: normal;
   color: #c50d3e;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .about-infra__line {
-  flex: 0 0 82px;
+  flex: 0 0 72px;
   height: 0;
-  border-bottom: 3px solid #c50d3e;
+  border-bottom: 2px solid #c50d3e;
 }
 
 .about-infra__heading {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  margin: 0 0 24px;
+  gap: 4px;
+  margin: 12px 0 24px;
 }
 
 .about-infra__heading-line {
   font-family: var(--font-poppins), "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: clamp(2.5rem, 5vw, 64px);
-  line-height: 1.1;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 56px);
+  line-height: 1.05;
   color: #c50d3e;
+  text-transform: none;
+  white-space: nowrap;
 }
 
 .about-infra__heading-accent {
@@ -1746,18 +1750,18 @@
 .about-infra__text {
   font-family: "Roboto", system-ui, sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 22px;
+  line-height: 32px;
   color: #7e7c7c;
   margin: 0 0 32px;
-  max-width: 443px;
+  max-width: 580px;
 }
 
 .about-infra__icons {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .about-infra__icon {
@@ -1831,14 +1835,14 @@
 
   /* Desktop: text left, image right – side by side */
   .about-infra__layout {
-    grid-template-columns: 469px 1fr;
+    grid-template-columns: 750px 1fr;
     justify-content: space-between;
     align-items: center;
-    gap: 0;
+    gap: 2rem;
   }
 
   .about-infra__left {
-    padding: 40px 80px !important;
+    padding: 70px 70px 70px 100px !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2907,7 +2911,7 @@
 }
 
 .franchise-contact__form-wrap {
-  background: #010101;
+  background: radial-gradient(114.78% 114.78% at 0% 0%, #2B040C 0%, #010101 100%);
   border-radius: 24px;
   padding: 2rem 2rem 1.5rem;
   display: flex;
@@ -2950,7 +2954,7 @@
   width: 100%;
   height: 60px;
   padding: 10px 16px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   font-family: "Roboto", system-ui, sans-serif;
   font-size: 20px;
@@ -2970,7 +2974,7 @@
   align-items: center;
   gap: 10px;
   padding: 10px 16px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   background: transparent;
   box-sizing: border-box;

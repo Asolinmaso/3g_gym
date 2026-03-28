@@ -29,7 +29,7 @@ export default function Services() {
               <span className="services-label-line" aria-hidden />
             </div>
             <h2 className="services-heading">
-              Programs Designed to <span style={{color:"#c50d3e"}}>Transform You</span>
+              Programs Designed to <span style={{ color: "#c50d3e" }}>Transform You</span>
             </h2>
           </div>
           <div className="services-header__right">
@@ -41,7 +41,7 @@ export default function Services() {
               Know More
               <span className="btn-pill__arrow" aria-hidden>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
             </a>
@@ -51,51 +51,51 @@ export default function Services() {
 
       {/* White curved card area – auto-scrolling marquee strip */}
       <AnimateOnScroll>
-      <div className="services-cards-wrap">
-        <div className="services-curve services-curve--top" aria-hidden />
-        <div className="services-curve services-curve--bottom" aria-hidden />
-        <div className="services-cards-inner">
-          <div className="services-scroll-wrap" role="region" aria-label="Services carousel">
-            <div className="services-marquee-track">
-              <div className="services-grid services-grid--scroll">
-                {SERVICES.map((service) => (
-                  <div key={service.title} className="services-card">
-                    <div className="services-card__image-wrap">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="services-card__image"
-                        sizes="357px"
-                      />
-                      <div className="services-card__overlay" aria-hidden />
+        <div className="services-cards-wrap">
+          <div className="services-curve services-curve--top" aria-hidden />
+          <div className="services-curve services-curve--bottom" aria-hidden />
+          <div className="services-cards-inner">
+            <div className="services-scroll-wrap" role="region" aria-label="Services carousel">
+              <div className="services-marquee-track">
+                <div className="services-grid services-grid--scroll">
+                  {SERVICES.map((service) => (
+                    <div key={service.title} className="services-card">
+                      <div className="services-card__image-wrap">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="services-card__image"
+                          sizes="357px"
+                        />
+                        <div className="services-card__overlay" aria-hidden />
+                      </div>
+                      <h3 className="services-card__title">{service.title}</h3>
                     </div>
-                    <h3 className="services-card__title">{service.title}</h3>
-                  </div>
-                ))}
-              </div>
-              {/* Duplicate for seamless infinite loop */}
-              <div className="services-grid services-grid--scroll" aria-hidden>
-                {SERVICES.map((service) => (
-                  <div key={`dup-${service.title}`} className="services-card">
-                    <div className="services-card__image-wrap">
-                      <Image
-                        src={service.image}
-                        alt=""
-                        fill
-                        className="services-card__image"
-                        sizes="357px"
-                      />
-                      <div className="services-card__overlay" aria-hidden />
+                  ))}
+                </div>
+                {/* Duplicate for seamless infinite loop */}
+                <div className="services-grid services-grid--scroll" aria-hidden>
+                  {SERVICES.map((service) => (
+                    <div key={`dup-${service.title}`} className="services-card">
+                      <div className="services-card__image-wrap">
+                        <Image
+                          src={service.image}
+                          alt=""
+                          fill
+                          className="services-card__image"
+                          sizes="357px"
+                        />
+                        <div className="services-card__overlay" aria-hidden />
+                      </div>
+                      <h3 className="services-card__title">{service.title}</h3>
                     </div>
-                    <h3 className="services-card__title">{service.title}</h3>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </AnimateOnScroll>
     </section>
   );
