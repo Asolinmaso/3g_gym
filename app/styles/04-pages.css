@@ -142,6 +142,7 @@
 
 .services-detail {
   width: 100%;
+  scroll-margin-top: 130px;
 }
 
 .services-detail__row {

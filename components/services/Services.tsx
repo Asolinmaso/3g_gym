@@ -38,14 +38,14 @@ export default function Services() {
               From strength to fat loss, our expert-led programs help you train
               smarter and achieve real results at any fitness level.
             </p>
-            <a href="/services" className="btn-pill btn--red">
+            <Link href="/services" className="btn-pill btn--red">
               Know More
               <span className="btn-pill__arrow" aria-hidden>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-            </a>
+            </Link>
           </div>
         </AnimateOnScroll>
       </div>
@@ -67,7 +67,7 @@ export default function Services() {
                           alt={service.title}
                           fill
                           className="services-card__image"
-                          sizes="357px"
+                          sizes="650px"
                         />
                         <div className="services-card__overlay" aria-hidden />
                       </div>
@@ -85,7 +85,7 @@ export default function Services() {
                           alt=""
                           fill
                           className="services-card__image"
-                          sizes="357px"
+                          sizes="650px"
                         />
                         <div className="services-card__overlay" aria-hidden />
                       </div>
