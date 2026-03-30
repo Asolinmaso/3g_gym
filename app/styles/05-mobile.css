@@ -60,30 +60,23 @@
   }
 
   .services-cards-inner {
-    padding: 0 1rem 64px;
+    padding: 80px 0 100px;
   }
 
   .services-curve {
-    height: 180px;
-  }
-
-  .services-curve--top {
-    border-radius: 0 0 100% 100% / 0 0 100% 100%;
-  }
-
-  .services-curve--bottom {
-    border-radius: 100% 100% 0 0 / 100% 100% 0 0;
+    height: 96px;
+    width: 1200px;
   }
 
   .services-card {
-    height: clamp(260px, 70vw, 420px);
+    height: 376px;
     max-width: 100%;
   }
 
   .services-grid--scroll .services-card {
-    flex: 0 0 min(320px, 85vw);
-    width: min(320px, 85vw);
-    height: clamp(300px, 60vw, 400px);
+    flex: 0 0 280px;
+    width: 280px;
+    height: 376px;
   }
 
   .services-card__title {
@@ -3872,52 +3865,47 @@
 
   /* 1️⃣ Parent container adjustment */
   .services-cards-inner {
-    padding: 40px 0 100px !important;
+    padding: 80px 0 100px !important;
     overflow: visible !important;
   }
 
-  /* 2️⃣ Hide the blocking white curves */
+  /* 2️⃣ Restore curves */
   .services-curve {
-    display: none !important;
+    display: block !important;
+    height: 80px !important;
+    width: 800px !important;
   }
 
-  /* 3️⃣ The Card, Image, and OVERLAY Fix */
-  /* Added .services-card__overlay to this group */
+  /* 3️⃣ Card – proper overflow so images are visible */
   .services-card,
   .services-card__image-wrap,
   .services-card__overlay {
-    /* Set aspect ratio to match Figma card proportions */
-    aspect-ratio: 4 / 5 !important;
-    height: auto !important;
+    aspect-ratio: auto !important;
     position: relative !important;
+    border-radius: var(--card-curve-radius) !important;
+    clip-path: none !important;
+    overflow: hidden !important;
+  }
 
-    /* 1. Remove border-radius to prevent flat corners */
-    border-radius: 0 !important;
-
-    /* 2. Apply the specific Elliptical Clip-Path:
-       180% X: Pushes the side curves way out so the sides look straight.
-       82% Y: Forces the top and bottom edges to curve inward/outward. */
-    clip-path: ellipse(180% 82% at 50% 50%) !important;
-
-    /* 3. Ensure no parent container is slicing the card before the curve */
-    overflow: visible !important;
+  .services-grid--scroll .services-card {
+    flex: 0 0 min(260px, 75vw) !important;
+    width: min(260px, 75vw) !important;
+    height: 350px !important;
   }
 
   .services-card__image {
-    /* Ensure the actual image adheres to the same shape */
-    clip-path: inherit;
     object-fit: cover !important;
     width: 100% !important;
     height: 100% !important;
-    border-radius: 0 !important;
+    border-radius: var(--card-curve-radius) !important;
+    clip-path: none !important;
   }
 
   /* 5️⃣ Padding for the marquee track */
   .services-grid--scroll {
-    padding-bottom: 60px !important;
-    /* Extra room so the bottom arc is visible */
+    padding-bottom: 0 !important;
     display: flex !important;
-    gap: 24px !important;
+    gap: 16px !important;
   }
 }
 

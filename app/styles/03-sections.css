@@ -397,9 +397,9 @@
 /* White curved shapes framing top and bottom – full width, no shadow */
 .services-curve {
   position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1542px;
   height: 148px;
   background: #ffffff;
   pointer-events: none;
@@ -407,22 +407,21 @@
   box-shadow: none;
   border: none;
   outline: none;
+  border-radius: 50%;
 }
 
 .services-curve--top {
   top: 0;
-  border-radius: 0 0 var(--services-wave-h) var(--services-wave-h) / 0 0 var(--services-wave-v) var(--services-wave-v);
 }
 
 .services-curve--bottom {
   bottom: 0;
-  border-radius: var(--services-wave-h) var(--services-wave-h) 0 0 / var(--services-wave-v) var(--services-wave-v) 0 0;
 }
 
 .services-cards-inner {
   position: relative;
   background: #ffffff;
-  padding: 56px 0 80px;
+  padding: 89px 0 85px;
   z-index: 1;
   box-shadow: none;
 }
@@ -554,7 +553,7 @@
   }
 
   .services-cards-inner {
-    padding: 0px 0 80px;
+    padding: 89px 0 85px;
   }
 
   .services-scroll-wrap {

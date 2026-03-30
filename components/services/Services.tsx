@@ -1,19 +1,20 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 /* All 9 services – horizontal scroll order per Figma */
 const SERVICES = [
-  { title: 'Weight Gain Program', image: '/services/weight_gain.png' },
-  { title: 'Group Classes', image: '/services/group_class.png' },
-  { title: 'Strength training', image: '/services/strength_home.png' },
-  { title: 'Weight Loss Program', image: '/services/weight_loss_home.png' },
-  { title: 'Functional Training', image: '/services/functional_training.png' },
-  { title: 'Personal Training', image: '/services/personel_train.png' },
-  { title: 'Contest Preparation', image: '/services/contest.png' },
-  { title: 'Nutrition Guidance', image: '/services/nutrition.png' },
-  { title: 'Zumba Classes', image: '/services/zumba.png' },
+  { title: 'Weight Gain Program', image: '/services/weight_gain.png', id: 'weight-gain' },
+  { title: 'Group Classes', image: '/services/group_class.png', id: 'group' },
+  { title: 'Strength training', image: '/services/strength_home.png', id: 'strength' },
+  { title: 'Weight Loss Program', image: '/services/weight_loss_home.png', id: 'weight-loss' },
+  { title: 'Functional Training', image: '/services/functional_training.png', id: 'functional' },
+  { title: 'Personal Training', image: '/services/personel_train.png', id: 'personal' },
+  { title: 'Contest Preparation', image: '/services/contest.png', id: 'contest' },
+  { title: 'Nutrition Guidance', image: '/services/nutrition.png', id: 'nutrition' },
+  { title: 'Zumba Classes', image: '/services/zumba.png', id: 'zumba' },
 ];
 
 export default function Services() {
@@ -37,14 +38,14 @@ export default function Services() {
               From strength to fat loss, our expert-led programs help you train
               smarter and achieve real results at any fitness level.
             </p>
-            <a href="/services" className="btn-pill btn--red">
+            <Link href="/services" className="btn-pill btn--red">
               Know More
               <span className="btn-pill__arrow" aria-hidden>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-            </a>
+            </Link>
           </div>
         </AnimateOnScroll>
       </div>
@@ -59,37 +60,45 @@ export default function Services() {
               <div className="services-marquee-track">
                 <div className="services-grid services-grid--scroll">
                   {SERVICES.map((service) => (
-                    <div key={service.title} className="services-card">
+                    <Link 
+                      key={service.title} 
+                      href={`/services#${service.id}`}
+                      className="services-card"
+                    >
                       <div className="services-card__image-wrap">
                         <Image
                           src={service.image}
                           alt={service.title}
                           fill
                           className="services-card__image"
-                          sizes="357px"
+                          sizes="650px"
                         />
                         <div className="services-card__overlay" aria-hidden />
                       </div>
                       <h3 className="services-card__title">{service.title}</h3>
-                    </div>
+                    </Link>
                   ))}
                 </div>
                 {/* Duplicate for seamless infinite loop */}
                 <div className="services-grid services-grid--scroll" aria-hidden>
                   {SERVICES.map((service) => (
-                    <div key={`dup-${service.title}`} className="services-card">
+                    <Link 
+                      key={`dup-${service.title}`} 
+                      href={`/services#${service.id}`}
+                      className="services-card"
+                    >
                       <div className="services-card__image-wrap">
                         <Image
                           src={service.image}
                           alt=""
                           fill
                           className="services-card__image"
-                          sizes="357px"
+                          sizes="650px"
                         />
                         <div className="services-card__overlay" aria-hidden />
                       </div>
                       <h3 className="services-card__title">{service.title}</h3>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>
