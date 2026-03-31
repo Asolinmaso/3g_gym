@@ -492,6 +492,18 @@
   overflow: hidden;
   border-radius: var(--card-curve-radius);
   box-shadow: var(--card-curve-shadow);
+  text-decoration: none;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.services-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(197, 13, 62, 0.2);
+}
+
+.services-card:hover .services-card__image {
+  transform: scale(1.1);
 }
 
 .services-card__image-wrap {
@@ -505,6 +517,7 @@
 .services-card__image {
   object-fit: cover;
   border-radius: var(--card-curve-radius);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .services-card__overlay {

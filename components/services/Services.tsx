@@ -6,15 +6,15 @@ import { AnimateOnScroll } from '@/components/ui/AnimateOnScroll';
 
 /* All 9 services – horizontal scroll order per Figma */
 const SERVICES = [
-  { title: 'Weight Gain Program', image: '/services/weight_gain.png', id: 'weight-gain' },
-  { title: 'Group Classes', image: '/services/group_class.png', id: 'group' },
-  { title: 'Strength training', image: '/services/strength_home.png', id: 'strength' },
-  { title: 'Weight Loss Program', image: '/services/weight_loss_home.png', id: 'weight-loss' },
-  { title: 'Functional Training', image: '/services/functional_training.png', id: 'functional' },
-  { title: 'Personal Training', image: '/services/personel_train.png', id: 'personal' },
-  { title: 'Contest Preparation', image: '/services/contest.png', id: 'contest' },
-  { title: 'Nutrition Guidance', image: '/services/nutrition.png', id: 'nutrition' },
-  { title: 'Zumba Classes', image: '/services/zumba.png', id: 'zumba' },
+  { id: 'weight-gain', title: 'Weight Gain Program', image: '/services/weight_gain.png' },
+  { id: 'group', title: 'Group Classes', image: '/services/group_class.png' },
+  { id: 'strength', title: 'Strength training', image: '/services/strength_home.png' },
+  { id: 'weight-loss', title: 'Weight Loss Program', image: '/services/weight_loss_home.png' },
+  { id: 'functional', title: 'Functional Training', image: '/services/functional_training.png' },
+  { id: 'personal', title: 'Personal Training', image: '/services/personel_train.png' },
+  { id: 'contest', title: 'Contest Preparation', image: '/services/contest.png' },
+  { id: 'nutrition', title: 'Nutrition Guidance', image: '/services/nutrition.png' },
+  { id: 'zumba', title: 'Zumba Classes', image: '/services/zumba.png' },
 ];
 
 export default function Services() {
@@ -60,11 +60,7 @@ export default function Services() {
               <div className="services-marquee-track">
                 <div className="services-grid services-grid--scroll">
                   {SERVICES.map((service) => (
-                    <Link 
-                      key={service.title} 
-                      href={`/services#${service.id}`}
-                      className="services-card"
-                    >
+                    <Link key={service.title} href={`/services#${service.id}`} className="services-card">
                       <div className="services-card__image-wrap">
                         <Image
                           src={service.image}
@@ -82,11 +78,7 @@ export default function Services() {
                 {/* Duplicate for seamless infinite loop */}
                 <div className="services-grid services-grid--scroll" aria-hidden>
                   {SERVICES.map((service) => (
-                    <Link 
-                      key={`dup-${service.title}`} 
-                      href={`/services#${service.id}`}
-                      className="services-card"
-                    >
+                    <Link key={`dup-${service.title}`} href={`/services#${service.id}`} className="services-card">
                       <div className="services-card__image-wrap">
                         <Image
                           src={service.image}
