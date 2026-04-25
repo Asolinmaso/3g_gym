@@ -221,14 +221,12 @@ export default function ServicesDetailBlock({
             <h3 className="services-detail__subheading">
               Duration / Intensity
             </h3>
-            <p className="services-detail__meta">
-              {duration}
+            <div className="services-detail__meta-stack">
+              <p className="services-detail__meta">{duration}</p>
               {intensity && (
-                <>
-                  <span className="services-detail__dot" /> {intensity}
-                </>
+                <p className="services-detail__meta">{intensity}</p>
               )}
-            </p>
+            </div>
           </div>
           <a href="/contact" className="services-detail__cta">
             Enquire Now <span aria-hidden>&gt;</span>

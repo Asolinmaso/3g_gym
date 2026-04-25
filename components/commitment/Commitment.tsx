@@ -20,7 +20,7 @@ export default function Commitment() {
         </p>
 
         <p className="commitment-motto">
-          Your transformation is our responsibility!
+          Your transformation is our responsibility !
         </p>
       </AnimateOnScroll>
     </section>

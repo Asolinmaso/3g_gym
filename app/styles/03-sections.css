@@ -509,6 +509,8 @@
 .services-card__image-wrap {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   background: #1a1a1a;
   border-radius: var(--card-curve-radius);
   overflow: hidden;
@@ -1333,7 +1335,7 @@
   overflow: visible;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .cta-banner {
@@ -1366,7 +1368,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 8px;
   height: 52px;
   border: none;
   padding: 0 24px;
@@ -1375,7 +1377,7 @@
   border-radius: 40px;
   color: #ffffff;
   font-family: var(--font-poppins), "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
   text-decoration: none;

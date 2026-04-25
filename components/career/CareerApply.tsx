@@ -319,7 +319,7 @@ export default function CareerApply() {
                   <button
                     type="submit"
                     className="btn-pill btn--red"
-                    disabled={loading || !!emailError || !file}
+                    disabled={loading}
                   >
                     {loading ? "Submitting..." : "Submit"}
 

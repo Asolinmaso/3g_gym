@@ -128,7 +128,7 @@ export default function Header() {
         {/* Mobile menu – left-to-right sliding drawer overlay */}
         <div
           className={`mobile-menu-overlay lg:hidden ${isMenuOpen ? "mobile-menu-overlay--open" : ""}`}
-          aria-hidden={!isMenuOpen}
+          inert={!isMenuOpen}
         >
           <button
             className="mobile-menu-backdrop"
