@@ -624,6 +624,7 @@
   .franchise-contact__heading {
     font-size: clamp(1.5rem, 5vw, 48px);
     line-height: 1.2;
+    text-transform: none;
   }
 
   .franchise-contact__block-title {
@@ -2275,43 +2276,57 @@
   .cta-heading {
     font-size: 32px;
     line-height: 40px;
+    text-align: left;
   }
 
   .cta-desc {
     font-size: 18px;
     line-height: 24px;
+    text-align: left;
+    margin: 0 0 1.5rem;
+    max-width: 400px;
   }
 
   .cta-btn {
-    width: 148px;
+    width: fit-content;
     height: 48px;
+    padding: 0 24px;
     font-size: 16px;
+    margin: 0;
+    display: inline-flex;
     white-space: nowrap;
   }
 
   .cta-inner {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
+    width: 100%;
   }
 
   .cta-banner {
     border-radius: 32px;
-    padding: 2.5rem 2rem 2rem;
+    padding: 2.5rem 1.5rem 280px;
+    /* Large bottom padding for the person image */
     width: 100%;
     overflow: hidden;
     position: relative;
-    min-height: 500px;
+    background: #c50d3e;
   }
 
   .cta-image {
     position: absolute;
-    bottom: 0;
-    right: -20px;
-    width: 75%;
+    bottom: -15px;
+    /* Slight overflow at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 450px;
+    /* Prevent over-scaling */
     height: 300px;
-    margin-top: 0;
+    margin: 0;
+    z-index: 2;
   }
 
   .career-hero {

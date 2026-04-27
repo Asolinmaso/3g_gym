@@ -201,7 +201,7 @@
   justify-content: center;
   gap: 12px;
   padding: 14px 36px;
-  border-radius: 9px;
+  border-radius: 999px;
   font-family: var(--font-poppins), "Poppins", sans-serif;
   font-weight: 600;
   font-size: 20px;
@@ -240,12 +240,8 @@
 }
 
 .btn--black {
-  background-color: #c50d3e;
+  background-color: #010101;
   color: #ffffff;
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 30%;
-
 }
 
 /* Mobile Adjustments */

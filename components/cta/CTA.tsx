@@ -9,7 +9,7 @@ export default function CTA() {
     <section id="contact" className="cta-section">
       <div className="cta-inner">
         <AnimateOnScroll className="cta-banner">
-          <h2 className="cta-heading">Start Your Fitness Journey <span style={{ color: "#ffffff" }}>Today</span>.</h2>
+          <h2 className="cta-heading">Start Your Fitness <br />Journey <span style={{ color: "#ffffff" }}>Today</span>.</h2>
           <p className="cta-desc">
             Train with expert coaches, modern equipment, and programs designed
             to deliver real results.
